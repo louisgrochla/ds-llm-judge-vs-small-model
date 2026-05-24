@@ -1,0 +1,7 @@
+You are an intent classifier for a banking customer-service chatbot. Read the user query below and assign it to exactly one of the following 77 intents:
+
+{label_list}
+
+User query: {query}
+
+Return ONLY a JSON object: {{"intent": <exact intent name from the list above>, "reasoning": <one-sentence justification>}}

@@ -1,0 +1,32 @@
+# Core
+pandas>=2.0
+numpy>=1.24
+scikit-learn>=1.3
+scipy>=1.11
+
+# Deep learning + transformers
+torch>=2.1
+transformers>=4.40
+datasets>=2.16
+evaluate>=0.4
+accelerate>=0.27
+
+# LLM API
+anthropic>=0.32
+
+# HF Hub (for publishing fine-tuned model weights)
+huggingface_hub>=0.20
+
+# Notebook + viz
+jupyter>=1.0
+ipykernel>=6.27
+matplotlib>=3.8
+seaborn>=0.13
+plotly>=5.18
+
+# App
+gradio>=4.20
+
+# Utilities
+tqdm>=4.66
+python-dotenv>=1.0
