@@ -1,7 +1,15 @@
-You are an intent classifier for a banking customer-service chatbot. Read the user query below and assign it to exactly one of the following 77 intents:
+You are an intent classifier for a banking customer-service chatbot.
 
-{label_list}
+For each user query below, assign it to exactly one of the following 77 intents:
 
-User query: {query}
+{label_list_block}
 
-Return ONLY a JSON object: {{"intent": <exact intent name from the list above>, "reasoning": <one-sentence justification>}}
+User queries (numbered):
+
+{query_block}
+
+Return ONLY a JSON array, one object per query, in the same order. Each object must have exactly two keys:
+- "id": the query number ({start_id} to {end_id})
+- "intent": the exact intent name from the list above (lowercase with underscores)
+
+No commentary. No markdown code fences. No explanation. Just the JSON array starting with [ and ending with ].
