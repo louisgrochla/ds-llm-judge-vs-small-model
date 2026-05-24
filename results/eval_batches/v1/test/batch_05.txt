@@ -1,0 +1,240 @@
+You are an intent classifier for a banking customer-service chatbot.
+
+For each user query below, assign it to exactly one of the following 77 intents:
+
+- activate_my_card
+- age_limit
+- apple_pay_or_google_pay
+- atm_support
+- automatic_top_up
+- balance_not_updated_after_bank_transfer
+- balance_not_updated_after_cheque_or_cash_deposit
+- beneficiary_not_allowed
+- cancel_transfer
+- card_about_to_expire
+- card_acceptance
+- card_arrival
+- card_delivery_estimate
+- card_linking
+- card_not_working
+- card_payment_fee_charged
+- card_payment_not_recognised
+- card_payment_wrong_exchange_rate
+- card_swallowed
+- cash_withdrawal_charge
+- cash_withdrawal_not_recognised
+- change_pin
+- compromised_card
+- contactless_not_working
+- country_support
+- declined_card_payment
+- declined_cash_withdrawal
+- declined_transfer
+- direct_debit_payment_not_recognised
+- disposable_card_limits
+- edit_personal_details
+- exchange_charge
+- exchange_rate
+- exchange_via_app
+- extra_charge_on_statement
+- failed_transfer
+- fiat_currency_support
+- get_disposable_virtual_card
+- get_physical_card
+- getting_spare_card
+- getting_virtual_card
+- lost_or_stolen_card
+- lost_or_stolen_phone
+- order_physical_card
+- passcode_forgotten
+- pending_card_payment
+- pending_cash_withdrawal
+- pending_top_up
+- pending_transfer
+- pin_blocked
+- receiving_money
+- Refund_not_showing_up
+- request_refund
+- reverted_card_payment?
+- supported_cards_and_currencies
+- terminate_account
+- top_up_by_bank_transfer_charge
+- top_up_by_card_charge
+- top_up_by_cash_or_cheque
+- top_up_failed
+- top_up_limits
+- top_up_reverted
+- topping_up_by_card
+- transaction_charged_twice
+- transfer_fee_charged
+- transfer_into_account
+- transfer_not_received_by_recipient
+- transfer_timing
+- unable_to_verify_identity
+- verify_my_identity
+- verify_source_of_funds
+- verify_top_up
+- virtual_card_not_working
+- visa_or_mastercard
+- why_verify_identity
+- wrong_amount_of_cash_received
+- wrong_exchange_rate_for_cash_withdrawal
+
+User queries (numbered):
+
+601. how much do you charge to accept transfers
+602. I would like to make a transfer. How much does it cost?
+603. I need to make a transfer, what will the fee be?
+604. If I make a top-up are there charges applied?
+605. Can I also transfer with SWIFT?
+606. Are SWIFT transfers accepted?
+607. I would like to refill my account using SWIFT.
+608. Do I have to pay for topping up by transfer?
+609. Are there any sort of fees involved for top of transfers?
+610. Is it possible to get a transfer from SWIFT?
+611. Do I have to pay any fees in order to receive money?
+612. How much am I charged to receive money?
+613. Will you deal with SWIFT transfers?
+614. Will there be any charges for money received?
+615. Will a transfer incur a fee?
+616. Are there charges for receiving a SEPA transfer?
+617. If I transfer money from my bank to top-up my account will I be charged?
+618. Will I be charged if someone needs to send me money?
+619. What are the fees for top-ups?
+620. Will topping up by transfer lead to a charge on my account?
+621. What are the charges for receiving money?
+622. What is the fee to receive money?
+623. How much am I charged for a SEPA transfer?
+624. How much is the fee for a SEPA transfer?
+625. What'll it charge me for a SEPA transfer?
+626. Is there a charge for topping up by transfer?
+627. Do you do SWIFT transfers?
+628. Should I expect to be charged for topping up by transfer?
+629. Will I be charged for a SEPA transfer?
+630. is there a fee for a transfer? if so how much will it be?
+631. Please tell me about SWIFT transfers at this bank.
+632. Is there a fee for transfer top-up?
+633. Can you tell me what the transfer policy is?
+634. Is a SWIFT transfer okay?
+635. Will I be charged a fee if I receive a SEPA transfer
+636. When topping up by transfer, will I be charged?
+637. What us the fee to transfer money from my bank?
+638. Do I get charged if i am getting money?
+639. Can you tell me the total cost of a transfer?
+640. can i do a transfer with swift
+641. new customer and filling gas today, it's not working, the thing shows pending half an hour!
+642. My card was topped this morning but I can't see the funds. Why didn't it complete?
+643. What would lead to my top up still pending?
+644. there's a delay in my top-up
+645. Is there a reason my top up hasn't gone through
+646. The top-up is pending.
+647. Could you explain why my top-up has gone through yet?
+648. I've already topped up, but I cannot see the funds being available. What happened?
+649. What is going on? My top-up is still pending. I use your system all the time but now it is just showing as pending.
+650. I  do not see a top-up processed.
+651. I topped up but it didn't complete
+652. So, I am a new customer and attempted to top up for the very first time today. It's already been pending for half an hour and doesn't seem to be working. I need to please get this fixed.
+653. My top up is pending.
+654. Can you look into my top up please.  I made it over three hours ago and yet it's still pending.
+655. Can you please make my top up go through as soon as possible. I really need the money and it has been pending for an hour already.
+656. What's going on with the top-up? All it says is pending, pending, pending! I use your service several times a week and have never had a problem before! What's going on here?
+657. why hasn't my top up gone through yet
+658. top-up is slow to process
+659. Is there something wrong with your website? I tried topping up my account and it's been close to two hours now and it's still at "pending" for some reason. I just joined with you guys and this is the first attempt at this, so maybe I'm wrong, but shouldn't this be instant?
+660. I topped up by card a while ago and it's still pending, surely it should be done by now?
+661. Why hasn't my top-up been completed?
+662. top up did not complete
+663. So I just put my top-up into the card and it hasn't changed.
+664. Why is my top up still pending?
+665. Your top-up function isn't working, it still says pending even though I know my card works.
+666. Hi I'm a new customer and tried topping up for the first time today, seems it's not working, the thing shows up as pending since half an hour already! Please fix it!
+667. OMG!  I'm trying to load my card and it wont top up!  I desperately need the money either on my card or in my bank, where is it?
+668. I'm attempting to top-up my account but it has been pending for an hour.
+669. Why is my top-up still outstanding?
+670. What does it mean when my top up is saying  still pending?
+671. My top up hasn't worked, it's been stuck in pending for the last couple hours
+672. It doesn't look like the top-up completed.
+673. Why does my top up say still pending when I used my card to do it.
+674. Where is the money I topped off with?
+675. Hi. I'm a new customer to your system and I think something isn't working right - or maybe it is. Maybe you can confirm. I tried to top up today (my first time ever) and it's been stuck at "pending" for over an hour now. Is it supposed to do this or is there something wrong in the system?
+676. Why is my top-up still pending?
+677. Topping up my card is not working because I believe the top up is pending
+678. When will my top-up process?
+679. The top-up has a definite problem! I regularly use your service and haven't had a problem before, but now the top-up just shows pending. Please tell my why it continues to show pending.
+680. I tried topping up but my funds seem to be pending. I want to buy something right now, what do I do?
+681. I made a transaction this morning and would like to revert it.
+682. Can i cancel a charge?
+683. Can I cancel my transaction?
+684. I made a transaction but did it to the wrong account.
+685. Tell me how to cancel a transfer.
+686. I need you to cancel a transfer that I made.  It is the wrong account number and the app won't let me stop the transaction.  Please stop it!
+687. I need to cancel my recent transfer immediately, I made a mistake there, please help quickly before it goes through
+688. I would like to revert a transaction I did this morning
+689. If I make a transaction can I cancel it?
+690. How can I cancel a transfer?
+691. Is there any way to cancel a transfer?
+692. I accidentally made a transaction to the wrong account.
+693. I want to cancel a transfer right away! Can you help?
+694. Help me cancel my transaction
+695. This is URGENT, I typed the wrong payment information for a payment I needed to make and have clicked send, I need to reverse the transaction immediately.
+696. Can I cancel a transfer
+697. I want to reverse my transaction from earlier
+698. Is there a way to revert my transaction from this morning?
+699. I'd like to cancel a transfer
+700. Can I cancel a transfer if is already processed?
+701. I transferred the wrong amount and would like to cancel the transaction.
+702. I made a mistake when I did a transfer so now what can I do to fix that?
+703. I need to cancel an incorrect transaction.
+704. How do I cancel my transfer?
+705. I made a mistake with a transaction!
+706. I submitted a transaction to the incorrect account.
+707. The transfer I just made needs to be cancelled right now. It was my mistake. Please help me cancel it before it goes through!
+708. I want to go back on what I did this morning
+709. Can a transaction be cancelled?
+710. How do i cancel my transaction?
+711. My transaction needs to be canceled.
+712. I need to make an immediate cancellation related to a transfer. This was a mistake. Please assist quickly so this does not actually go through.
+713. I made a mistake and need to cancel a transaction
+714. I made an error in payment yesterday and I need it fixed asap because it's for my rent tomorrow.
+715. Cancel my last transfer
+716. My recent transfer needs to be cancelled immediately; it was a mistake, please can you cancel it before it goes through?
+717. I need help cancelling a transaction.
+718. I don't want the transaction to go through now
+719. Can I change the amount I made on a payment that I made to the payment is correct.
+720. Please help me!  I need to cancel a transaction.
+721. can you limit my top up?
+722. Am I free to top-up as much as I want?
+723. Is there a top up limit for my account?
+724. What is the limit to top up?
+725. How much money can i top up?
+726. What are the restrictions to top-offs?
+727. Are the top-ups limited?
+728. what is the top up limit
+729. I need to find out what is the limit for top-ups.
+730. Do you have a limit to top ups?
+731. What is maximum top up?
+732. How can I tell what the limit is to top-ups?
+733. Is there a limit to top-up amounts?
+734. Is there any limit to the amount I can add to a card at a time?
+735. I want to know if there is a maximum I can top up.
+736. What is the limit to a top-up?
+737. Tell me if there are any top-up limits?
+738. How can I top-up my limit?
+739. Is there a limit to top-ups?
+740. Can I top-up as much as I want?
+741. Can you tell me the limits for top ups?
+742. When I top up what are the amoutn limits.
+743. Is there a limit on top-ups?
+744. What is the top-ups limit?
+745. Are there limits to top-ups?
+746. Is there a maximum amount of top-ups?
+747. Do you have a top-up limit?
+748. What's the top up limit?
+749. What is the limit to top-up?
+750. How much can I top-up to my card at a time?
+
+Return ONLY a JSON array, one object per query, in the same order. Each object must have exactly two keys:
+- "id": the query number (601 to 750)
+- "intent": the exact intent name from the list above (lowercase with underscores)
+
+No commentary. No markdown code fences. No explanation. Just the JSON array starting with [ and ending with ].

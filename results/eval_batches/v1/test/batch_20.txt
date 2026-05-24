@@ -1,0 +1,240 @@
+You are an intent classifier for a banking customer-service chatbot.
+
+For each user query below, assign it to exactly one of the following 77 intents:
+
+- activate_my_card
+- age_limit
+- apple_pay_or_google_pay
+- atm_support
+- automatic_top_up
+- balance_not_updated_after_bank_transfer
+- balance_not_updated_after_cheque_or_cash_deposit
+- beneficiary_not_allowed
+- cancel_transfer
+- card_about_to_expire
+- card_acceptance
+- card_arrival
+- card_delivery_estimate
+- card_linking
+- card_not_working
+- card_payment_fee_charged
+- card_payment_not_recognised
+- card_payment_wrong_exchange_rate
+- card_swallowed
+- cash_withdrawal_charge
+- cash_withdrawal_not_recognised
+- change_pin
+- compromised_card
+- contactless_not_working
+- country_support
+- declined_card_payment
+- declined_cash_withdrawal
+- declined_transfer
+- direct_debit_payment_not_recognised
+- disposable_card_limits
+- edit_personal_details
+- exchange_charge
+- exchange_rate
+- exchange_via_app
+- extra_charge_on_statement
+- failed_transfer
+- fiat_currency_support
+- get_disposable_virtual_card
+- get_physical_card
+- getting_spare_card
+- getting_virtual_card
+- lost_or_stolen_card
+- lost_or_stolen_phone
+- order_physical_card
+- passcode_forgotten
+- pending_card_payment
+- pending_cash_withdrawal
+- pending_top_up
+- pending_transfer
+- pin_blocked
+- receiving_money
+- Refund_not_showing_up
+- request_refund
+- reverted_card_payment?
+- supported_cards_and_currencies
+- terminate_account
+- top_up_by_bank_transfer_charge
+- top_up_by_card_charge
+- top_up_by_cash_or_cheque
+- top_up_failed
+- top_up_limits
+- top_up_reverted
+- topping_up_by_card
+- transaction_charged_twice
+- transfer_fee_charged
+- transfer_into_account
+- transfer_not_received_by_recipient
+- transfer_timing
+- unable_to_verify_identity
+- verify_my_identity
+- verify_source_of_funds
+- verify_top_up
+- virtual_card_not_working
+- visa_or_mastercard
+- why_verify_identity
+- wrong_amount_of_cash_received
+- wrong_exchange_rate_for_cash_withdrawal
+
+User queries (numbered):
+
+2851. Why can't I activate my card?
+2852. What is the process of card activation?
+2853. WHAT CAN I DO AFTER THE CARD MISSING
+2854. I got my new card where do I go to activate it?
+2855. Would like to use my card and need to activate it first.  Can you help me do this?
+2856. I need help activating my new card.
+2857. how to activate card?
+2858. Please, activate my card
+2859. I tried activating my bill of fare and it didn't workplace
+2860. I just got my card and want to use it, how do I activate my card?
+2861. I have a new card and I want to activate it
+2862. Assist me please with card activation.
+2863. I need help with activating my card
+2864. How can I start using my card?
+2865. Activating my card
+2866. When will my card be activated?
+2867. How can I activate my card>
+2868. What are the steps in order to activate my new card?
+2869. How do I go about activating my new card?
+2870. What is the activation process on my new card?
+2871. I would like to get help from someone with activating my card.
+2872. What is the process for activating my card?
+2873. How do I use my new card?
+2874. I got my new card but I am not sure if it need s activated and how?
+2875. What are the steps to activating a new card?
+2876. I would like to activate my card to use now, can you help me?
+2877. How do I activate a new card?
+2878. I just got this card & I don't know how to activate it.
+2879. I got my new card. How do I activate it?
+2880. What do I need to do to activate my card?
+2881. I see some fees for cash withdraw.
+2882. How come I was charged extra when I withdrew cash?
+2883. Why am I being charged when I withdraw cash?
+2884. What is this charge on my account for a cash withdrawl?
+2885. Why are fees charged on cash withdrawals? I went to withdraw some money earlier today after shopping. There's a fee that wasn't there before.
+2886. How come you charge for cash withdrawals? I withdrew cash after buying groceries today, and there seems to be a new fee
+2887. It looks like I was charged a withdrawal fee for going to my ATM. Why is that because I haven't been charged previously for doing so?
+2888. Do ATM cash withdrawals carry a charge now? They've been free in the past, but all of a sudden I have to pay to make ATM withdrawals?
+2889. Why is there an extra charge for money that was withdrawn?
+2890. Why was I charged a fee for withdrawing cash?
+2891. Why did I get a fee?
+2892. Why did my cash get charged a fee that should not be there.
+2893. Why did I have to pay a fee when I got cash?
+2894. Hi, I am calling about a recent transaction that has happened on my account.  I recently went to the ATM, and tried to make a withdrawal on my account.  I just happened to check my transaction slip and noticed a fee for my withdrawal.  How can I resolve this, I didn't know fees were charged for this type of action.
+2895. A fee was charged for my recent withdrawal.
+2896. I got a fee for an ATM withdrawal.
+2897. What is the reason for this fee I got after a simple cash withdrawal?
+2898. Did you start charging for cash withdrawals? I thought it was free so far but noticed suddendly there is a fee. How much do I need to pay?
+2899. Is there a fee for withdrawing cash?
+2900. I've notice I was charged for withdrawing cash, can you explain why?
+2901. Why was my account charged for using an ATM?
+2902. Why is there a charge on my account for taking out cash?
+2903. An ATM fee was attached to my recent withdrawal.
+2904. I thought cash withdrawals didn't have a fee
+2905. Why did I get charged a fee when I tried to obtain cash?
+2906. While I was checking out in the grocery store, I realized I needed cash so I requested some.  However, I noticed there was a fee for this transaction.  Why did I get charged a fee?
+2907. Using an ATM caused me to incur an additional fee. Why?
+2908. I was charged extra for a withdrawal
+2909. Is there a limit on how much I can withdraw from my account without being charged?
+2910. I thought cash withdrawals were free? Why have I been charged a fee? Also, how much is this fee?
+2911. More fees, this time for withdrawing my own cash. Why are you robbing me?
+2912. I have never been charged a fee for cash withdrawal before. When did that change?
+2913. I was charged for a cash withdrawal.
+2914. Why did you charge me for a cash withdrawal?
+2915. I took cash and got charged a fee
+2916. Was charged an ATM fee despite it being a small withdrawal on the 1st day of the month. I thought I was allowed 200 per month?
+2917. I had a wrong fee charged at this ATM.
+2918. When I got cash, I'm pretty sure there was a glitch that overcharged me.
+2919. My account got charged for taking out cash, why did this happen?
+2920. Why is there a fee for withdrawing?
+2921. Am I able to order a new card and have it sent to me in China?
+2922. Will you be able to send the new card to China?
+2923. When my card expires what happens to my account?
+2924. What do I do when my card expires?
+2925. The expiration date on my card is coming up
+2926. My card's expiring, what happens now?
+2927. My card is about to expire. What do I need to do?
+2928. how long and how much does it cost for new card
+2929. What do I do if my card is expiring soon?
+2930. How much does it cost to get a new card?  Mine is almost expired.  How fast does it come?
+2931. Since my card is about to expire, what do I do to get a new one?
+2932. My card is about to expire and I need to know how much it costs and how long it takes to get a new one.
+2933. When my card expires do you send a new card?
+2934. What is the next step if my card is about to expire.
+2935. Once my card expires, what should I do?
+2936. I need a new card, my current card is nearly expired.
+2937. It appears my card expires next month, can I order a new one?
+2938. My card is about to expire. How much does it cost to order a new one and how fast will I get it?
+2939. What do I do when my card is about to expire?
+2940. I will need to get a new card soon, how do I order?
+2941. going to need a new card what are the fees and time it takes
+2942. Will I need to order a new card since mine expires next month?
+2943. When my card expires, will I get a new one mailed to me?
+2944. Do you have to order a new card before your current card expires?
+2945. Since my card is about to expire, I need a new one.
+2946. My card is very close to expiring. When can I order a new one and how do I do so?
+2947. I need to order a  new card, mine is about to expire and I need to know how much it will cost and how long until I receive it.
+2948. How do I order a new card before It expires?
+2949. Can I receive a new card while I am in China?
+2950. Next month my card will expire, do I need to order a new one?
+2951. The expiration date of my card is approaching .
+2952. How can I get a new card ASAP to replace an old, soon to expire one?
+2953. I need a new card since my old one is about to expire.
+2954. My card is about to expire.
+2955. My card is expiring shortly.  How much will it cost for a replacement, and how soon can I get it?
+2956. What would the price be for an expired card replacement and how long will it take me to get it?
+2957. in china, need new card
+2958. If my card is about to expire, do I need to order a new one?
+2959. My card is about to expire. How do I get a new one?
+2960. I need to know the cost and when I will receive a new card to replace an old one.
+2961. Is the top up feature available on the Apple Watch?
+2962. Can I use the system Google Pay for top-ups?
+2963. My top-up for Google Pay isn't working
+2964. Can I add money with Apple Pay?
+2965. Can I use my Apple Watch to to top up?
+2966. Does Apple Pay give the option to top up?
+2967. Top up on my Google Pay isn't working.
+2968. Is it possible to top up with Apple Pay?
+2969. do i have to setup apple pay to use it
+2970. Can I use Apple Pay to top up?
+2971. How can I top up my Google Pay?
+2972. Does Google Play have an app to Top up?
+2973. I received my American Express card, but I am having problems making it work with Apple pay.  Can you help me with this problem?
+2974. is apple pay eligible for top up
+2975. Why can't I use my American Express with Apple Pay to top up my account?
+2976. how do i add money with my apple watch
+2977. If I want to top up, can I use Apple Pay?
+2978. can i top up with apple pay
+2979. My American express is experiencing a problem with apple play with top up, can you fix it?
+2980. My top up is not working in Apple Pay.
+2981. Is Apple Pay a possible top up option?
+2982. I don't know how to top up my Google pay.
+2983. Can I top up from my Apple Watch?
+2984. Can I use my American Express stored in Apple Pay to top up?
+2985. is apple pay costly?
+2986. How can I top up with Google Pay?
+2987. I can't top up my account using my American Express with Apple Pay.
+2988. I got my American Express in Apple Pay, why is top up not working?
+2989. I got my American Express in Apple Bay but top up is not working
+2990. How do I top up? Can I use my apple watch?
+2991. Is it possible to use Apple Pay to put money in my account?
+2992. My American Express is in my Apple Pay and the top up is failing, why?
+2993. How can I top-ff my account using my Apple Watch?
+2994. can google pay be used to make a top-up
+2995. How do I get the Top Up feature on my apple watch working?
+2996. How do I troubleshoot Google pay top up?
+2997. How do I top up with Apple Pay?
+2998. Why isn't my top up working using my saved American Express in ApplePay?
+2999. How do I use the top up app with my apple watch?
+3000. Google pay and top up, I want it, can I get it?
+
+Return ONLY a JSON array, one object per query, in the same order. Each object must have exactly two keys:
+- "id": the query number (2851 to 3000)
+- "intent": the exact intent name from the list above (lowercase with underscores)
+
+No commentary. No markdown code fences. No explanation. Just the JSON array starting with [ and ending with ].

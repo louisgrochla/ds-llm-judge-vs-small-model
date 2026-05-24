@@ -1,0 +1,241 @@
+You are an intent classifier for a banking customer-service chatbot.
+
+For each user query below, assign it to exactly one of the following 77 intents:
+
+- activate_my_card
+- age_limit
+- apple_pay_or_google_pay
+- atm_support
+- automatic_top_up
+- balance_not_updated_after_bank_transfer
+- balance_not_updated_after_cheque_or_cash_deposit
+- beneficiary_not_allowed
+- cancel_transfer
+- card_about_to_expire
+- card_acceptance
+- card_arrival
+- card_delivery_estimate
+- card_linking
+- card_not_working
+- card_payment_fee_charged
+- card_payment_not_recognised
+- card_payment_wrong_exchange_rate
+- card_swallowed
+- cash_withdrawal_charge
+- cash_withdrawal_not_recognised
+- change_pin
+- compromised_card
+- contactless_not_working
+- country_support
+- declined_card_payment
+- declined_cash_withdrawal
+- declined_transfer
+- direct_debit_payment_not_recognised
+- disposable_card_limits
+- edit_personal_details
+- exchange_charge
+- exchange_rate
+- exchange_via_app
+- extra_charge_on_statement
+- failed_transfer
+- fiat_currency_support
+- get_disposable_virtual_card
+- get_physical_card
+- getting_spare_card
+- getting_virtual_card
+- lost_or_stolen_card
+- lost_or_stolen_phone
+- order_physical_card
+- passcode_forgotten
+- pending_card_payment
+- pending_cash_withdrawal
+- pending_top_up
+- pending_transfer
+- pin_blocked
+- receiving_money
+- Refund_not_showing_up
+- request_refund
+- reverted_card_payment?
+- supported_cards_and_currencies
+- terminate_account
+- top_up_by_bank_transfer_charge
+- top_up_by_card_charge
+- top_up_by_cash_or_cheque
+- top_up_failed
+- top_up_limits
+- top_up_reverted
+- topping_up_by_card
+- transaction_charged_twice
+- transfer_fee_charged
+- transfer_into_account
+- transfer_not_received_by_recipient
+- transfer_timing
+- unable_to_verify_identity
+- verify_my_identity
+- verify_source_of_funds
+- verify_top_up
+- virtual_card_not_working
+- visa_or_mastercard
+- why_verify_identity
+- wrong_amount_of_cash_received
+- wrong_exchange_rate_for_cash_withdrawal
+
+User queries (numbered):
+
+451. card is lost, please help
+452. How do I report my card stolen?
+453. My card is gone I think it was stolen
+454. Is a copy of the police report necessary for completing the report process?
+455. I lost my wallet today with all my credit cards. Will you please block the card and send a replacement?
+456. How do I deal with a stolen card?
+457. Can you freeze my card it was stolen
+458. Help!  I can't find my card.
+459. What should I do if I lost my card?
+460. I need help with a lost card
+461. I think my card was stolen.
+462. Someone stole my wallet earlier today, not sure exactly when, probably on Piccadilly circus. Can you check if there were any attempts to use the card and obviously block it?
+463. I think I lost my card . I dont know how long it has been missing. Can you see if maybe someone else has been using it?
+464. How can I freeze a stolen card?
+465. What should I do if my card is missing?
+466. My bags were stolen. I need a new card but need to cancel the stolen one.
+467. Somehow I am missing my card.  What should I do?
+468. My card was taken from me
+469. My card got lost.
+470. Some idiot stole my card.
+471. How do I report my card lost or stolen?
+472. My card is lost! What do I do now?
+473. I'm in Spain and my stuff has been stolen. My card was with it and I need a new one shipped and the old one frozen.
+474. I believe my credit card was stolen.
+475. How do I report a stolen card?
+476. Somebody has stolen my card, I need help please.
+477. I cannot find my credit card.
+478. Are you able to locate my card?
+479. My card got stolen!
+480. Help me please!  My card was stolen!
+481. how old do i need to be to get an account for myself
+482. How young can I be to open my own account?
+483. How old do I have to be?
+484. Can I open an account for a child?
+485. How old do we have to be?
+486. How do I go about setting up an account for my daughter?
+487. Is there an age minimum?
+488. What is the youngest age in order to have an account?
+489. What age do I have to be?
+490. Can my daughter open an account?
+491. What is the minimum age to open an account?
+492. What is the minimum age?
+493. I am only 17. Can I make an account?
+494. Could I open an account for my children?
+495. What is the age to open an account?
+496. How do I open up an account for my child?
+497. Can I open a bank account for my newborn baby?
+498. How old do I have to be to open an account?
+499. Do you offer services for children to have money saving experience?
+500. If my kids wanted to use your service how old would they have to be?
+501. Can my 19 year old daughter open a savings account at the bank?
+502. How old do you have to be to get an account?
+503. What's the minimum age for opening an account?
+504. I would like an account for my children, how do I go about doing this?
+505. Can my children have their own account?
+506. Is it possible to open an account for my children?
+507. Do my kids have to be a certain age to use this service?
+508. How old do you have to be to be able to open an account?
+509. Is there an age limit?
+510. What are the age requirements for opening an account?
+511. will i be able to open an account for my daughter
+512. How old do I need to be to open an account?
+513. What age can sign up for services?
+514. How old do my kids have to be to use your service?
+515. What age do my kids need to be to use your service?
+516. How old do my children need to be to open an account?
+517. How old does my kids need to be to open an account?
+518. How young can someone be in order to open an account?
+519. What is the youngest someone can be to open an account?
+520. How old does one have to be to have an account with the bank?
+521. How do I get my PIN unlocked?
+522. Where can I view my PIN?
+523. Will you reinstate my PIN?
+524. I accidentally blocked my PIN. How do I reset it?
+525. How do I unblock my pin after entering it wrong too many times?
+526. I used the wrong ping too many times and now the account is blocked.  How do I unblock?
+527. I need help because I drunken blocked my card?
+528. How do I reset my PIN, I can't seem to use my card?
+529. When I put the wrong pin too much, I got blocked, so can you help me unblock my pin
+530. My pin was blocked, how do I make it so I can use it?
+531. How many tries do I have to enter my pin before I'm blocked?
+532. What should I do if I've tried to enter my PIN too often?
+533. I have exceeded the number of times I can try my PIN
+534. How can I unblock a blocked pin number for my account?
+535. What do I do if the bank machine won't accept my PIN attempts anymore?
+536. Can you unlock my pin? I think I entered the wrong pin too many times.
+537. How do I deal with a blocked PIN?
+538. I attempted to use my card while I was intoxicated, and I failed to input my PIN, and the machine kept my card. How soon can I have it back?
+539. Can I unblock my card using the app?
+540. I'v exhausted all the of times I can try my PIN
+541. How can I unlock my pin from too many tries?
+542. Help! I forgot my PIN and have been locked out of using my card.
+543. My account is blocked, how do I log in now
+544. Why did I get blocked?
+545. Are you able to unblock my pin?
+546. Can you assist me with unblocking my PIN? I put it in wrong too many times.
+547. I entered the wrong pin too many times and now I am blocked.  Help me unblock!
+548. My pins seems to be blocked, can you unblock it please
+549. Can you unblock my pin after too many wrong pin attempts?
+550. What can you do to unblock my pin?
+551. My PIN is blocked, what do I do?
+552. Can I reactivate my PIN?
+553. How do I reset my PIN?
+554. Can I unblock my pin?
+555. How do I unblock my PIN?
+556. My card's frozen, what can I do?
+557. How can I unlock the pin?
+558. Since my pin is blocked, would you help me unblock it?
+559. My PIN is not working and I need assistance.
+560. 
+Where can I get my PIN unblocked?
+561. Are contactless payments enabled on my new card?
+562. My contanctless has stopped working
+563. what is required documents for new card process ?
+564. I don't know what's wrong, my contactless stopped working. Tried it in a few different places today and it didn't work in any of them.
+565. How do I get the contactless feature to work for my card?
+566. I tried to pay contactless at the bus today and it didn't work. Any ideas why?
+567. I've been unable to pay contactless with my card for over a week now. Is there a way to fix this issue?
+568. Do you know why my contactless won't work?
+569. My contactless payments have not been completed successfully.
+570. Do I need to replace my card if it didn't work when I tried to pay contactless at the shop today?
+571. For some reason my contactless has stopped working. I don't know what the problem is. What can I do?
+572. I couldn't use my contactless this morning, it wasn't accepted.
+573. Contactless isn't working for me
+574. Why wouldn't the contactless payment work when I tried to pay at the bus today?
+575. How do I check my security settings to allow contactless pay?
+576. What can I do if contactless doesn't work?
+577. Fix my contactless
+578. How can I make my contactless work for the metro?
+579. My contactless is not working
+580. Can you help my fix my contactless?
+581. For some reason my contactless won't work for me.
+582. I'm unable to use contactless payments for purchases.
+583. When I tried to pay for my bus ride, the contactless payment wouldn't work. How can I prevent this in the future?
+584. The NFC payment wouldn't work on the bus today. Help?
+585. I wanted to use my card contactless but it doesn't seem to be working, what could be the problem?
+586. How do I make contactless work
+587. what is the charges for new card?
+588. The contactless I have won't work.
+589. Why isn't my contactless not working?
+590. I wanted to use my contactless at the metro today but it didn't accept it!
+591. It didnt work when I tried to pay contactless at the bus today. Why?
+592. I am not able to do contactless.
+593. How do I use contactless payments?
+594. Help me with my contactless which isn't working.
+595. How can I fix a problem where contactless isn't working?
+596. How do I use contactless pay?
+597. How do I enable contactless pay?
+598. Do I need to make a regular payment before a contactless one?
+599. How can I find out where my contactless works?
+600. Should i reinstall the payment app?
+
+Return ONLY a JSON array, one object per query, in the same order. Each object must have exactly two keys:
+- "id": the query number (451 to 600)
+- "intent": the exact intent name from the list above (lowercase with underscores)
+
+No commentary. No markdown code fences. No explanation. Just the JSON array starting with [ and ending with ].

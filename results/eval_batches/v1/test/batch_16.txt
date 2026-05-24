@@ -1,0 +1,240 @@
+You are an intent classifier for a banking customer-service chatbot.
+
+For each user query below, assign it to exactly one of the following 77 intents:
+
+- activate_my_card
+- age_limit
+- apple_pay_or_google_pay
+- atm_support
+- automatic_top_up
+- balance_not_updated_after_bank_transfer
+- balance_not_updated_after_cheque_or_cash_deposit
+- beneficiary_not_allowed
+- cancel_transfer
+- card_about_to_expire
+- card_acceptance
+- card_arrival
+- card_delivery_estimate
+- card_linking
+- card_not_working
+- card_payment_fee_charged
+- card_payment_not_recognised
+- card_payment_wrong_exchange_rate
+- card_swallowed
+- cash_withdrawal_charge
+- cash_withdrawal_not_recognised
+- change_pin
+- compromised_card
+- contactless_not_working
+- country_support
+- declined_card_payment
+- declined_cash_withdrawal
+- declined_transfer
+- direct_debit_payment_not_recognised
+- disposable_card_limits
+- edit_personal_details
+- exchange_charge
+- exchange_rate
+- exchange_via_app
+- extra_charge_on_statement
+- failed_transfer
+- fiat_currency_support
+- get_disposable_virtual_card
+- get_physical_card
+- getting_spare_card
+- getting_virtual_card
+- lost_or_stolen_card
+- lost_or_stolen_phone
+- order_physical_card
+- passcode_forgotten
+- pending_card_payment
+- pending_cash_withdrawal
+- pending_top_up
+- pending_transfer
+- pin_blocked
+- receiving_money
+- Refund_not_showing_up
+- request_refund
+- reverted_card_payment?
+- supported_cards_and_currencies
+- terminate_account
+- top_up_by_bank_transfer_charge
+- top_up_by_card_charge
+- top_up_by_cash_or_cheque
+- top_up_failed
+- top_up_limits
+- top_up_reverted
+- topping_up_by_card
+- transaction_charged_twice
+- transfer_fee_charged
+- transfer_into_account
+- transfer_not_received_by_recipient
+- transfer_timing
+- unable_to_verify_identity
+- verify_my_identity
+- verify_source_of_funds
+- verify_top_up
+- virtual_card_not_working
+- visa_or_mastercard
+- why_verify_identity
+- wrong_amount_of_cash_received
+- wrong_exchange_rate_for_cash_withdrawal
+
+User queries (numbered):
+
+2251. My salary is received in the form of GBP. Do I need to do anything specific to configure this?
+2252. How do people send me money?
+2253. Is GBP a supported currency?
+2254. Do I need to establish I am paid in GBP before a transfer?
+2255. Salary in GBP has been received, does it need to be configured elsewhere?
+2256. How do i get my salary in the account?
+2257. What are the ways for others to transfer me money?
+2258. What different ways are there for someone to send me money?
+2259. What do I need to do to transfer my paycheck to my account?
+2260. How can my friend send me money?
+2261. Can I directly transfer my salary onto here?
+2262. Can this be used to receive my salary?
+2263. Is it possible to deposit money in GBP?
+2264. I received my salary in GBP. How do I change this to my currency?
+2265. How can my friend transfer money to me?
+2266. Can my friends send me money?
+2267. How do I deposit my paycheck to this account?
+2268. Can I use this account to receive my salary?
+2269. Can i deposit my salary to this account?
+2270. How do I get my salary through this account?
+2271. What if I need my salary in a different currency?
+2272. I receive my salary in GBP. Do I need to configure this somehwere?
+2273. Do you know if I can use this for my salary?
+2274. How do I get my paycheck through this?
+2275. can I transfer my salary if it's in a different currency?
+2276. Can I get paid in a different currency?
+2277. Is my salary eligible for this?
+2278. My salary is in GBP; how can I note this in the app?
+2279. Can I get paid in another currency?
+2280. Can I get my paycheck through here?
+2281. dont understand why transfer failed
+2282. Please help me make a transfer. I keep receiving an error and I'm trying to make the initial mortgage payment for a flat I'm buying. What is the deal here?
+2283. My transfer didn't work
+2284. Fix your system. I can't make transfers, I've tried like 5 times already.
+2285. Tell me why my transfer failed!
+2286. My transfer did not go through.
+2287. Why was I not able to complete a transfer?
+2288. Can you help me figure out what's happening? I'm trying to transfer money to a friend but it keeps getting returned. I'm not sure what i'm doing wrong.
+2289. Why did my transfer not go through?
+2290. My transfer didn't go through.
+2291. I could not get my transfer to happen correctly and was wondering why?
+2292. how come my transfer didn't work
+2293. I transferred my funds, why did it not go through?
+2294. Why has my transfer failed?
+2295. Why did my transfer fail?
+2296. Why hasn't my transfer been made?
+2297. My transfer will not go through.
+2298. My transfer keeps failing and I just want to transfer the money can you please make it work?
+2299. The transfer keeps failing , I tried to transfer some money to friends this morning but it keeps getting rejected for some reason, Would you please check the issue ?
+2300. Why would a transfer fail?
+2301. What are your policies for card transfers?
+2302. Is the system down? I've been trying to do a transfer and have failed?
+2303. I tried to make a transfer but it failed
+2304. Why couldn't I complete a transfer?
+2305. My transfer appeared not to work.
+2306. What is stopping my money from transferring?
+2307. Hi, I'm buying a flat and I'm trying to get my mortgage to go though. Every time I check I simply get an error message. Is there any way you can help me get this money transferred over. Thanks!
+2308. My attempted transfer failed.
+2309. I can not seem to make a successful transfer, can you tell me what I'm doing wrong?
+2310. Please help me as i am continuously facing the issue in transferring money to my friends, as all my transactions are getting failed.
+2311. I am trying to make a transfer and am unsuccessful, can you please tell me why?
+2312. My transfer did not seem to work.
+2313. I've now been trying to do a really standard transfer 5 times already. What's going on, is your system broken or something?!
+2314. help me with my transfer
+2315. Says my transfer can't be completed?
+2316. can you tell me why my transfer failed?
+2317. Why didn't my transfer go through?
+2318. I've attempted to do a very standard transfer and have tried 5 times at this point. Can you tell me what the issue is? Is the system down?
+2319. Can you provide a reason as to why my transfer did not work?
+2320. I tried to transfer money and it did not work.
+2321. Can I do a bank transfer to put additional money in my account because I am out of money?
+2322. I'm out of money, can I add money with my bank?
+2323. How do I go forth on transferring money into my account?
+2324. I don't understand how to top up my account, can you please explain the process?
+2325. I don't understand the money transfer process.
+2326. I need to transfer money into my account, how do I go about doing this?
+2327. What do I need to do to transfer money into my account?
+2328. I don't know what to do. Should I transfer funds. My account is out of money.
+2329. Can I add funds to the card directly from my bank account?
+2330. How does tranferring money into my account work?
+2331. I NEED TO KNOW HOW TO TRANSFER MONEY INTO MY BANK ACCOUNT. PLEASE HELP
+2332. I would like to transfer some money from my other bank account into this one.
+2333. When I want to transfer money to my account, how can I do that?
+2334. I need to transfer funds into my account. How can I do this?
+2335. What are the steps I follow to transfer money into my account?
+2336. How can I transfer funds from my bank to my top up account?
+2337. I want to top my account by using a bank transfer. How would that work?
+2338. How to I transfer my funds into my account?
+2339. How do I top up my card?
+2340. How can I transfer money from an outside bank?
+2341. How can I fund my top-up account using my bank account?
+2342. What methods can I use to add money to my account?
+2343. I would like to use the bank transfer feature, but I can't find it. Can you please give me the details?
+2344. How can I perform a dual money transferring from one account to another?
+2345. CAN YOU EXPLAIN HOW TO TRANSFER MONEY INTO MY  ACCOUNT FOR ME?
+2346. I need to bank account transfer from another account into this one, what is the easiest way that can be done, and what information do i need?
+2347. How do I transfer money to my account?
+2348. How do I send my account money through transfer?
+2349. How do I do an international transfer?
+2350. Are there ways to transfer money into my account?
+2351. I want to transfer from accounts in order to Top up. What are the steps necessary.
+2352. How does a transfer work?
+2353. I would like use the bank transfer, but I don't understand the process, can you please explain, topping up?
+2354. I want to use bank transfer for topping up my account. How is it handled?
+2355. I checked my account today and it said I was out of money. How do I transfer money into my account?
+2356. How can I transfer money to my account?
+2357. I would like to transfer funds from one account to another.
+2358. I'm trying to transfer money into my account.
+2359. I would like to transfer money from my other bank account into this one.
+2360. Can I use a bank transfer to refill my account?
+2361. What all is needed to verify the top-up card?
+2362. It wants me to verify the top up. Why?
+2363. Where can I find the top-up verification code?
+2364. Why do I have to verify the top-up that I started?
+2365. Can you give me information about verification code?
+2366. What are the benefits to verifying the top-up?
+2367. how come the verification with the top up
+2368. Can I verify a top up?
+2369. reason i need to verify top up
+2370. Why do you need code verification for my top up?
+2371. Where can I find the verification code on a top-up card?
+2372. How do I get my top-up verification code?
+2373. Is it possible to verify a top up?
+2374. Is it normal to have to verify my top-up or is something wrong?
+2375. Why does the top-up need verification?
+2376. Why does top-up need verifying?
+2377. Is it necessary to verify my top up?
+2378. Why am i to verify the top-ups?
+2379. Where's the verification code for the top-up card?
+2380. How do I find the verification code for my top-up card?
+2381. Why is it important to verify a top-up card?
+2382. Why do I have to verify the top-up?
+2383. What is the verification code on a top-up?
+2384. I can't find the top-up verification code.
+2385. How do I go forth verifying my top-up card?
+2386. Where do I find the top-up verification code?
+2387. How is the top-up card verified?
+2388. Is there a verification code for the top-up card?
+2389. What is the importance of verifying the top-up?
+2390. help me find the top-up card's verification code?
+2391. I don't understand why it says I have to verify the top-up.
+2392. Can I verify a top-up and what card is used?
+2393. Where do I go to get the code to verify the top up card?
+2394. The top-up verification code is missing
+2395. How do I verify a top-up?
+2396. I cannot locate the verification code for my top-up card. Please help me.
+2397. How can I find the top-up verification code?
+2398. I need help finding the verification code for my top-up card.
+2399. Is there a verification code for top-ups?
+2400. What is the necessity of verifying the top up?
+
+Return ONLY a JSON array, one object per query, in the same order. Each object must have exactly two keys:
+- "id": the query number (2251 to 2400)
+- "intent": the exact intent name from the list above (lowercase with underscores)
+
+No commentary. No markdown code fences. No explanation. Just the JSON array starting with [ and ending with ].

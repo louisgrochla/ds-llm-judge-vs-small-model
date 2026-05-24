@@ -1,0 +1,240 @@
+You are an intent classifier for a banking customer-service chatbot.
+
+For each user query below, assign it to exactly one of the following 77 intents:
+
+- activate_my_card
+- age_limit
+- apple_pay_or_google_pay
+- atm_support
+- automatic_top_up
+- balance_not_updated_after_bank_transfer
+- balance_not_updated_after_cheque_or_cash_deposit
+- beneficiary_not_allowed
+- cancel_transfer
+- card_about_to_expire
+- card_acceptance
+- card_arrival
+- card_delivery_estimate
+- card_linking
+- card_not_working
+- card_payment_fee_charged
+- card_payment_not_recognised
+- card_payment_wrong_exchange_rate
+- card_swallowed
+- cash_withdrawal_charge
+- cash_withdrawal_not_recognised
+- change_pin
+- compromised_card
+- contactless_not_working
+- country_support
+- declined_card_payment
+- declined_cash_withdrawal
+- declined_transfer
+- direct_debit_payment_not_recognised
+- disposable_card_limits
+- edit_personal_details
+- exchange_charge
+- exchange_rate
+- exchange_via_app
+- extra_charge_on_statement
+- failed_transfer
+- fiat_currency_support
+- get_disposable_virtual_card
+- get_physical_card
+- getting_spare_card
+- getting_virtual_card
+- lost_or_stolen_card
+- lost_or_stolen_phone
+- order_physical_card
+- passcode_forgotten
+- pending_card_payment
+- pending_cash_withdrawal
+- pending_top_up
+- pending_transfer
+- pin_blocked
+- receiving_money
+- Refund_not_showing_up
+- request_refund
+- reverted_card_payment?
+- supported_cards_and_currencies
+- terminate_account
+- top_up_by_bank_transfer_charge
+- top_up_by_card_charge
+- top_up_by_cash_or_cheque
+- top_up_failed
+- top_up_limits
+- top_up_reverted
+- topping_up_by_card
+- transaction_charged_twice
+- transfer_fee_charged
+- transfer_into_account
+- transfer_not_received_by_recipient
+- transfer_timing
+- unable_to_verify_identity
+- verify_my_identity
+- verify_source_of_funds
+- verify_top_up
+- virtual_card_not_working
+- visa_or_mastercard
+- why_verify_identity
+- wrong_amount_of_cash_received
+- wrong_exchange_rate_for_cash_withdrawal
+
+User queries (numbered):
+
+1. How do I locate my card?
+2. I still have not received my new card, I ordered over a week ago.
+3. I ordered a card but it has not arrived. Help please!
+4. Is there a way to know when my card will arrive?
+5. My card has not arrived yet.
+6. When will I get my card?
+7. Do you know if there is a tracking number for the new card you sent me?
+8. i have not received my card
+9. still waiting on that card
+10. Is it normal to have to wait over a week for my new card?
+11. How do I track my card?
+12. How long does a card delivery take?
+13. I still don't have my card after 2 weeks.  What should I do?
+14. still waiting on my new card
+15. I am still waiting for my card after 1 week.  Is this ok?
+16. I have been waiting longer than expected for my bank card, could you provide information on when it will arrive?
+17. I've been waiting longer than expected for my card.
+18. Why hasn't my card been delivered?
+19. Where is my new card? I have been waiting a week!
+20. My card still hasn't arrived after 2 weeks. Is it lost?
+21. I did not get my card yet, is it lost?
+22. Status of the card I ordered.
+23. How long should my new card take to arrive?
+24. I ordered my card 2 weeks ago and it still isn't here? What do I do?
+25. My card has not arrived yet, where is it?
+26. What is the tracking number for my card that was mailed?
+27. I think something went wrong with my card delivery as I haven't received it yet.
+28. I'm still waiting for delivery of my new card, why is it taking so long?
+29. I ordered a card a week ago, and it's still not here. What do I do?
+30. i want to track the card you sent
+31. My card hasn't arrived yet.
+32. I was expecting my new card and am wondering why I haven't received it yet?
+33. How do I know when my card will arrive?
+34. I'm still waiting on my card to be delivered.
+35. Does the card you sent have a way to track to it?
+36. I ordered a card and I still haven't received it. It's been two weeks. What can I do?
+37. I'm starting to think my card is lost because it still hasn't arrived, can you help?
+38. Is there tracking info available?
+39. What is the tracking number for the card you sent?
+40. Where is the tracking number for the card you sent me?
+41. Why won't my card show up on the app?
+42. I would like to reactivate my card.
+43. Where do I link the new card?
+44. I have received my card, can you help me put it in the app?
+45. How do I link a card that I already have?
+46. I received my new card, but I don't see it in the app anywhere.  What do I do?
+47. How do I re-add a card to the app?
+48. How do I add the card to my account?
+49. Can I put my old card back into the system? I just found it/
+50. I have one of your cards already, how do I link it?
+51. How do I link a new card?
+52. Can I link an existing card?
+53. How do I link one your card if I have one already?
+54. How do I add a card to the app?
+55. Can I link my new card?
+56. Hello, I found the card I misplaced and I need to reactive it, how do I do that?
+57. Can you tell me how to link one of your cards that I already have?
+58. How do I view the card I received in the app?
+59. Where on the website do I go to link my card?
+60. I found my card, can I add it to the app?
+61. How do I link to my credit card with you?
+62. I've received my card so now I need to know how to sync it to the app.
+63. I found my card, I would like to reactivate it.
+64. How do I link this new card?
+65. Can I reactivate my lost card that I found this morning in my jacket pocket?
+66. how do I link an already existing card?
+67. The app doesn't show the card I received.
+68. how do I link a card I already have?
+69. I would like to link my card. How do I do it?
+70. Can you please show me where I can find the location to link my card?
+71. Where do I go if I want to link my new card?
+72. Is there a way to make my old card usable with the app?
+73. Can I reactivate a card I thought I lost?
+74. How do I link my card
+75. Where do I need to go in the app to enter my card info?
+76. I have found my lost or stolen card. Is there a way I can link the card with my account through my app again?
+77. Could you help me reactivate my card? It was previously lost, but I found it this morning in my jacket.
+78. I already have one of your cards, how do I link them?
+79. How do I link my replacement card?
+80. Can I link another card to my account?
+81. I need to know your exchange rates.
+82. What exchange rates do you offer?
+83. How did you come up with your exchange rates?
+84. Where do you guys acquire your exchange rate?
+85. How do I find the exchange rate?
+86. What are your international exchange rates?
+87. How often do your exchange rates change
+88. Please advise what is the exchange rate
+89. How are exchange rates calculated?
+90. what are exchange rates based on
+91. what are exchange rates
+92. What are the most current exchange rates?
+93. Can you explain your exchange rate policy to me?
+94. Is it a good time to exchange?
+95. What is the exchange rate like on this app?
+96. Do you have a list of exchange rates?
+97. Can you tell me where you get your exchange rates?
+98. Will I get a curreng foreign exchange rate?
+99. What currencies is an exchange rate calculated in?
+100. Where do you get your exchange rates from?
+101. What is the base of the exchange rates?
+102. What exchange rate do you use?
+103. The exchange rates are?
+104. What do you base your exchange rates on?
+105. What foreign exchange rate will you use?
+106. How much will I get with the exchange rate?
+107. The exchange rate would be?
+108. What is the exchange rate like?
+109. How do your exchange rates work?
+110. what is the exchange rate?
+111. Where did your guys exchange rates come from?
+112. How are you determining your exchange rates?
+113. I'm trying to figure out the current exchange rate.
+114. From where are you getting your exchange rates?
+115. Can you tell me the foreign exchange rate?
+116. why do your exchange rates change
+117. What kind of foreign exchange rate will I get when I exchange my money?
+118. What is my foreign exchange rate?
+119. when does the rate get determined
+120. What is the current exchange rate for me?
+121. I purchased something in a foreign currency but the rate applied is wrong
+122. I made a currency exchange and think I was charged more than I should of been.
+123. the card payment exchange rate is wrong
+124. The exchange rate was wrong when I bought something outside the country.
+125. The exchange rate on my purchase is wrong.
+126. This rate is too low. Are you sure your using the right exchange rate.
+127. I bought something, but the exchange rate looks wrong.
+128. The rate applied to my foreign purchase was incorrect
+129. I bought something in a foreign currency but the rate applied is wrong!
+130. My exchange went wrong. I swapped Russian Ruble for UK pounds and was charged too much.
+131. You did not apply the correct exchange rate for an item that I bought.
+132. The rate of exchange for my card payment is incorrect
+133. The rate for a currency exchange was wrong when I bought something.
+134. Why is the exchange rate wrong when I purchase something abroad?
+135. I bought an item and noticed the exchange rate was not correct.
+136. I bought something overseas and the wrong exchange rate is on my statement.
+137. The exchange rate for my transaction last Saturday seems to have been wrong I got charged extra.  Please fix.
+138. Why is your exchange rate for my card payment wrong
+139. Why am I being charged more ?
+140. I purchased an item and the exchange rate I was given was incorrect.
+141. I don't think my card payment exchange rate is correct.
+142. When I made a purchase last Saturday, I was charged extra. Did I receive the right exchange rate?
+143. They charged me wrong for a currency exchange on a purchase.
+144. I believe my card payment exchange rate is incorrect.
+145. Hi, I have been overcharged for my payment last Saturday. I guess exchange rate was wrong.
+146. The exchange rate seems off on this transaction
+147. The exchange rate given to me wasn't correct, after i purchased an item
+148. Hi, I don't think your exchange rate is right. I need you to check the official interbank exchange please.
+149. I'm pretty sure something went wrong with my exchange. I changed Russian Ruble to UK pounds and was charged way too much!
+150. I wasn't applied the correct exchange rate for an item I bought
+
+Return ONLY a JSON array, one object per query, in the same order. Each object must have exactly two keys:
+- "id": the query number (1 to 150)
+- "intent": the exact intent name from the list above (lowercase with underscores)
+
+No commentary. No markdown code fences. No explanation. Just the JSON array starting with [ and ending with ].

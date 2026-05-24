@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "intent": "top_up_failed",
+    "text": "Top up did not work on the app."
+  },
+  {
+    "id": 2,
+    "intent": "order_physical_card",
+    "text": "Does it cost anyting to get my own card?"
+  },
+  {
+    "id": 3,
+    "intent": "beneficiary_not_allowed",
+    "text": "Can you please explain why my beneficiary is not allowed?"
+  },
+  {
+    "id": 4,
+    "intent": "wrong_exchange_rate_for_cash_withdrawal",
+    "text": "what are the exchange rates for getting cash"
+  },
+  {
+    "id": 5,
+    "intent": "card_arrival",
+    "text": "why hasnt my card come in yet?"
+  },
+  {
+    "id": 6,
+    "intent": "failed_transfer",
+    "text": "I attempted a transfer, but it failed."
+  },
+  {
+    "id": 7,
+    "intent": "country_support",
+    "text": "where do you have locations at"
+  },
+  {
+    "id": 8,
+    "intent": "direct_debit_payment_not_recognised",
+    "text": "If I found an error in my account for a transaction I didn't make, how long to I have to dispute it?"
+  },
+  {
+    "id": 9,
+    "intent": "balance_not_updated_after_cheque_or_cash_deposit",
+    "text": "I attempted to deposit a cheque yesterday but the balance isn't showing today. Is it still pending?"
+  },
+  {
+    "id": 10,
+    "intent": "order_physical_card",
+    "text": "What is the cost for physical cards?"
+  }
+]

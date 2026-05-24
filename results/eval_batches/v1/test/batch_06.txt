@@ -1,0 +1,240 @@
+You are an intent classifier for a banking customer-service chatbot.
+
+For each user query below, assign it to exactly one of the following 77 intents:
+
+- activate_my_card
+- age_limit
+- apple_pay_or_google_pay
+- atm_support
+- automatic_top_up
+- balance_not_updated_after_bank_transfer
+- balance_not_updated_after_cheque_or_cash_deposit
+- beneficiary_not_allowed
+- cancel_transfer
+- card_about_to_expire
+- card_acceptance
+- card_arrival
+- card_delivery_estimate
+- card_linking
+- card_not_working
+- card_payment_fee_charged
+- card_payment_not_recognised
+- card_payment_wrong_exchange_rate
+- card_swallowed
+- cash_withdrawal_charge
+- cash_withdrawal_not_recognised
+- change_pin
+- compromised_card
+- contactless_not_working
+- country_support
+- declined_card_payment
+- declined_cash_withdrawal
+- declined_transfer
+- direct_debit_payment_not_recognised
+- disposable_card_limits
+- edit_personal_details
+- exchange_charge
+- exchange_rate
+- exchange_via_app
+- extra_charge_on_statement
+- failed_transfer
+- fiat_currency_support
+- get_disposable_virtual_card
+- get_physical_card
+- getting_spare_card
+- getting_virtual_card
+- lost_or_stolen_card
+- lost_or_stolen_phone
+- order_physical_card
+- passcode_forgotten
+- pending_card_payment
+- pending_cash_withdrawal
+- pending_top_up
+- pending_transfer
+- pin_blocked
+- receiving_money
+- Refund_not_showing_up
+- request_refund
+- reverted_card_payment?
+- supported_cards_and_currencies
+- terminate_account
+- top_up_by_bank_transfer_charge
+- top_up_by_card_charge
+- top_up_by_cash_or_cheque
+- top_up_failed
+- top_up_limits
+- top_up_reverted
+- topping_up_by_card
+- transaction_charged_twice
+- transfer_fee_charged
+- transfer_into_account
+- transfer_not_received_by_recipient
+- transfer_timing
+- unable_to_verify_identity
+- verify_my_identity
+- verify_source_of_funds
+- verify_top_up
+- virtual_card_not_working
+- visa_or_mastercard
+- why_verify_identity
+- wrong_amount_of_cash_received
+- wrong_exchange_rate_for_cash_withdrawal
+
+User queries (numbered):
+
+751. how much can i top up?
+752. what is the most i can top up?
+753. Is there a limit to how high I can top-up?
+754. Is there an amount limit to my top-up?
+755. Is there a limit for top-ups?
+756. Is there a maximum i can top up?
+757. How can I tell if there is a top-up limit?
+758. Do you have any restrictions to my top-up?
+759. As for limits are top ups included?
+760. What are the top-up limits?
+761. I don't know if this is an issue with the ATM or my account, but I just tried withdrawing 30 pounds from the ATM I'm at now and it only gave me 10. Is this a glitch or what exactly is going on?
+762. I didn't get all the cash I requested for at the ATM
+763. How come the ATM gave me less cash than what I asked for?
+764. Why did I not get my cash back after I withdrew?
+765. I got less cash than the one I specified in the ATM
+766. The amount of cash I received was incorrect
+767. I'm at an ATM and withdrew 30 pounds and was only given 10. What should I do?
+768. The ATM gave me the wrong amount of cash today when I went to withdraw. The app says it was more.
+769. The amount of cash I received was different than what I requested.
+770. Hi. I just withdrew cash from an ATM and received the wrong amount. However, my app shows the correct amount I withdrew. How do I get the rest of the cash?
+771. The wrong amount of cash came out of the ATM today when I went to withdraw. When I looked at the app, it was showing it was much more.
+772. I did not get as much cash as I requested at the ATM.
+773. How can I request cash back? The ATM just gave me the wrong amount, the app shows the amount that I've been actually charged though...
+774. Where is the money I pushed it's on my mobile app as being withdrawn.
+775. Why did I not get all the cash I asked for?
+776. My cash withdrawal was partly declined
+777. Why did I only get $20 when I tried to get $100
+778. I have withdrawn cash from ATM but i received the wrong amount. I want cash back as in app its showing actual amount which i got. Please help me in this.
+779. I went to withdraw some cash earlier today, but seems the ATM gave me the wrong amount of cash! The amount showing up in the app is a lot more
+780. I tried to get $100 but I just got $20
+781. I have not received the amount of cash i was supposed to.
+782. I asked for $100 cash but only got $20?
+783. Where is the money that I asked for? I asked for more than I got!
+784. I withdrew money but the full amount wasn't dispensed.
+785. Something went wrong with my withdrawal. The amount of money isn't right.
+786. I have got out the wrong amount from an ATM. Please tell me the process to get the cash back as in app its showing the amount i have been actually received.
+787. I asked for 100 but only got 20.
+788. I didn't receive the right amount of cash back
+789. The ATM gave me less cash than I requested
+790. I didn't get as much cash as I asked for from the ATM, why?
+791. What do I do if the ATM didn't give me the correct amount I withdrew? I pulled out 30 pounds and the ATM gave me 10 pounds.
+792. I tried to take out cash but the amount isn't right, so what do I do?
+793. I didn't receive all the cash I asked for
+794. I just got $20 when I tried to get $100
+795. The right amount of cash was not sent to me.
+796. The ATM didn't give me the the withdraw amount requested.
+797. Why did I get less money than I asked for?
+798. I didn't get the right amount at the ATM.
+799. did not receive correct cash upon withdrawal
+800. Will declined funds I tried to withdraw be returned to me?
+801. I payed with a card and was charged an extra fee
+802. I was charged a fee after using my card and I shouldn't have been.
+803. Is there a reason I was charged a fee for using my card as payment? I've never had an extra fee before.
+804. I show another charge on my card from when I used it, why?
+805. Why do I get charged additional fees on some payments, but not others?
+806. I used my card for a purchase and was charged a fee
+807. Why was I charged for card payment?
+808. There is an unauthorized fee.
+809. I would appreciate that someone let me know when there is an extra charge for payments. I was checking the app earlier and saying a charge on one of my payments that was additional that no one made me aware of before.
+810. Why was I charged an extra fee when paying with my card?
+811. Why did I have to pay extra because I paid with card?
+812. Why are there fees for card usage?
+813. im not sure what this charge is for
+814. What is the fee charged with this card payment?
+815. When would my card be charged an extra fee for a transaction?
+816. Why did I have to pay more when I do it with my card?
+817. I made a card payment and a fee is showing up?
+818. I have been charged a fee for paying with card
+819. What is the fee on my card payment?
+820. Why would I be charged a fee for card payment?
+821. Will I always be charged a fee for using my card?
+822. Can I check somewhere if there will be a fee on my payment or not? Seems you are charging in some cases, what's the pattern there?
+823. Paying in card resulted in a fee
+824. I paid with card and I think there was a fee applied.
+825. So what items  actually come  with  extra  fees
+826. How do I avoid getting charged a fee on my card?
+827. Is there a fee when you pay with your card?
+828. I have been charged with a fee for paying with my card.
+829. For the first time I got a fee on my account. How do I know when you charge these fees?
+830. Someone needs to make me aware when there are extra charges for payments. I happened to be looking at the app earlier and noticed a charge associated to a payment that was extra that no one made me aware of before at all.
+831. Is using my card free?
+832. Why was I charged an extra fee when using a card?
+833. What fees apply when using a card?
+834. Why do you charge for payments? Why aren't your charges clearly laid out in the agreement?
+835. Why was I charged a fee when I paid with card?
+836. There is a fee on my account. Why?
+837. Why do you charge fees on card payments?
+838. I was charged a fee for a card payment. Why?
+839. Why was a charged a fee for using the card?
+840. They charged me for paying with my card.
+841. I completed an in country transfer a few days ago and was sure to check the account information several times since the transaction was completed, but the funds are still not available. What is the problem?
+842. My money transfer has not arrived.
+843. I am still waiting for a transaction to be completed
+844. I made a money transaction but the recipient can't see it
+845. I tried to send someone money but they haven't received it.
+846. How long does it take for a transfer to get to a recipient?
+847. How can the recipient see my money transaction?
+848. I transferred money but the recipient says it has not arrived. Why would this be?
+849. The transfer I did hasn't arrived
+850. how long do money transfers take?
+851. I transferred some money and it didint arrive
+852. Where is the transfer I started?
+853. transaction failed?
+854. I just finished sending money, but it's not logging on the recipient side.
+855. I completed a money transaction but the recipient hasn't received it
+856. The receipient doesn't see my money transfer.
+857. I transferred the rent payment for my new place a couple days ago but the landlord says it's not there yet, despite showing up as done on my side. I checked the account number I sent it to and it's definitely correct. Can you please verify if the transaction really went through or not?
+858. I need to find out why my transfer didn't get there.
+859. I've just moved address from a place in Durham to a place in Walton-On-The-Naze.  I have a new landlord at my new house and they haven't got my payment but I know I sent it on time, can you check they got it please?
+860. I sent money.  They haven't received it.
+861. Hey, I need some help figuring out way my transfer is not complete yet. My Landlord hasn't got the money yet.She should have received it by now.
+862. The day before yesterday, I performed a transfer which was within this country. It still hasn't gone through. Can you check on that? The account number is definitely correct, as I've checked and double checked.
+863. I'm having a problem with a money transfer.  I sent some money to a friend a couple of hours ago, and they haven't received it yet.  Why hasn't it gotten to them? How long do transfers need to go through?
+864. I transferred some money but the receiver can't pick it up for some reason.
+865. Where is the transaction I made to a friend?
+866. My friend still hasn't gotten a transaction I made.
+867. Im waiting for my transaction to go through.
+868. I made a transaction and it is taking a very long time to go through.
+869. Is there a reason why my transaction is taking so long?
+870. How long will it take for my transaction to be completed?
+871. I sent some money and the receiver can't access it.
+872. I sent my friend some money a few hours ago but she has not received it yet. She really needs it. How long does this take?
+873. The person I sent money to hasn't gotten it yet!
+874. When will my funds transfer?
+875. How long does it take for transfers to finish?  I sent funds to my pal, and she says that she has not gotten anything.
+876. How long do transfers need to come through? I sent some money to a friend, she needs it urgently, but seems it's still not there yet after a couple hours.
+877. How long until my friend receives my transaction?
+878. Why hasn't my recipient received their money?
+879. I am still awaiting the completion of the transaction.
+880. I transferred some money but the recipient is having trouble withdrawing.
+881. To add money to my account, what currencies can I use?
+882. I need support options, I want to top my card
+883. I have 1 other US card.  Can you take that?
+884. What are the cards and currencies that are supported?
+885. What currencies are accepted for adding money?
+886. What kind of currencies can I use to add money?
+887. I only own one other credit card from the USA. Will it be accepted?
+888. If I only have 1 other US card, can you take it?
+889. Can I use my American Express to add money to my account?
+890. can you tell me what cards and currencies you take?
+891. Can I use American Express to add money into my account?
+892. Will you accept my other card from the U.S.?
+893. What is accepted in regards to cards and currencies?
+894. Will you accept my other card?
+895. I would like to add money to my account through my American Express.
+896. Which cards do you guys support? I want to top up using my credit card.
+897. What credit cards are supported?
+898. What cards and currencies do you support?
+899. How do I transfer funds from my American Express into my account?
+900. How can I use American Express to add money to my account?
+
+Return ONLY a JSON array, one object per query, in the same order. Each object must have exactly two keys:
+- "id": the query number (751 to 900)
+- "intent": the exact intent name from the list above (lowercase with underscores)
+
+No commentary. No markdown code fences. No explanation. Just the JSON array starting with [ and ending with ].

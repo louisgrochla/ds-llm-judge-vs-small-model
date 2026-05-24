@@ -1,0 +1,12 @@
+[
+  {"id": 1, "intent": "top_up_failed"},
+  {"id": 2, "intent": "get_physical_card"},
+  {"id": 3, "intent": "beneficiary_not_allowed"},
+  {"id": 4, "intent": "wrong_exchange_rate_for_cash_withdrawal"},
+  {"id": 5, "intent": "card_arrival"},
+  {"id": 6, "intent": "failed_transfer"},
+  {"id": 7, "intent": "atm_support"},
+  {"id": 8, "intent": "card_payment_not_recognised"},
+  {"id": 9, "intent": "balance_not_updated_after_cheque_or_cash_deposit"},
+  {"id": 10, "intent": "get_physical_card"}
+]

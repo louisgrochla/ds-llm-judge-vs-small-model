@@ -1,0 +1,240 @@
+You are an intent classifier for a banking customer-service chatbot.
+
+For each user query below, assign it to exactly one of the following 77 intents:
+
+- activate_my_card
+- age_limit
+- apple_pay_or_google_pay
+- atm_support
+- automatic_top_up
+- balance_not_updated_after_bank_transfer
+- balance_not_updated_after_cheque_or_cash_deposit
+- beneficiary_not_allowed
+- cancel_transfer
+- card_about_to_expire
+- card_acceptance
+- card_arrival
+- card_delivery_estimate
+- card_linking
+- card_not_working
+- card_payment_fee_charged
+- card_payment_not_recognised
+- card_payment_wrong_exchange_rate
+- card_swallowed
+- cash_withdrawal_charge
+- cash_withdrawal_not_recognised
+- change_pin
+- compromised_card
+- contactless_not_working
+- country_support
+- declined_card_payment
+- declined_cash_withdrawal
+- declined_transfer
+- direct_debit_payment_not_recognised
+- disposable_card_limits
+- edit_personal_details
+- exchange_charge
+- exchange_rate
+- exchange_via_app
+- extra_charge_on_statement
+- failed_transfer
+- fiat_currency_support
+- get_disposable_virtual_card
+- get_physical_card
+- getting_spare_card
+- getting_virtual_card
+- lost_or_stolen_card
+- lost_or_stolen_phone
+- order_physical_card
+- passcode_forgotten
+- pending_card_payment
+- pending_cash_withdrawal
+- pending_top_up
+- pending_transfer
+- pin_blocked
+- receiving_money
+- Refund_not_showing_up
+- request_refund
+- reverted_card_payment?
+- supported_cards_and_currencies
+- terminate_account
+- top_up_by_bank_transfer_charge
+- top_up_by_card_charge
+- top_up_by_cash_or_cheque
+- top_up_failed
+- top_up_limits
+- top_up_reverted
+- topping_up_by_card
+- transaction_charged_twice
+- transfer_fee_charged
+- transfer_into_account
+- transfer_not_received_by_recipient
+- transfer_timing
+- unable_to_verify_identity
+- verify_my_identity
+- verify_source_of_funds
+- verify_top_up
+- virtual_card_not_working
+- visa_or_mastercard
+- why_verify_identity
+- wrong_amount_of_cash_received
+- wrong_exchange_rate_for_cash_withdrawal
+
+User queries (numbered):
+
+151. the conversion value for my card payments is incorrect.
+152. The wrong exchange rate was used when I bought something with a foriegn currency.
+153. I paid for something in foreign currency but noticed the exchange rate is incorrect.
+154. The incorrect rate was used in my foreign purchase
+155. Why was the exchange rate incorrect for an item I recently bought?
+156. Why is my exchange rate wrong for an item I bought?
+157. How can I check the exchange rate applied to my transaction?
+158. Your exchange rate is totally wrong for my card payment
+159. The wrong rate was applied to an item I bought in a currency different from mine. Can this be changed?
+160. I go the wrong exchange rate applied to my purchase in a foreign country.
+161. My statement has a dollar I have been charged showing up on it.
+162. Why is there a fee for an extra pound in my statement?
+163. I'm not okay with this fee on my statement.
+164. Why is there an extra dollar charged to my account?
+165. There is a fee I don't recognize on my statement.
+166. I would like a refund on the extra pound I was charged.
+167. Can you explain what this random $1 charge is?
+168. What is this $1 charge on my statement?
+169. Why does my statement have these extra charges?
+170. I do not remember purchasing anything for 1£, and it is on my statement. Can you please tell me what that is about?
+171. I can see an extra 1£ charge on my app. Why did you charge me extra?
+172. Can you tell me why I noticed a $1 charge on my statement?
+173. When will the $1 transaction be credited to me?
+174. Where did this fee come from?
+175. I noticed an extra $1 charge on my statement, can you tell me why that is?
+176. There is an extra $1 charge
+177. I need information about an extra €1 fee in my statement.
+178. Why is there an extra 1 pound charge on my card?
+179. Why are there so many fees on my statement?
+180. What would be the reason there's an extra fee on my statement?
+181. Where did this 1 euro fee come from?
+182. I got a extra €1 fee in my statement
+183. I have a 1 euro fee on my statement.
+184. Why was I overcharged a pound!?
+185. Something went wrong, I was charged an extra pound?
+186. Where did the extra fee on my statement come from?
+187. There is an extra charge on my app that I was not told about or I was aware of!
+188. I am seeing an extra fee on my statement what is that for?
+189. What is this €1 fee in my statement?
+190. I am a new customer, and I happened to look at my app and there is a charge I am not familiar with.  Could you tell me why the extra charge is there?
+191. For some reason my account's been charged an extra dollar.
+192. There is a transaction for $1 and I don't know why it was charged.
+193. Can you help me with a weird charge?  It's a pound charge that never goes away from the statement view on the app I'm using.  It's not described as anything but "Pending", and that status has never changed during the last two days.
+194. What is the purpose of the extra fee that is showing up on my statement?
+195. $1 extra has been charged on my statement, why is that?
+196. What is the extra  €1 fee in my statement
+197. It's been two weeks, why has the transaction for $1.00 not been reversed?
+198. What is the €1 fee for?
+199. I'm quite confused as to what is going on. There is some odd extra pound charge on my statement in the app that's just listed as pending and doesn't go away since a couple days.
+200. Can you please check why I am having this extra fee on my statement.
+201. My withdrawl is still pending.  Why?
+202. My card was denied at an ATM earlier today but the transaction is pending. Please cancel it as I did not receive my money.
+203. My transaction is still showing that is pending from my cash withdrawal.
+204. Hey I tried to get some money out earlier but the machine didn't work. Now just saw the transaction still seems in progress! Can you please check what's going there, seems something is broken, I don't want to be charged for money that I haven't actually received!
+205. How long does the cash withdrawal take to pend?
+206. Why is it taking so long for my cash withdrawal to no longer show as pending?
+207. I tried taking money from the ATM but no money came out, but the transaction is still pending? How is this possible?
+208. I got some cash of an ATM earlier but this shows up as pending in the app. How can this be still pending, I've got the cash already?
+209. Why is my withdrawal still pending?
+210. Are you sure when the withdrawal will show?
+211. Hi! I was wondering if you can help me. I used the city centre ATM to get some cash, but the machine declined my card. My account shows that transaction is still pending. I didn't receive the money, so please cancel that transaction.
+212. Why is a transaction showing as pending when I recieved cash from an ATM?
+213. My cash in the ATM is still pending
+214. my atm cash out is still pending
+215. I am still waiting for a cash withdrawal to show
+216. Is my pending cash withdrawal processed?
+217. how long til my cash out goes through?
+218. Why is my ATM cash withdrawal showing up as a pending transaction?
+219. Hi,I tried to get some money out but the machine was not working .The transaction still seems in progress! Can you please check what's going on.I don't want to be charged for money that I did not received.
+220. Hey, my card was declined at an ATM in the city centre theatre. My account says the transaction is pending, though. I didn't get the money, though, so what does that mean?
+221. Why do I have a pending cash withdrawal?
+222. I have a pending cash withdrawal
+223. I made a withdrawal from my account but it has not posted?
+224. Is my cash withdrawal pending?
+225. I'm not quite understanding why my cash withdrawal is showing as pending.
+226. I made a cash withdrawal but the pending status is taking forever.
+227. My cash withdrawal is still showing as pending.
+228. Why am I unable to take money from my card but the statement says the transaction is still pending?
+229. Why does my account have a pending cash withdrawal?
+230. I have a pending transaction in my app. How is it still pending if I pulled the cash out from the ATM earlier?
+231. Cash withdrawal still pending?
+232. I received cash from the ATM earlier, but this shows up as pending in the app.  I've got the cash already.  How can this be still pending?
+233. I tried to take money from my card, but it didn't work. Later I saw that the transaction is still in progress. What's goign on?
+234. Why does it say pending cash withdrawal on my statement?
+235. How long with my cash withdrawal stay pending for?
+236. Where's accounting for my cash withdrawal?
+237. My account was charged for a withdraw I tried to make that was decline.
+238. how long does it take to post atm with drawl
+239. Why is my cash withdrawal from the ATM still not yet showing as confirmed in my account?
+240. What's a pending transaction? My card was declined at an ATM, but my account says it's still pending. Can I cancel the payment?
+241. If I request that my funds be held, what currencies do you use?
+242. I want to know how many different currencies my money can be in
+243. Do you support all fiat currencies?
+244. Does your system support multiple currency.
+245. What currencies can I hold money in?
+246. Do you support any currency?
+247. There is an incoming payment into my account, but it is deactivated. Will they still be processed?
+248. What currencies do you do exchanges for?
+249. In terms of holding and exchange, what fiat currencies do you use.
+250. What fiat currencies are used for holding transactions?
+251. Where can I exchange my money for EUR?
+252. Is it permissible to hold money in multiple currencies?
+253. Can I exchange to EUR?
+254. Can someone assist me with the details explaining which fiat currencies that you support?
+255. Do you offer additional currency options?
+256. How do I change currencies to euros?
+257. What fiat currencies are supported for holding and exchange?
+258. When considering currency holdings and exchanges, what fiat currencies are supported?
+259. Will you handle EUR?
+260. Can I hold money in other currencies?
+261. What options do I have for holding currencies?
+262. Do you happen to do exchanges of EUR?
+263. Do you accept exchanges to EUR?
+264. Can you tell me what currency I can have?
+265. Am I able to exchange currencies?
+266. What currencies are used in your exchange?
+267. Which fiat currencies do you support?
+268. Which country's currency do you support?
+269. I want to make a currency exchange to EU.
+270. Can I exchange and hold all fiat currencies?
+271. What kind of currency can I hold money in?
+272. Can I exchange currencies?
+273. Do you work with all fiat currencies?
+274. Can I hold money in multiple currencies?
+275. How man currencies can I hold?
+276. Besides USD what other currencies can I have?
+277. How do I accept exchanges to EU?
+278. What kind of fiat currency can I used for holding and exchange?
+279. Do you support the exchange of EUR from my currency.
+280. What countries can I travel to and have access to their currencies?
+281. I need my card now!
+282. my card was not in the mail again can you advise?
+283. i need my card quick
+284. How long will it take to get to me?
+285. I'm just wondering when my card will get here.
+286. Can you get me my card fast?
+287. How long will it take to deliver something to US?
+288. I live in the US, how long will it take for delivery?
+289. When can I expect my card to be delivered to the US?
+290. I need my card quickly
+291. Does delivery to the US take long?
+292. How long will it take to arrive?
+293. Can I have my card delivered on a specific day?
+294. What is the difference between standard and express delivery?
+295. Can it be delivered by a specific date?
+296. May I choose when it's delivered?
+297. I need it delivered on a certain date.
+298. When should I expect my card?
+299. How long does it take to get my card? Can I choose when to receive it?
+300. How long will it take for the card to arrive?
+
+Return ONLY a JSON array, one object per query, in the same order. Each object must have exactly two keys:
+- "id": the query number (151 to 300)
+- "intent": the exact intent name from the list above (lowercase with underscores)
+
+No commentary. No markdown code fences. No explanation. Just the JSON array starting with [ and ending with ].

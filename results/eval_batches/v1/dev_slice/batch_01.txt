@@ -1,0 +1,240 @@
+You are an intent classifier for a banking customer-service chatbot.
+
+For each user query below, assign it to exactly one of the following 77 intents:
+
+- activate_my_card
+- age_limit
+- apple_pay_or_google_pay
+- atm_support
+- automatic_top_up
+- balance_not_updated_after_bank_transfer
+- balance_not_updated_after_cheque_or_cash_deposit
+- beneficiary_not_allowed
+- cancel_transfer
+- card_about_to_expire
+- card_acceptance
+- card_arrival
+- card_delivery_estimate
+- card_linking
+- card_not_working
+- card_payment_fee_charged
+- card_payment_not_recognised
+- card_payment_wrong_exchange_rate
+- card_swallowed
+- cash_withdrawal_charge
+- cash_withdrawal_not_recognised
+- change_pin
+- compromised_card
+- contactless_not_working
+- country_support
+- declined_card_payment
+- declined_cash_withdrawal
+- declined_transfer
+- direct_debit_payment_not_recognised
+- disposable_card_limits
+- edit_personal_details
+- exchange_charge
+- exchange_rate
+- exchange_via_app
+- extra_charge_on_statement
+- failed_transfer
+- fiat_currency_support
+- get_disposable_virtual_card
+- get_physical_card
+- getting_spare_card
+- getting_virtual_card
+- lost_or_stolen_card
+- lost_or_stolen_phone
+- order_physical_card
+- passcode_forgotten
+- pending_card_payment
+- pending_cash_withdrawal
+- pending_top_up
+- pending_transfer
+- pin_blocked
+- receiving_money
+- Refund_not_showing_up
+- request_refund
+- reverted_card_payment?
+- supported_cards_and_currencies
+- terminate_account
+- top_up_by_bank_transfer_charge
+- top_up_by_card_charge
+- top_up_by_cash_or_cheque
+- top_up_failed
+- top_up_limits
+- top_up_reverted
+- topping_up_by_card
+- transaction_charged_twice
+- transfer_fee_charged
+- transfer_into_account
+- transfer_not_received_by_recipient
+- transfer_timing
+- unable_to_verify_identity
+- verify_my_identity
+- verify_source_of_funds
+- verify_top_up
+- virtual_card_not_working
+- visa_or_mastercard
+- why_verify_identity
+- wrong_amount_of_cash_received
+- wrong_exchange_rate_for_cash_withdrawal
+
+User queries (numbered):
+
+1. Do you give refunds?
+2. My card has been compromised. I see a bunch of online shopping charges that I didn't make. I need to freeze it immediately.
+3. Why does my statement show a $1 charge on my account?
+4. Will this app allow me to exchange currencies?
+5. I did a card payment but its status is still coming as pending. Please check and inform when it would complete.
+6. I attempted to deposit a cheque yesterday but the balance isn't showing today. Is it still pending?
+7. Where can I use a disposable card?
+8. Can you please refund my item?
+9. My card stopped working. How do I check if there is a freeze on it?
+10. what are the exchange rates for getting cash
+11. After purchasing an item I noticed the exchange rate was incorrect.
+12. What is the time frame for european transfers?
+13. What would II do if I wanted to activate my new card
+14. I am perplexed. Why is it that I received an extremely wrong rate when I tried to use an ATM using a foreign currency?
+15. How do I add my new card to the app?
+16. My attempted transfer keeps kicking back with an error message.  Could you please help me to resolve this?
+17. I deposited cash into my account and I'm having trouble seeing it on my account.
+18. Why would the ATM machine fail to give me the cash withdrawal I requested?
+19. There is a mysterious debit transaction on my statement
+20. How old must I be to open an account?
+21. Why haven't I gotten my new card?
+22. Hello, I tried to take out some money out of the ATM, but it's still showing that it's pending? I really don't want to be charged for this.
+23. There's a €1 fee on my statement, why?
+24. When will my top up be applied?
+25. Do I have a choice for a Mastercard?
+26. When do i activate auto top-up?
+27. What is the formula for your exchange rate?
+28. I need my card topped up,
+29. I have been double charged for a couple of things this week, and would appreciate a refund for the duplicate charges.
+30. Is there a charge to use a Top up card in the US?
+31. What should I do if I lost my phone?
+32. Explain why a card payment would be cancelled?
+33. Do top-up limits exist?
+34. Suddenly, my card won't work.
+35. Please list what fiat currencies are supported for both holding and exchanging.
+36. What are the steps for the identity checks?
+37. After looking at the app I noticed a couple of payments I know I did not make. Is it possible someone has accessed my card? What is actually going on?
+38. How to order a virtual card
+39. Why is my beneficiary being denies?
+40. I transferred some money a couple days ago but haven't received it yet. How long should I expect to wait?
+41. I can't figure out how to unblock my pin number. Can you help me?
+42. I have not received my pin yet
+43. Can I use google play as my primary app to Top up?
+44. Why was my ATM withdrawal cancelled?
+45. My passcode won't work.
+46. Can you explain why I am now getting charged a fee for using my card?
+47. In the app, where do I find my card PIN?
+48. A shop I go to didn't let me pay.
+49. How do I add an existing card to the app?
+50. I need to order a new card as my old one will expire soon. Can you tell me how to order a new one?
+51. Hey, I'm buying a flat and I need my mortgage to go though. However, every time I check I get an error message. Is there any way you can help me with this transfer.
+52. This transfer incurred a fee that I don't think is right.
+53. I made a purchase but never expected to see a fee charged for the transaction.
+54. I made a card payment by my card but it failed. Please let me know when the payment will get completed as its still pending.
+55. A false direct debit payment is showing in my app
+56. How do I go about changing my address?
+57. Why are my purchases from this morning still pending?
+58. I have a confusing payment appear on my statement and I don't recognise it!
+59. Help! I think someone has made a cash withdrawal with my card!
+60. I didn't get the all the cash i wanted from the atm
+61. Is there a way to use this app with a disposable virtual card?
+62. How can we correct a mistake on an ATM transaction?  The app shows what I should have gotten.
+63. I need to add money to my account. Can I do so via bank transfer?
+64. Why is my payment still pending?
+65. Why hasn't the transaction I did to my friend arrive yet?
+66. Why can't I transfer to another account?
+67. I was given the wrong amount of cash
+68. I am still waiting for the cash to be returned from a cheque I deposited!
+69. Should my cash withdrawal still be pending?
+70. I think my top up has been reverted
+71. What is the most that I can top-up to a card?
+72. What happens if the ATM gives me the wrong amount of money?
+73. I want a refund
+74. Do you have charges now when you pay with a card?
+75. why can't my beneficiary make transactions?
+76. Why was there a fee on my cash withdrawal?
+77. What is the procedure for an expired card?
+78. What is the fee if I use a European bank for a top up?
+79. There is unexpected money in my account.
+80. What  is the verification process for a top up card?
+81. How many physical cards am I allowed to have?
+82. Hi, I had an issue with my card payment and It shows on my account that my payment went through. Then I got contacted from the seller saying "they did not receive my payment" then the payment was returned to my account. so I would like to see why it did that please.
+83. How do you do exchanges?
+84. how do i see what i transferred
+85. Can I change my PIN at any cash machines?
+86. What do I do to link my new card?
+87. I'm still waiting on my new card to be delivered!
+88. Do I need to pay extra for exchanging currencies?
+89. my virtual card has not came yet!
+90. The app rejected my top up
+91. Can I track history on funds?
+92. For topping-up is there a charge?
+93. Can you tell me what this fee is on my statement?
+94. My disposable virtual card wouldn't process my payment?
+95. How long do EU transfers actually take? I recently bought something online a few days ago, sent the money immediately online but the seller says it's still not there yet.
+96. How long does EU transfer take? I bought something online a couple days ago , sent the money immediately online but the seller says it is still not there yet
+97. why cant you just refund me instead of a merchant
+98. My statement contained a one pound extra fee
+99. I have not received a refund.
+100. Please tell me how to edit my personal details.
+101. What do I do if there is an electronic debit that is not correct?
+102. What is the refund policy?
+103. Am I allowed to change my PIN anywhere?
+104. why did i get declined transfer
+105. My card has been lost! help!
+106. I made a transaction, but I made it to an account I didn't mean to make it to.
+107. I was refunded the money for something I bought already.
+108. Can you tell me what is wrong ? I top-up with you all the time but this time it just shows my top-up as pending. What is happening?
+109. Please assist me with activation.
+110. If I found an error in my account for a transaction I didn't make, how long to I have to dispute it?
+111. I see an unfamiliar payment on my statement.
+112. How much do I have to pay to accept an international transfer?
+113. The ATM machines keep declining my card and I don't know why. I thought I had money in my account. Why is this happening?
+114. my balance has not changed, despite depositing a cheque
+115. I can't see if the transfer I did a couple days ago is in my account yet. I double checked my info before sending, too. Can you check this?
+116. As far as courtries go which ones are supported?
+117. Can I obtained a Visa Card
+118. How do I know where I can use my card?
+119. I need to reverse a transaction
+120. What is the basis of your exchange rates?
+121. what documents do i need to verify who i am
+122. I ordered a card and would like to know how to track the delivery progress of it.
+123. How would I top up with a cheque?
+124. Where is the refund on my statement?
+125. The ATM keeps declining my card! I tried two different ATMs already can you please check if everything is alright with my account??
+126. I didnt get the correct exchange rate for getting cash
+127. I have no more money in my account.  Is there a way to do a bank transfer to put money into my account?
+128. What do I do to lock my phone after losing it so my account isn't accessed
+129. What limits are the to top-ups?
+130. What do I do if I can't prove my identity?
+131. Would it be possible for me to get a second card?
+132. I want to use a cheque to pay.
+133. I'm trying to use my Apple Watch to top up my google pay. Do I need a special app?
+134. What are the steps I need to take to cancel a transaction?
+135. I want to request a physical card
+136. Are there limitations to what currency I can hold?
+137. I make payments for my place abroad using this account and since i use it so frequently I was wondering why did the fees increase suddenly rather than decreasing? I would think customers like me should receive incentives for using your service
+138. I received my salary in the wrong currency. How do I change this?
+139. Why am I being charged more on exchange with things I bought abroad?
+140. Why was a fee charged to me for transferring money?
+141. I have a cash withdrawal in my statement. Why is that?
+142. What should I do if I think that someone might be using me card?
+143. where is this money from
+144. How can I hold and exchange fiat currencies?
+145. I topped-up my account, but I don't think it went through.
+146. Is the 1 pound charge going to be reimbursed on my card?
+147. Where can I located the auto-top up option?
+148. Why was my card declined?
+149. The exchange rate used on your app is really bad. I'm considering closing my account because of it.
+150. Are you going to charge me to collect the money?
+
+Return ONLY a JSON array, one object per query, in the same order. Each object must have exactly two keys:
+- "id": the query number (1 to 150)
+- "intent": the exact intent name from the list above (lowercase with underscores)
+
+No commentary. No markdown code fences. No explanation. Just the JSON array starting with [ and ending with ].

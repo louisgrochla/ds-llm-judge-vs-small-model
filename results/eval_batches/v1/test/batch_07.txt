@@ -1,0 +1,242 @@
+You are an intent classifier for a banking customer-service chatbot.
+
+For each user query below, assign it to exactly one of the following 77 intents:
+
+- activate_my_card
+- age_limit
+- apple_pay_or_google_pay
+- atm_support
+- automatic_top_up
+- balance_not_updated_after_bank_transfer
+- balance_not_updated_after_cheque_or_cash_deposit
+- beneficiary_not_allowed
+- cancel_transfer
+- card_about_to_expire
+- card_acceptance
+- card_arrival
+- card_delivery_estimate
+- card_linking
+- card_not_working
+- card_payment_fee_charged
+- card_payment_not_recognised
+- card_payment_wrong_exchange_rate
+- card_swallowed
+- cash_withdrawal_charge
+- cash_withdrawal_not_recognised
+- change_pin
+- compromised_card
+- contactless_not_working
+- country_support
+- declined_card_payment
+- declined_cash_withdrawal
+- declined_transfer
+- direct_debit_payment_not_recognised
+- disposable_card_limits
+- edit_personal_details
+- exchange_charge
+- exchange_rate
+- exchange_via_app
+- extra_charge_on_statement
+- failed_transfer
+- fiat_currency_support
+- get_disposable_virtual_card
+- get_physical_card
+- getting_spare_card
+- getting_virtual_card
+- lost_or_stolen_card
+- lost_or_stolen_phone
+- order_physical_card
+- passcode_forgotten
+- pending_card_payment
+- pending_cash_withdrawal
+- pending_top_up
+- pending_transfer
+- pin_blocked
+- receiving_money
+- Refund_not_showing_up
+- request_refund
+- reverted_card_payment?
+- supported_cards_and_currencies
+- terminate_account
+- top_up_by_bank_transfer_charge
+- top_up_by_card_charge
+- top_up_by_cash_or_cheque
+- top_up_failed
+- top_up_limits
+- top_up_reverted
+- topping_up_by_card
+- transaction_charged_twice
+- transfer_fee_charged
+- transfer_into_account
+- transfer_not_received_by_recipient
+- transfer_timing
+- unable_to_verify_identity
+- verify_my_identity
+- verify_source_of_funds
+- verify_top_up
+- virtual_card_not_working
+- visa_or_mastercard
+- why_verify_identity
+- wrong_amount_of_cash_received
+- wrong_exchange_rate_for_cash_withdrawal
+
+User queries (numbered):
+
+901. When adding money, what are the currencies you take?
+902. Which forms of currency are accepted?
+903. Are US credit cards accepted?
+904. I want to add money but don't know what currencies you accept, can you tell me?
+905. why wouldn't you support american express? its a card i like and use often and i don't want to get a different one
+906. Tell me which cards and what currency is supported.
+907. Do you support all cards and currencies?
+908. Which credit or debit cards can I use to top up?
+909. What options do I have in regards to payment?
+910. I just have one other card from the US. Is that okay?
+911. What are all the currencies and cards supported to use this?
+912. What cards to do you support to top up.
+913. Do you accept other currencies besides US Dollars?
+914. Can I use any currency to add money?
+915. Is my currency okay to add money with?
+916. What cards and currencies will suffice?
+917. How can I use American Express to add funds to my account?
+918. What cards and currencies are supported?
+919. What currencies or cards do you support for topping up?
+920. Which cards and currencies do you support?
+921. Where can I obtain my virtual card?
+922. How do you get a virtual card?
+923. Where can I find a virtual card?
+924. Is there an option to have a virtual card?
+925. If I don't want a physical card can i get a virtual version?
+926. I requested a virtual card but it is not showing up. Why?
+927. Can you tell me how to order a virtual card?
+928. Where is the virtual card?
+929. what is the virtual card
+930. how do i get a virtual card?
+931. Where do I order a virtual card from?
+932. Why did I not get a virtual card yet?
+933. How can I order virtual cards?
+934. Can you tell me where I can order a virtual card?
+935. Is it possible for me to get a virtual card?
+936. Is this where I order a virtual card?
+937. What are the steps to getting a virtual card?
+938. help me obtain a virtual card
+939. Where is the virtual card located?
+940. Where can I order a virtual card?
+941. Where do I obtain my virtual card?
+942. I want a virtual card!
+943. I want one of those virtual cards!
+944. Are virtual cards available to get?
+945. Can you help me sign up for a virtual card?
+946. Can I get a copy of the card by email?
+947. Where do I find the virtual card?
+948. why do i not have a virtual card
+949. How do I order a virtual card?
+950. I thought I was going to get a virtual card but I haven't received it yet, how can we resolve this?
+951. Please help me get a virtual card.
+952. Can I order a virtual card?
+953. Where can I go to get a virtual card?
+954. Where are the virtual cards located?
+955. I would like a virtual card- where can I purchase one?
+956. When should I receive my virtual card?
+957. I need to reorder my virtual card!
+958. Where can I get a virtual card?
+959. Is there a way to obtain a virtual card?
+960. Can I have one of the virtual cards?
+961. Will my card be accepted all over the world?
+962. Who accepts this card?
+963. Can I use my card for payment all over the world?
+964. It will be fine to use at any establishment that accepts Mastercard.
+965. Where can the card be used?
+966. Can my card be used everywhere?
+967. Are there any limits on where I can use my card?
+968. What stores can I sue my card?
+969. Can I use my card anywhere I want?
+970. Is there anywhere my card will not be accepted?
+971. What are the rules to where I can use my card?
+972. Do you know where my card will be accepted?
+973. What places can I use my card?
+974. Is my card accepted everywhere?
+975. What places will accept my card for payment?
+976. Does this card work everywhere?
+977. 
+
+What businesses accept this card?
+978. Where can I use my card?
+979. Which outlets accept my card?
+980. I am traveling to Germany, Will I be able to use my card there?
+981. What stores will take my credit card as payment?
+982. Is there any place I cannot use my card?
+983. Will I be able to use my card anywhere?
+984. Is my card usable anywhere?
+985. Is it acceptable to use my card anywhere?
+986. Can I use my card everywhere?
+987. Where is my card accepted?
+988. Where can I pay with my debit or credit card?
+989. Where should my card work?
+990. areas card is accpeted
+991. places i can use the card
+992. Can I make online purchases with my card?
+993. Does every place of business accept this card?
+994. What places will accept my card?
+995. Can I use my card anywere?
+996. Will any business take this card?
+997. Will filling stations accept my card?
+998. Where am I able to use the card?
+999. What can I use my card to pay for?
+1000. Who accepts my card?
+1001. My top-up was cancelled; will I receive a refund?
+1002. How do I fix a reverted top up?
+1003. Is it possible to tell if my top up has reverted?
+1004. My top-up showed as complete, but it's no longer there! What's going on here?
+1005. Hi, i don't know what's going on i've just paid for my top up twice by accident can you help me get a refund please.
+1006. It seems my top up is reverted?
+1007. The app wouldn't accept my top up.
+1008. I topped up my account and even though it was confirmed at first, the money isn't there anymore! why did this happen, and where did my money go?
+1009. I believe my money did not go through with my top up, was there a problem on your end?
+1010. My top-up was reverted, why did this happen?
+1011. I put money into my account for the minimum balance but the application didn't accept.
+1012. Can you tell me if my top-up has been cancelled?
+1013. I got topped up but the application reverted it.
+1014. Why would my top up be cancelled?
+1015. There appears to have been a reversion in my top up
+1016. The application reverted my top-up.
+1017. I think my top-up was cancelled.
+1018. I believed crypto top up with something you offered. This does not seem to be working. The money has been removed from my account though so what's going on?
+1019. I topped up but the app reverted it
+1020. I went to top up and it is no longer there.  Was it sent back?
+1021. What happened to my top-up?
+1022. Can you tell me why my top up was reverted?
+1023. For what reason would a top up be reverted and returned to my account?
+1024. When I topped up, the app reverted my funds.
+1025. What happened to where my top-up was canceled?
+1026. I tryed to make a top-up with cryptocurrency but the payment was referted.
+1027. The app reverted my top off.
+1028. The app reverted my action when I topped up.
+1029. Was my top up reversed?
+1030. I see my top-up was canceled, but why?
+1031. Do you know if my top-up has been cancelled?
+1032. has my top-up has been cancelled
+1033. My top-up was revoked.
+1034. Causes of top-up cancellation
+1035. The app reverted what I topped up.
+1036. Has my top up been reverted?
+1037. Im very upset as my top-up was canceled and I have no idea why.
+1038. My top-up has been cancelled.
+1039. On my last transaction it seem that my top-up was not successful.
+1040. I'd like to know why my top-up was canceled please.
+1041. I tried making an update to my balance using cheque just yesterday but it doesn't appear to have worked. Should this not be a faster process? I need you to please check over my account because something has went wrong.
+1042. How come I don't see my deposit in my account yet?
+1043. Is there a reason why my account isn't updating because I used a check to  balance my account?
+1044. I don't know why the deposit I made a week ago still hasn't showed up, I really need the money now.
+1045. I made a cash deposit almost a week ago but it's still not there!! please sort this out asap I need the money
+1046. Where is my cash deposit?
+1047. How can I get the cash deposit to show up on my account?
+1048. When will I see the cash I deposited this morning as available?
+1049. cash from this morning has not deposited
+1050. Where is the cash from my cheque I recently deposited?
+
+Return ONLY a JSON array, one object per query, in the same order. Each object must have exactly two keys:
+- "id": the query number (901 to 1050)
+- "intent": the exact intent name from the list above (lowercase with underscores)
+
+No commentary. No markdown code fences. No explanation. Just the JSON array starting with [ and ending with ].

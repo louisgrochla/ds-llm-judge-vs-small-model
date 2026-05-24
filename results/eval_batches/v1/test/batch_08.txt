@@ -1,0 +1,240 @@
+You are an intent classifier for a banking customer-service chatbot.
+
+For each user query below, assign it to exactly one of the following 77 intents:
+
+- activate_my_card
+- age_limit
+- apple_pay_or_google_pay
+- atm_support
+- automatic_top_up
+- balance_not_updated_after_bank_transfer
+- balance_not_updated_after_cheque_or_cash_deposit
+- beneficiary_not_allowed
+- cancel_transfer
+- card_about_to_expire
+- card_acceptance
+- card_arrival
+- card_delivery_estimate
+- card_linking
+- card_not_working
+- card_payment_fee_charged
+- card_payment_not_recognised
+- card_payment_wrong_exchange_rate
+- card_swallowed
+- cash_withdrawal_charge
+- cash_withdrawal_not_recognised
+- change_pin
+- compromised_card
+- contactless_not_working
+- country_support
+- declined_card_payment
+- declined_cash_withdrawal
+- declined_transfer
+- direct_debit_payment_not_recognised
+- disposable_card_limits
+- edit_personal_details
+- exchange_charge
+- exchange_rate
+- exchange_via_app
+- extra_charge_on_statement
+- failed_transfer
+- fiat_currency_support
+- get_disposable_virtual_card
+- get_physical_card
+- getting_spare_card
+- getting_virtual_card
+- lost_or_stolen_card
+- lost_or_stolen_phone
+- order_physical_card
+- passcode_forgotten
+- pending_card_payment
+- pending_cash_withdrawal
+- pending_top_up
+- pending_transfer
+- pin_blocked
+- receiving_money
+- Refund_not_showing_up
+- request_refund
+- reverted_card_payment?
+- supported_cards_and_currencies
+- terminate_account
+- top_up_by_bank_transfer_charge
+- top_up_by_card_charge
+- top_up_by_cash_or_cheque
+- top_up_failed
+- top_up_limits
+- top_up_reverted
+- topping_up_by_card
+- transaction_charged_twice
+- transfer_fee_charged
+- transfer_into_account
+- transfer_not_received_by_recipient
+- transfer_timing
+- unable_to_verify_identity
+- verify_my_identity
+- verify_source_of_funds
+- verify_top_up
+- virtual_card_not_working
+- visa_or_mastercard
+- why_verify_identity
+- wrong_amount_of_cash_received
+- wrong_exchange_rate_for_cash_withdrawal
+
+User queries (numbered):
+
+1051. Cash deposit to my account but it has not appeared.
+1052. When I deposit cheques and cash, my balance does not update.
+1053. I made a deposit this morning but it is still pending?
+1054. cash deposit to my account has shown a red flag.
+1055. I have paid money into my account but it doesn't show.
+1056. The balance on my account wasn't updated after I made a depost.
+1057. Are cheques accepted to my account? Mine didn't seem to work.
+1058. I deposited a check but my balance is still the same.
+1059. IM still waiting for my account to update from a cash deposit?
+1060. I Submitted a cheque couple days ago, nothing happened to my account yet.Would you please check What could be the possible issue?
+1061. Where is my deposit?
+1062. My bank statement doesn't show the cash deposit I made recently.
+1063. My cash deposit from a week ago hasn't shown up. I need the money - how quickly can you sort this out?
+1064. Why didn't my balance update after my cash or checque deposit?
+1065. Why is the cash deposit not showing up in my account?
+1066. I made a deposit of cash and check that has not been added to my balance.
+1067. Why hasn't my balance increased after depositing a check?
+1068. Why does my account not accept cash deposits?
+1069. What happened to the cash that I tried to deposit into my account? It's gone!
+1070. I had a cheque deposited, but I still haven't seen the cash.
+1071. A cheque deposit hasn't posted to my account, when will my balance update?
+1072. I submitted a cash deposit to my account but it hasn't posted yet.
+1073. I sent a cheque  a few days ago and nothing has happened to my account yet. Can you please check on this for me?
+1074. Has the check I deposited cleared to I can get the cash?
+1075. How long does it take to process cheque deposits?
+1076. How come my cash deposit is not showing up. This can't be right. There must be some mistake. Where did my cash go. You better not have lost it as I need this money asap.
+1077. I deposited cash this morning and I am still waiting
+1078. Balance hasn't been updated following a cheque or cash deposit
+1079. I tired to deposit some cash into my account but it's not there
+1080. I sent you a cheque couple days ago, nothing happened to my account yet! This is unacceptable, where is my money??
+1081. I have a strange payment in my statement
+1082. There is a charge on my card that I did not make
+1083. I saw a payment i did not do
+1084. There is a payment that is not mine in the app.  Please advise/
+1085. An unauthorized payment is in my app
+1086. I did not make this card payment.
+1087. What should I do if I see a payment I didn't make?
+1088. I found an unauthorized card payment
+1089. there is a transaction on my account that i didnt make
+1090. I don't recall making that payment?
+1091. There are some payments with my card that I don't know where they are coming from. Just checked today and it's been since a couple days as well! What to I do? Can I revert this retrospectively? My card needs to be frozen immediately as well!
+1092. Has someone accessed my card there are payments I did not make that are showing up on the app.
+1093. There are some strange charges on my card that I didn't make from a few days ago.  Is my card stolen and if so should I cancel it?  Will I get refunded the charges?
+1094. Why would there be a payment on my account I don't recognize?
+1095. I have a payment I didn't do
+1096. There is a payment that is not mine.
+1097. Can you freeze my account?  I just saw there are transactions on my account that I don't recognize.  How can I fix this?
+1098. There is a card payment I do not recognise.
+1099. I don't recognise a card payment
+1100. Payment i did not do
+1101. Please put a freeze on my card,  I am worried there has been some payments on it and I don't know what for.
+1102. I think my statement has a fraudulent charge
+1103. I'm concerned about a payment that has recently been made on my card.  I do not recognize the name that the transaction went to, can you help me?
+1104. What should I do to get transactions off of my account if I didn't make them?  My card must have been compromised and I need to freeze it asap!
+1105. I have a payment listed in error.
+1106. What can I do about some payments on my card I didn't make.  Please put a freeze on my card till we can figure this out.
+1107. I'm not familiar with a card payment.
+1108. I have an unauthorized transaction on my statement
+1109. There is a payment in the App that is not mine.
+1110. I don't know where this transaction came from?
+1111. I see a charge on my account that I don't recall making. I feel like my account may have been compromised.
+1112. I know I didn't make this payment showing up on my card, I don't remember this person at all.
+1113. Somebody used my card to make a purchase
+1114. There's a recent charge on my card that I know I didn't make because I've never seen the name before. Can we investigate this?
+1115. Some of my card payments look different than where I purchased products from. Why is that?
+1116. There is a strange payment on my statement. What should I do?
+1117. I think there has been a purchase made that wasn't by me.
+1118. There is a fraudulent charge on my statement.
+1119. What is the payment in my account that I did not do?
+1120. In my statement there is a payment that is I do not recognize
+1121. I no longer live at my address on file, how do I change it?
+1122. How to change my address.
+1123. How do I update my details?
+1124. My address needs to be revised.
+1125. got married, need to change account name
+1126. My address has changed.
+1127. got married and need to change name
+1128. I want to change my personal details.
+1129. I moved.  I need to update my details.
+1130. I need to edit the personal details section of my account
+1131. Where can I change my personal information after I move?
+1132. Where can I go to modify my detail?
+1133. How do I change my information?
+1134. I need to change my account details
+1135. I moved.  Where do I update my details?
+1136. I relocated and need to change my personal details.
+1137. I need to update my personal details
+1138. My address has changed. How do I report it?
+1139. I need to update my info.
+1140. How can I modify my details?
+1141. What do i have to do to change my name?
+1142. My address has updated and I need to change it.
+1143. Where can I go to update my personal profile?
+1144. Is it possible to edit my personal details on the app?
+1145. how can i change my details
+1146. I need help changing my last name on my account.
+1147. How do I update my current residence details?
+1148. how do i change name?
+1149. I need to change my name since I got married
+1150. I want to change my address.
+1151. how to change name
+1152. Can I change my information?
+1153. I need to update my current address
+1154. I have moved.  Where can I update my details?
+1155. I want to change my name.
+1156. Should I just wait until the post office sends a change of address form?
+1157. I need to change my name what do I do?
+1158. How can I edit my personal details?
+1159. How do I change my address?
+1160. What do I need to do to change the address on my account?
+1161. Why do you require so many details about my identity?
+1162. I'd rather not verify my identity.
+1163. do I need to verify my identity every time I log into my account?
+1164. Why am I required to verify my identity?
+1165. Can I make transfers before identity verification?
+1166. What is the need to verify my identity?
+1167. Do I have to do the identity check?
+1168. Can I use my account without verifying my identity?
+1169. Why is identity verification mandatory?
+1170. Do I have to do an identity check?
+1171. I would like to not have to do the identity verification.
+1172. Can I still use my account, even though the identity verification has not passed yet?
+1173. Why do you require all my identity details?
+1174. Why do you need so much information to verify my identity?
+1175. What is the purpose for the identity check
+1176. I don't like that I have to fill out so much information about my identity.
+1177. What is the point of an identity check?
+1178. How come you need to know my identity?
+1179. May I use my account now, even though the identity verification has not gone through yet?
+1180. Do I need to verify my identity to use my account?
+1181. Why am I required to do an identity check?
+1182. Why am I being asked to have an identity check
+1183. Can i make transactions before identity verification is complete?
+1184. Do I really need to verify my identity?
+1185. Why do I have to give you all of my identification details?
+1186. Why do you require so many identity details?
+1187. Since my id hasn't been verified, when can I use my account?
+1188. I won't verify my identity.
+1189. I want to skip verification of my identity.
+1190. I do not wish to verify my identity.
+1191. Why do I have to verify my identity?
+1192. what is the identity check?
+1193. What other methods are there to verify my identity?
+1194. Do I need to verify my identity?
+1195. Do I need to verify my identity each time I wish to use my account?
+1196. Can I use my account if the identity verification is not complete?
+1197. Why is it asking me to verify my identity
+1198. Do I have to verify my identity?
+1199. Why do you need to know so much about me
+1200. Why did I need to verfiy my identity?
+
+Return ONLY a JSON array, one object per query, in the same order. Each object must have exactly two keys:
+- "id": the query number (1051 to 1200)
+- "intent": the exact intent name from the list above (lowercase with underscores)
+
+No commentary. No markdown code fences. No explanation. Just the JSON array starting with [ and ending with ].

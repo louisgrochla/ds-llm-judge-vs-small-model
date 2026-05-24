@@ -1,0 +1,240 @@
+You are an intent classifier for a banking customer-service chatbot.
+
+For each user query below, assign it to exactly one of the following 77 intents:
+
+- activate_my_card
+- age_limit
+- apple_pay_or_google_pay
+- atm_support
+- automatic_top_up
+- balance_not_updated_after_bank_transfer
+- balance_not_updated_after_cheque_or_cash_deposit
+- beneficiary_not_allowed
+- cancel_transfer
+- card_about_to_expire
+- card_acceptance
+- card_arrival
+- card_delivery_estimate
+- card_linking
+- card_not_working
+- card_payment_fee_charged
+- card_payment_not_recognised
+- card_payment_wrong_exchange_rate
+- card_swallowed
+- cash_withdrawal_charge
+- cash_withdrawal_not_recognised
+- change_pin
+- compromised_card
+- contactless_not_working
+- country_support
+- declined_card_payment
+- declined_cash_withdrawal
+- declined_transfer
+- direct_debit_payment_not_recognised
+- disposable_card_limits
+- edit_personal_details
+- exchange_charge
+- exchange_rate
+- exchange_via_app
+- extra_charge_on_statement
+- failed_transfer
+- fiat_currency_support
+- get_disposable_virtual_card
+- get_physical_card
+- getting_spare_card
+- getting_virtual_card
+- lost_or_stolen_card
+- lost_or_stolen_phone
+- order_physical_card
+- passcode_forgotten
+- pending_card_payment
+- pending_cash_withdrawal
+- pending_top_up
+- pending_transfer
+- pin_blocked
+- receiving_money
+- Refund_not_showing_up
+- request_refund
+- reverted_card_payment?
+- supported_cards_and_currencies
+- terminate_account
+- top_up_by_bank_transfer_charge
+- top_up_by_card_charge
+- top_up_by_cash_or_cheque
+- top_up_failed
+- top_up_limits
+- top_up_reverted
+- topping_up_by_card
+- transaction_charged_twice
+- transfer_fee_charged
+- transfer_into_account
+- transfer_not_received_by_recipient
+- transfer_timing
+- unable_to_verify_identity
+- verify_my_identity
+- verify_source_of_funds
+- verify_top_up
+- virtual_card_not_working
+- visa_or_mastercard
+- why_verify_identity
+- wrong_amount_of_cash_received
+- wrong_exchange_rate_for_cash_withdrawal
+
+User queries (numbered):
+
+2701. I made a transfer and it doesnt' show up in my account.
+2702. I transferred some money but it is yet to arrive.
+2703. Why is my balance the same?  I processed a transfer.
+2704. Why don't I have my transfer?
+2705. Why isn't the transfer on my account showing up?
+2706. The  money I transferred does not show in the balance.
+2707. I have completed a transfer but it is not showing up.
+2708. I did a transfer to my account but it doesn't show up
+2709. How long until my transfer will be available to me
+2710. Why doesn't it show that I did a balance transfer?
+2711. I made a bank transfer a couple of hours ago from my UK account.  It hasn't appeared, can you check to make sure it went through?
+2712. My transfer is pending.
+2713. Hey, I try to make a bank transfer from my UK account a few hours ago, but it haven't show up yet. Please check my account to make sure everything alright with it?
+2714. Where is my transfer from [country]?
+2715. I made a bank transfer and my account balance did not show it.
+2716. Where is my money? I transfered it and it isn't in my account.
+2717. I need to know the time frame that is typical for a transfer from a UK account. I just made a transfer and it doesn't appear. I want to make sure everything is okay.
+2718. Why doesn't my balance reflect my transfer
+2719. My account balance has not gone up even though I just transferred money into it
+2720. When will I see my new balance after making my bank transfer?
+2721. Think someone has took money out with my card. What shall I do?
+2722. There is a withdrawal that isn't mind in the app.
+2723. I just lost my wallet and I see that they are already withdrawing money from my account. How can I stop this?
+2724. I didn't get cash from an ATM, but the app says I did
+2725. My app shows some cash I didn't get.
+2726. Why is there a random withdrawal in my app?
+2727. There is a suspicious cash withdraw on the account.
+2728. I didn't get cash from an ATM, but according to the app a transaction was made when i didn't make it.
+2729. The app said I withdrew cash at an ATM and I didn't
+2730. My app says that I received cash from an ATM and I didn't.
+2731. How do I freeze my bank card, as there has been a strange withdrawal?
+2732. I see a cash withdrawal that I did not perform.
+2733. I checked the app and saw an extra cash withdrawal that I didn't authorize
+2734. I have a strange cash withdrawal in my statement
+2735. There's a cash withdraw on my statement that I didn't make.
+2736. i think someone is using my card to withdraw money. Someone stole my wallet. What can I do? it is urgent.
+2737. I am seeing in the App a some cash withdrawal that its not mine
+2738. My account has a weird withdrawal.
+2739. I'm unsure of a withdrawl in my statement.
+2740. It looks like someone else withdrew cash from my account, can you help?
+2741. I think I see a withdraw I did not make.
+2742. Some cash is showing up in my app that I did not get.
+2743. There is an unauthorized cash withdrawal from my account for 500£.  I definitely didn't make this withdrawal.  I need your help.
+2744. The app is showing an ATM withdrawl that I didn't make.
+2745. There is a odd withdrawal on my account.
+2746. I need to cancel my card that got stolen a little while ago. Someone has already taken some money out and I don't want them to take anymore. Can you please do that?
+2747. How do I cancel my card? There are charges on my account that I didn't make.
+2748. There is an error, the app says I made an ATM withdrawal and I didn't.
+2749. Can anyone help me, I lost my wallet and they've started withdrawing from my account.
+2750. What do I do if I notice a strange withdrawl in my statement?
+2751. I don't recognise a cash withdrawal
+2752. Help!  My wallet was stolen and someone is taking money out.  I need this money!  What can I do?
+2753. There is a cash withdrawal transaction that I am unsure of.
+2754. I didn't take out money from an ATM but my app statement shows that I did. How can I fix this?
+2755. Someone has stolen my card. Even though I have my card with me, someone just made a 500£ cash withdrawal. Please help as soon as possible.
+2756. Cash I didn't get shows in my app.
+2757. There is a problem with my card. Somebody has removed money from my account in a town I haven't been to. Can you please freeze my account immediately?
+2758. There is an ATM withdrawl in the app I don't recognize.
+2759. A cash withdrawal is showing up that I didn't do.
+2760. The app made a mistake and said I made a cash withdrawal.
+2761. Is there an exchange fee?
+2762. whats your exchange rate
+2763. What are your currency exchange fees?
+2764. Where do I find the exchange rate?
+2765. What is the base amount for cross-currency exchanges?
+2766. My work sends me all over the world, can I get a discount for all the money I have to exchange?
+2767. How much more do I have to pay to exchange currencies?
+2768. Is there a fee for exchanging currencies?
+2769. How much does it cost to exchange currencies?
+2770. whats the exchange charge
+2771. Is there any discount for someone that exchanges currencies frequently?
+2772. Is there a fee to exchange foreign money?
+2773. Do I have to pay for exchanging currencies?
+2774. Does it cost extra to exchange currencies?
+2775. Is there a fee for exchanging foreign currencies?
+2776. Will I be charged a fee for exchanging foreign currencies?
+2777. How much is a cross currency exchange, and can I check to see if I have any discounts available?
+2778. Do you offer a discount on multiple currency exchanges?
+2779. How much do I have to pay for the exchange fee?
+2780. If I want to exchange currency, will there be extras?
+2781. If I need to exchange currency is there an extra fee?
+2782. I was wondering if there were any discounts offered for frequent currency exchanges?
+2783. Would I be charged for exchanging currencies?
+2784. What is the exchange fee?
+2785. Does it cost to exchange currencies with this card?
+2786. how much you charge for exhcange
+2787. Are there any extra hidden fees for exchanging currencies?
+2788. When I travel, what will it cost to switch for my currency?
+2789. How much will I pay to exchange foreign currency?
+2790. Does it cost money for currency exchange services?
+2791. Are there extra charges for exchanging currency?
+2792. I will need to exchange currencies frequently, will I be able to get a discount?
+2793. Is there a charge for a foreign currency exchange?
+2794. Is there a discount for frequently exchanging currencies?
+2795. What is the cost for an exchange fee?
+2796. Will it cost more money if my currency needs to be exchanged?
+2797. I would like to exchange currencies, but is there an extra charge to do so?
+2798. Does it cost anything for exchanges?
+2799. Can I exchange money from abroad without additional costs?
+2800. does it cost to exchange currencies?
+2801. Is there a fee for using a European bank card to top up?
+2802. Are there any fees for adding money with an international card?
+2803. i was charged when i used a us issued card. why and what cards are free to use to add money
+2804. Any hidden fees associated with the international card if money is added?
+2805. Will I get charged for topping off my card?
+2806. Are there charges for topping up US cards?
+2807. Are there fees for top ups?
+2808. What are the charges for US cards with top up.
+2809. Is there an additional charge for topping up using a European card?
+2810. In exchange for top ups will you take fees?
+2811. I just topped off my card will I be charged for it?
+2812. How much does it cost to top up by card?
+2813. Are there any fees if I use a European bank card for a top up?
+2814. What are the top-up fees?
+2815. How much is the charge to top up my card?
+2816. How much can I expect to pay to top up a US card?
+2817. What fee is included if I top up by card?
+2818. If I use a European bank card for top up, Do I get charged?
+2819. Will there be any extra fees for European bank card for top up?
+2820. Will I be charged if I use European bank card for top up?
+2821. I want to use a European bank card for a top up. Must I pay?
+2822. Will I be charged for topping up by card?
+2823. Is there a fee for topping up
+2824. What do you charge for top ups?
+2825. Will it cost anything to top up a US card?
+2826. Does topping up my card have a fee?
+2827. Are there fees for adding money using an international card
+2828. When using a US card, what is the cost for a top up/off?
+2829. I need to use a European card for a top up, what will the charge be?
+2830. Is it okay to use a bank card to top up
+2831. Any fee for topping up?
+2832. Are there any fees for top ups?
+2833. What are the fees of using an international card to add money?
+2834. Is there a charge or discount if I use a European bank in a top up?
+2835. Is their a fee for top ups?
+2836. Can I top up using an international card
+2837. What will happen if I want to add money using an international card? Will I run into any fees?
+2838. Are there any extra fees for adding money into the international card?
+2839. What are the fees for top ups?
+2840. What are the top up charges for US cards?
+2841. Could you please activate my card
+2842. I need to activate my card can you do that now?
+2843. What do I need to do to activate my new card?
+2844. Tell me how to go about activating my new card?
+2845. How can I activate my card so I can start using it?
+2846. How long will it take to activate my new card?
+2847. What's the right way to activate my card?
+2848. I received my new card, how is it activated?
+2849. Is there a way my new card can be renewed?
+2850. How do I activate a card I received?
+
+Return ONLY a JSON array, one object per query, in the same order. Each object must have exactly two keys:
+- "id": the query number (2701 to 2850)
+- "intent": the exact intent name from the list above (lowercase with underscores)
+
+No commentary. No markdown code fences. No explanation. Just the JSON array starting with [ and ending with ].

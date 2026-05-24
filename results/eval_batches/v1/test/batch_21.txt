@@ -1,0 +1,170 @@
+You are an intent classifier for a banking customer-service chatbot.
+
+For each user query below, assign it to exactly one of the following 77 intents:
+
+- activate_my_card
+- age_limit
+- apple_pay_or_google_pay
+- atm_support
+- automatic_top_up
+- balance_not_updated_after_bank_transfer
+- balance_not_updated_after_cheque_or_cash_deposit
+- beneficiary_not_allowed
+- cancel_transfer
+- card_about_to_expire
+- card_acceptance
+- card_arrival
+- card_delivery_estimate
+- card_linking
+- card_not_working
+- card_payment_fee_charged
+- card_payment_not_recognised
+- card_payment_wrong_exchange_rate
+- card_swallowed
+- cash_withdrawal_charge
+- cash_withdrawal_not_recognised
+- change_pin
+- compromised_card
+- contactless_not_working
+- country_support
+- declined_card_payment
+- declined_cash_withdrawal
+- declined_transfer
+- direct_debit_payment_not_recognised
+- disposable_card_limits
+- edit_personal_details
+- exchange_charge
+- exchange_rate
+- exchange_via_app
+- extra_charge_on_statement
+- failed_transfer
+- fiat_currency_support
+- get_disposable_virtual_card
+- get_physical_card
+- getting_spare_card
+- getting_virtual_card
+- lost_or_stolen_card
+- lost_or_stolen_phone
+- order_physical_card
+- passcode_forgotten
+- pending_card_payment
+- pending_cash_withdrawal
+- pending_top_up
+- pending_transfer
+- pin_blocked
+- receiving_money
+- Refund_not_showing_up
+- request_refund
+- reverted_card_payment?
+- supported_cards_and_currencies
+- terminate_account
+- top_up_by_bank_transfer_charge
+- top_up_by_card_charge
+- top_up_by_cash_or_cheque
+- top_up_failed
+- top_up_limits
+- top_up_reverted
+- topping_up_by_card
+- transaction_charged_twice
+- transfer_fee_charged
+- transfer_into_account
+- transfer_not_received_by_recipient
+- transfer_timing
+- unable_to_verify_identity
+- verify_my_identity
+- verify_source_of_funds
+- verify_top_up
+- virtual_card_not_working
+- visa_or_mastercard
+- why_verify_identity
+- wrong_amount_of_cash_received
+- wrong_exchange_rate_for_cash_withdrawal
+
+User queries (numbered):
+
+3001. What can I use to verify my identify?
+3002. What do you need to verify my identity?
+3003. I need to verify my identity, but how do I do that?
+3004. How can I verify my indentity?
+3005. What is needed to prove my identity?
+3006. What do you need for my identity check?
+3007. How do you verify an identity?
+3008. Is there a specific type you need for identity verification?
+3009. I got a message that I need to verify my identity; what do I do?
+3010. Are there any documents needed for the identity check?
+3011. What are the steps I need to take to verify my identity?
+3012. What do I need to verify my identity
+3013. I need to verify my identity
+3014. I need some help with identity verification.
+3015. What's the process for ID verification?
+3016. I would like to know how I can verify my Identity.
+3017. What kind of documents do I need for the identity check?
+3018. Let me know the steps for the identity checks
+3019. What should I do to verify my identity?
+3020. What are the steps to verify my identity?
+3021. How does my identity get verified?
+3022. What things do I need to verify my identity?
+3023. What steps do I take to verify my identity?
+3024. Can I verify my identity online?
+3025. do the details of my profile have to match my documents
+3026. Where do I verify my identity?
+3027. When getting my ID checked, what are the steps involved?
+3028. do I need anything for the identity check?
+3029. which kind of documentation do I need for identity check?
+3030. How do I go forth on verifying my identity?
+3031. What can I do to verify my identity?
+3032. What do you need so I can verify my identity?
+3033. What do I need to show who I am?
+3034. Do I need any kind of documentation for the identity check?
+3035. What will I need for identity verification?
+3036. Is there any way to verify who I am?
+3037. Is there any documentation needed for the identity check?
+3038. What all am I required to show for the identity check?
+3039. What do I do for the identity check?
+3040. What do I need to do to verify my identity?
+3041. I live in the US but want to get a card
+3042. Are your cards available in Europe?
+3043. Can I use your app if I am from the EU?
+3044. What countries are supported?
+3045. i live in the US can i still get a card?
+3046. Can I get a card outside the UK?
+3047. I'm not in the UK, can I still get a card?
+3048. I'm not in the UK, is it possible for me to still get a card?
+3049. Now that I live in the US how can I get a card?
+3050. Can I get one of your cards in the EU
+3051. Can I get a card despite the fact I'm not in the UK?
+3052. Where do I need to live to get support?
+3053. Do you support the EU?
+3054. how do i get a card if i am in the usa
+3055. Please help me get a new card, I reside in the United States.
+3056. Is it possible to get a card if I'm not in the UK?
+3057. Is my country supported
+3058. From what countries can I use this product?
+3059. Where can I find your locations?
+3060. Can I get a card even if I live outside the UK?
+3061. I am from the EU, can I sign up?
+3062. I would like to receive and use the card in Europe, is that possible?
+3063. What countries do you support?
+3064. What countries are you currently in?
+3065. What locations are you in?
+3066. Can you tell me what countries you operate in?
+3067. I need a card, but I'm in the US at the moment.
+3068. What countries will my card be supported in?
+3069. Do you have a list of countries you operate in?
+3070. In what countries do you do business?
+3071. I don't live in the UK.  Can I still get a card?
+3072. Where do you support?
+3073. Am I able to get a card in EU?
+3074. What countries do you currently do business in?
+3075. I'm not in the UK, can I get a card?
+3076. If i'm not in the UK, can I still get a card?
+3077. How many countries do you support?
+3078. What countries do you do business in?
+3079. What are the countries you operate in.
+3080. Can the card be mailed and used in Europe?
+
+Return ONLY a JSON array, one object per query, in the same order. Each object must have exactly two keys:
+- "id": the query number (3001 to 3080)
+- "intent": the exact intent name from the list above (lowercase with underscores)
+
+No commentary. No markdown code fences. No explanation. Just the JSON array starting with [ and ending with ].

@@ -1,0 +1,240 @@
+You are an intent classifier for a banking customer-service chatbot.
+
+For each user query below, assign it to exactly one of the following 77 intents:
+
+- activate_my_card
+- age_limit
+- apple_pay_or_google_pay
+- atm_support
+- automatic_top_up
+- balance_not_updated_after_bank_transfer
+- balance_not_updated_after_cheque_or_cash_deposit
+- beneficiary_not_allowed
+- cancel_transfer
+- card_about_to_expire
+- card_acceptance
+- card_arrival
+- card_delivery_estimate
+- card_linking
+- card_not_working
+- card_payment_fee_charged
+- card_payment_not_recognised
+- card_payment_wrong_exchange_rate
+- card_swallowed
+- cash_withdrawal_charge
+- cash_withdrawal_not_recognised
+- change_pin
+- compromised_card
+- contactless_not_working
+- country_support
+- declined_card_payment
+- declined_cash_withdrawal
+- declined_transfer
+- direct_debit_payment_not_recognised
+- disposable_card_limits
+- edit_personal_details
+- exchange_charge
+- exchange_rate
+- exchange_via_app
+- extra_charge_on_statement
+- failed_transfer
+- fiat_currency_support
+- get_disposable_virtual_card
+- get_physical_card
+- getting_spare_card
+- getting_virtual_card
+- lost_or_stolen_card
+- lost_or_stolen_phone
+- order_physical_card
+- passcode_forgotten
+- pending_card_payment
+- pending_cash_withdrawal
+- pending_top_up
+- pending_transfer
+- pin_blocked
+- receiving_money
+- Refund_not_showing_up
+- request_refund
+- reverted_card_payment?
+- supported_cards_and_currencies
+- terminate_account
+- top_up_by_bank_transfer_charge
+- top_up_by_card_charge
+- top_up_by_cash_or_cheque
+- top_up_failed
+- top_up_limits
+- top_up_reverted
+- topping_up_by_card
+- transaction_charged_twice
+- transfer_fee_charged
+- transfer_into_account
+- transfer_not_received_by_recipient
+- transfer_timing
+- unable_to_verify_identity
+- verify_my_identity
+- verify_source_of_funds
+- verify_top_up
+- virtual_card_not_working
+- visa_or_mastercard
+- why_verify_identity
+- wrong_amount_of_cash_received
+- wrong_exchange_rate_for_cash_withdrawal
+
+User queries (numbered):
+
+151. Is there a disposable virtual card option?
+152. Why haven't I been given a virtual card yet?
+153. Can you please explain why my beneficiary is not allowed?
+154. I recently bought an item using my card and I was charged an extra fee why is this?
+155. Where do I go to unblock my PIN?
+156. How do I get started when I get my card?
+157. I transferred money to a receiver within the EU and they received a lesser amount than expected.  Now I will have to send additional money to the receiver in order to make up the difference.  I'm not sure what went wrong, can you please advise?
+158. How long do transfers from a UK bank account usually take for you? I just made a transfer and I'm not seeing anything, wondering if it worked
+159. Does this program take SWIFT transfers?
+160. My top-up is still pending
+161. What's your refund policy if I bought an item from you?
+162. I have made a payment by my card, and its still pending since a long time. Could you please tell me when it will process.
+163. How come my card payment has been declined?
+164. I need to change my name, since i just got married
+165. There is a transaction showing up several times.
+166. Could I please cancel my transfer, I paid it into the wrong account. I need to pay it into the right account by tomorrow.
+167. I just noticed that I supposedly made a payment to a seller a while back. The problem is, I don't recognize the seller. There must be a way to see who it is or track the payment. Can you do that, because I don't remember this transaction?
+168. How can I pay for top-ups?
+169. I transferred some funds but I don't see it
+170. how do i cancel my account
+171. My recipient hasn't received the money
+172. There are some card payments that I haven't done myself. What is going on with my card and does somebody else have access to my card?
+173. How do I activate my card to start using it?
+174. Won't let me top my card up!! Who can get it sorted out for me? It's urgent! How do I find out what the problem is with my card and how else to top it up?
+175. My balance was not updated with my checque or cash deposit.
+176. What is the cost for physical cards?
+177. Why are the payments being declined on my new card?  I tried several times to use my new card to pay for my gas at the Shell station in my neighborhood.  I am very distressed about my new card not working.
+178. I had everything lined up to make a transfer, and then it rejected it.
+179. Why didn't my top up work?
+180. Why isn't my purchase exchange rate correct?
+181. Help me use American Express to add money to the account.
+182. What is the auto top-up limit?
+183. What different currencies can I get?
+184. Help my activate my card.
+185. Asked for $100 but only got $20. Why would this happen?
+186. I wasn't applied the correct exchange rate when getting cash
+187. Can you tell me where I can withdraw money?
+188. Can I order a second card?
+189. Why have I all of a sudden been charged for my ATM withdrawal? I thought the withdrawals were free because this is the first time I've ever had this problem.
+190. What is the wait time for delivery to the US?
+191. How long does it take for my physical card to be delivered.
+192. My card is broken
+193. Tell me how to setup a new PIN.
+194. Why was there an additional fee on the payment I just made? I don't usually have additional fees applied to my payments.
+195. Am I permitted to have a spare card?
+196. Are there charges for cash withdrawals?
+197. where do you have locations at
+198. My card hasn't came in the mail yet?
+199. I've tried using my contactless in several locations today and it's not working anywhere. It seemed fine before. How do I get it to work again?
+200. Why isn't the transfer I made to a friend showing?
+201. What is the maximum for auto top-up?
+202. Where are the ATMs that I can use Mastercard?
+203. My transfer is pending, why?
+204. Top up did not work on the app.
+205. Why does my identity need verification?
+206. What are the places that you deliver cards to?
+207. Is there a limit for age?
+208. Top up is not working even though I have my AMEX in apple pay.
+209. Are cards from the US accepted?
+210. Is there anything to do because my phone was stolen?
+211. Why was I charged extra on my last UK pound to Russian ruble exchange?
+212. I used my card to top up, but now I don't see the money in my account.
+213. I live in America, but I would like a card.
+214. I have exceeded the number of PIN attempts
+215. At what age can a person open an account?
+216. How can I stop someone from using my card after I lost it yesterday.
+217. There has been a red flag on my top up.
+218. How do I report fraud on my card?
+219. Hello, I was just went through my recent transaction on my bank account and I just noticed that I was charged twice at a place that ate at this past week. Can I get that second transaction removed from my account?
+220. How do I make my card appear on the app?
+221. Will you please help me get my card back?
+222. What is the limit on disposable cards?
+223. I am waiting for the money to enter my account. How long does it take?
+224. What's the reason for needing to verify my identity?
+225. What caused my transfer to fail?
+226. Why did the ATM cancel my transaction
+227. I attempted a transfer, but it failed.
+228. Can I receive money in a different countries money?
+229. My transaction history is looking a little off. I have been charged twice for multiple different purchases, and would like to have those duplicate charges refunded.
+230. Is it really necessary to verify my Identity?
+231. Can friends transfer money to each other?
+232. How can I find out the source of my available cash?
+233. Can you please advise if there is something wrong with my card? I have had multiple rejections and do not know the reason. Thanks!
+234. why hasnt my card come in yet?
+235. I am not in the UK can i get a card?
+236. How do I top up by card?
+237. There is a payment in the app that I did not approve
+238. Is there any way for you to find my card?
+239. I needed to make a payment on my account, but I typed in the incorrect number.  The app won't allow me to cancel this transaction.  I need it cancelled ASAP!!
+240. Estimated time arrival for transfers?
+241. is it free to add money to my card
+242. My account shows up as pending after I received cash from the ATM earlier.  How can this be still pending? I've got the cash already.
+243. How do I get selected for a visa card?
+244. Can I change my PIN on my phone?
+245. I received a refund, however I cannot see it in my account
+246. What is the process when my card is due to expire?
+247. Where is the top-up card verification code?
+248. how to recover my passcode
+249. I made a transfer for my rent payment about 2 days ago, but my landlord hasn't received it yet. It shows as done on my  side, and I've double check all account numbers and they are correct. Can you verify that the transaction was actually made?
+250. I've already tried 5 times to complete a transfer that's just standard. What's the deal? Is your system down at this time?
+251. Is my card accepted anywhere?
+252. Why hasn't my withdrawal shown on my statement?
+253. I have been charged twice for the same thing!
+254. Is it possible to change from USD to GBP with your App?
+255. Is there an extra charge to exchange different currencies?
+256. I am afraid to give you all my identify details.
+257. How can I verify the top-up card?
+258. Why did I have to pay extra because I paid with my card?
+259. What should I do if I can't prove my identity.
+260. Someone has a copy of my card. I have my card with me, but someone just made a 500£ cash withdrawal. Help me.
+261. How do I go through the identity checks?
+262. I need to urgently transfer something from China. How long will it approximately take?
+263. Please provide currency exchange rates
+264. When I received my cash, the exchange rate was wrong.
+265. I did a transfer and was charged a fee that should not have been charged!
+266. It looks like my card payment might have been reverted.
+267. Does it cost anyting to get my own card?
+268. What's the process for terminating an account?
+269. I'd like my account to be deleted. I'm not satisfied with the service you provide.
+270. My new card came in.  How do I activate?
+271. I am unable to access my app due to forgetting my passcode.
+272. I received a decline message on a transfer
+273. My top-up funds aren't available yet.
+274. What would be a reason my transfer got declined?
+275. I am seeing in the App a some cash withdrawal that does not belong to me
+276. What are disposable virtual cards?
+277. how do I get top up to work for my card
+278. How long does it take for a bank transfer to show on my balance?
+279. I need a new card before it expires.
+280. what is this extra charge for a withdrawal?
+281. What is the number of transactions for one disposable card?
+282. I can't see my refund on my account
+283. What are my payment options?
+284. I need to transfer money to my account from another bank
+285. I wish to be able to top up with cash.
+286. Can I have it by a certain date?
+287. My thoughts were that you offered crypto top up which does not seem to be working. The money has now been taken from my account. What is the problem here?
+288. Why is the transfer still pending?  Can I do something?
+289. Has my top-up been cancelled?
+290. I was charged for a cash withdrawal, why?
+291. Do I need to verify my top-up card?
+292. Is it possible to change from AUD to GBP?
+293. Where is the closest ATM I can use?
+294. Why did the ATM eat my card?
+295. Do you have support for flat currencies?
+296. A seller is stating that they haven't received money yet when the money has already deducted from my account.
+297. What are the rules for using disposable virtual cards?
+298. Could I get a mastercard if that's reasonable?
+299. The app doesn't believe that I am myself
+300. Since I just got married I need to change my name.
+
+Return ONLY a JSON array, one object per query, in the same order. Each object must have exactly two keys:
+- "id": the query number (151 to 300)
+- "intent": the exact intent name from the list above (lowercase with underscores)
+
+No commentary. No markdown code fences. No explanation. Just the JSON array starting with [ and ending with ].

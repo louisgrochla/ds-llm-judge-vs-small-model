@@ -1,0 +1,240 @@
+You are an intent classifier for a banking customer-service chatbot.
+
+For each user query below, assign it to exactly one of the following 77 intents:
+
+- activate_my_card
+- age_limit
+- apple_pay_or_google_pay
+- atm_support
+- automatic_top_up
+- balance_not_updated_after_bank_transfer
+- balance_not_updated_after_cheque_or_cash_deposit
+- beneficiary_not_allowed
+- cancel_transfer
+- card_about_to_expire
+- card_acceptance
+- card_arrival
+- card_delivery_estimate
+- card_linking
+- card_not_working
+- card_payment_fee_charged
+- card_payment_not_recognised
+- card_payment_wrong_exchange_rate
+- card_swallowed
+- cash_withdrawal_charge
+- cash_withdrawal_not_recognised
+- change_pin
+- compromised_card
+- contactless_not_working
+- country_support
+- declined_card_payment
+- declined_cash_withdrawal
+- declined_transfer
+- direct_debit_payment_not_recognised
+- disposable_card_limits
+- edit_personal_details
+- exchange_charge
+- exchange_rate
+- exchange_via_app
+- extra_charge_on_statement
+- failed_transfer
+- fiat_currency_support
+- get_disposable_virtual_card
+- get_physical_card
+- getting_spare_card
+- getting_virtual_card
+- lost_or_stolen_card
+- lost_or_stolen_phone
+- order_physical_card
+- passcode_forgotten
+- pending_card_payment
+- pending_cash_withdrawal
+- pending_top_up
+- pending_transfer
+- pin_blocked
+- receiving_money
+- Refund_not_showing_up
+- request_refund
+- reverted_card_payment?
+- supported_cards_and_currencies
+- terminate_account
+- top_up_by_bank_transfer_charge
+- top_up_by_card_charge
+- top_up_by_cash_or_cheque
+- top_up_failed
+- top_up_limits
+- top_up_reverted
+- topping_up_by_card
+- transaction_charged_twice
+- transfer_fee_charged
+- transfer_into_account
+- transfer_not_received_by_recipient
+- transfer_timing
+- unable_to_verify_identity
+- verify_my_identity
+- verify_source_of_funds
+- verify_top_up
+- virtual_card_not_working
+- visa_or_mastercard
+- why_verify_identity
+- wrong_amount_of_cash_received
+- wrong_exchange_rate_for_cash_withdrawal
+
+User queries (numbered):
+
+1951. I was getting cash and can't get my card back.
+1952. If my card is trapped in the ATM, what do I do?
+1953. My card has been swallowed by an ATM
+1954. I was taking out funds and was unable to regain my card.
+1955. What should I do with my atm that got stuck?
+1956. The ATM at Metro bank on High St. Kensington didn't return my card. What should I do now that the bank is closed?
+1957. The ATM won't give back my card
+1958. I was at an ATM and it swallowed my card.
+1959. WTF??? I tried to withdraw some money at a Metro bank on High St. Kensington and without any notice it disappeared in the machine. The bank was already closed so I couldn't do anything. How do I get it back?
+1960. What happens if my card is stuck in the ATM?
+1961. I got double charged for a payment so how do I fix that?
+1962. I've just come back from an eating holiday in the USA and Canada and have SO many pending and duplicated transactions on my account.  I think there is something wrong, can you look in to it please?
+1963. Why am I being charged twice fro a restaurant?
+1964. I would like to know why I was charged twice for my purchase.
+1965. I didn't buy this twice
+1966. Why was I chaged twice for the same thing?
+1967. Why is there more then one charge on my card I only paid for one not twice how can I fix this?
+1968. I have a duplicate payment showing up on the app. How do I stop myself being charged for the thing twice?
+1969. Why would I be charged more than once for the same transaction?
+1970. I was wondering how I could have two charges for the same item happen more than once in a 7 day period. Is there anyway I could get this corrected asap.
+1971. Can you please check if I was charged twice?
+1972. I have been charged twice
+1973. It appears that I am being double charged for some items that I have purchased this past week.  Please review and correct.
+1974. It looks like this week I was double charged for a couple things. Is there any way that you can look into this for me and return the double charged items back to my card?
+1975. I noticed after looking over my transactions that I have been charged twice from an earlier restaurant visit this week. Is it possible that one of these can be removed so I get the money back for the one that is not accurate?
+1976. I think something may have happened that caused a charge to show up twice.
+1977. Why is there a transaction that shows multiple times?
+1978. I see what looks like duplicate charges on account.
+1979. Why was I charged multiple times for the same thing?
+1980. I had a duplicate card and got charged twice. How do I resolve this?
+1981. Hello. I checked my transactions and saw I was double charged on my card for a restaurant visit. I would like to get my money back.
+1982. Why am I being charged twice?
+1983. Transactions on my card look really weird. I've been charged twice for a couple things this week! Please check this and return the double charged ones.
+1984. Please check payments on my card. There is a duplicate and I only bought it once.
+1985. More than one time this week, I have been charged more than once for the same transaction. Please correct the issue and refund the duplicate charges.
+1986. A transaction is repeated several times on my account.
+1987. I've been charged more than once for the same transaction
+1988. My card has been charged two separate times for a single transaction.
+1989. Can you explain why there is a payment showing twice?
+1990. Why have I been charged twice for the same transaction?
+1991. I see that I have been charged multiple times for the same transaction.
+1992. I was double charged
+1993. I have multiple charges on the same transaction.
+1994. Looks like my card payment was duplicated. I went to pay at the store earlier, got declined once,second time it works. App still stays pending for one of the payments. Can you please remove one of them as it's wrong and clearly was declined?
+1995. I have a transaction that shows several times
+1996. I recently got charged twice from a restaurant that I was at this week and I would like for one of those payments to be removed from my account.
+1997. There is more than one of the same transaction on my account.
+1998. I have a duplicate payment showing
+1999. I made a payment that got charged twice instead of once.
+2000. What are my remedies if I think I was charged twice for the same expense?
+2001. Can I verify the source of my funds?
+2002. I want information about the source of funds.
+2003. Where are my funds being sourced from?
+2004. I would like to verify the source of my money
+2005. where to funds come from
+2006. What is the source of my funds.
+2007. I need to verify my source of funds
+2008. I would like to see the source of my money.
+2009. Why do you need all this information about my Source of Funds?
+2010. How can I check the source of funds?
+2011. How can I tell where my funds came from?
+2012. What is the source of my available funds?
+2013. Can I find the origination of my funds?
+2014. My source of funds need verified.
+2015. What information do you need to verify my Source of Funds?
+2016. I need the source of my funds verified. How do I do this?
+2017. I need my funds verified.
+2018. Help me check where the funds came from.
+2019. I want to know where the funds come from.
+2020. What is the source of my money?
+2021. Where can I find the source of my available money?
+2022. How can I lookup where funds came from?
+2023. Can I see that history on my funds and where they came from?
+2024. I have to verify the source of my funds
+2025. How can I view the source of my available funds?
+2026. Why does my money come from?
+2027. I need to validate the source of my funds.
+2028. Where are my funds coming from? I need to know.
+2029. Where has my available money come from?
+2030. Why do you need to know where my money is coming from?
+2031. How can I see where my money comes from?
+2032. How can I check the source for my funds?
+2033. Where can I see the source of my money?
+2034. what is source of my funds, need to verify
+2035. Where do my funds come from?
+2036. How can I check the source of my fund?
+2037. How can I see my source of funds?
+2038. How do I become aware of where my funds come from?
+2039. Where does all this money come from though?
+2040. What do I need to do to verify the source of my funds?
+2041. What is the number of days I have to wait for my Europe transfer?
+2042. What is the wait time for a transfer from the US?
+2043. I need a fast transfer from China?  How fast will it be?
+2044. how soon will I see the transfer in my account?
+2045. How many days does it take until funds are in my account?
+2046. How long until my transfer goes through?
+2047. Do transfers from Europe take longer?
+2048. What is the fastest that I can make a transfer?
+2049. how long dies it take for transfers to reflect on my balance
+2050. If I started the Bank transfer from Europe, how long will the process take to complete?
+2051. How long until the money is in my account?
+2052. When will a transfer reach my account?
+2053. When should I expect to see my transfer hit my account?
+2054. Will my transfer immediately show up in my account?
+2055. If I need to do a quick transfer from China, how long should I expect the transfer to take?
+2056. When does the money get transferred to my account
+2057. How long do i have to wait for a transfer to reach my account?
+2058. How long does it take for funds to come through the US to my account?
+2059. How long is my Europe transfer wait?
+2060. How many days does a transfer from the US take?
+2061. How long do I have to wait for a transfer from the US?
+2062. How long is the wait for a US transfer?
+2063. How many days until the money will be in my account?
+2064. How long does it take for a transfer?
+2065. What is the time frame for a transfer from the US?
+2066. when will i receive a US transfer
+2067. Approximately how long will an urgent transfer from China take?
+2068. I initiated a Bank transfer form Europe, how long will this take?
+2069. How long does it take to process transfers from Europe?
+2070. How long does a funds transfer take from one back to another?
+2071. What would the approximate delivery date be if I transferred something urgently to China?
+2072. I have to transfer something to China as fast as I can. How long will it take to arrive in China?
+2073. How long to I have to wait for a transfer to reach my account?
+2074. How long is it going to take for my funds to show in my account?
+2075. How long does a transfer take from the point it's sent, to the point it arrives in my account?
+2076. How long will it take for the transfer to reach my account?
+2077. If my transfer is from Europe how long will it take?
+2078. There is an important thing from China that I need to transfer. Approximately how long will this take?
+2079. How long does a transfer take from china?
+2080. When will money be available in my account?
+2081. I think my card payment has been stopped
+2082. My card payment was reverted.  Why?
+2083. the app reverted my payment
+2084. My card payment was cancelled.
+2085. Why was my payment cancelled?
+2086. I made a payment but the app reverted the payment.
+2087. My payment was reverted by the app
+2088. Hello, My money went through for my purchase but now I got contacted from the seller noting that they didn't receive it. Then the money was returned to my account and I'm not sure why this occurred. So if you can resolve this issue please.
+2089. Please explain to me the circumstances in which my card payment would be reverted?
+2090. Why has my card payment been cancelled?
+2091. What do I do if it says my card payment has been cancelled?
+2092. I'm not sure why my account has been refunded a payment for an item I've already received about 2 weeks ago. Can you please tell me what is going on?
+2093. My card is being declined for a purchase. I bought items before and the card worked. Do you know what the problem is?
+2094. Can you tell my why my card payment has been reverted.
+2095. why did the app refuse to make an approved payment
+2096. Do you know why my card payment was reverted?
+2097. My credit card cancelled a payment for a purchase.
+2098. Why was my payment reversed?
+2099. I have a payment listed as cancelled.
+2100. I think my card payment had been return
+
+Return ONLY a JSON array, one object per query, in the same order. Each object must have exactly two keys:
+- "id": the query number (1951 to 2100)
+- "intent": the exact intent name from the list above (lowercase with underscores)
+
+No commentary. No markdown code fences. No explanation. Just the JSON array starting with [ and ending with ].

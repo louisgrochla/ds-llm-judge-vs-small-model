@@ -1,0 +1,240 @@
+You are an intent classifier for a banking customer-service chatbot.
+
+For each user query below, assign it to exactly one of the following 77 intents:
+
+- activate_my_card
+- age_limit
+- apple_pay_or_google_pay
+- atm_support
+- automatic_top_up
+- balance_not_updated_after_bank_transfer
+- balance_not_updated_after_cheque_or_cash_deposit
+- beneficiary_not_allowed
+- cancel_transfer
+- card_about_to_expire
+- card_acceptance
+- card_arrival
+- card_delivery_estimate
+- card_linking
+- card_not_working
+- card_payment_fee_charged
+- card_payment_not_recognised
+- card_payment_wrong_exchange_rate
+- card_swallowed
+- cash_withdrawal_charge
+- cash_withdrawal_not_recognised
+- change_pin
+- compromised_card
+- contactless_not_working
+- country_support
+- declined_card_payment
+- declined_cash_withdrawal
+- declined_transfer
+- direct_debit_payment_not_recognised
+- disposable_card_limits
+- edit_personal_details
+- exchange_charge
+- exchange_rate
+- exchange_via_app
+- extra_charge_on_statement
+- failed_transfer
+- fiat_currency_support
+- get_disposable_virtual_card
+- get_physical_card
+- getting_spare_card
+- getting_virtual_card
+- lost_or_stolen_card
+- lost_or_stolen_phone
+- order_physical_card
+- passcode_forgotten
+- pending_card_payment
+- pending_cash_withdrawal
+- pending_top_up
+- pending_transfer
+- pin_blocked
+- receiving_money
+- Refund_not_showing_up
+- request_refund
+- reverted_card_payment?
+- supported_cards_and_currencies
+- terminate_account
+- top_up_by_bank_transfer_charge
+- top_up_by_card_charge
+- top_up_by_cash_or_cheque
+- top_up_failed
+- top_up_limits
+- top_up_reverted
+- topping_up_by_card
+- transaction_charged_twice
+- transfer_fee_charged
+- transfer_into_account
+- transfer_not_received_by_recipient
+- transfer_timing
+- unable_to_verify_identity
+- verify_my_identity
+- verify_source_of_funds
+- verify_top_up
+- virtual_card_not_working
+- visa_or_mastercard
+- why_verify_identity
+- wrong_amount_of_cash_received
+- wrong_exchange_rate_for_cash_withdrawal
+
+User queries (numbered):
+
+2551. How do I get my disposable virtual card to work?
+2552. How come my disposable virtual card used to pay for a gym subscription got rejected?
+2553. Payments from my disposable virtual card don't work
+2554. My disposable virtual card was rejected by the merchant, please help?
+2555. My virtual card won't work.
+2556. Tell me why my virtual disposable card won't work.
+2557. I need help getting the virtual card to work.
+2558. I was trying to use my virtual card at a merchant and it was rejected. How can I fix this?
+2559. How do I make my virtual card work?
+2560. virtual card is not working for me
+2561. I did not get the right amount of money when I used a different country's currency.
+2562. I took out money from a transaction machine and it exchanged the wrong dollar value amount from another currency!
+2563. I made a withdraw from the ATM this past holiday and it seems like a was charged too much. If I would have   known about these charges I wouldn't have made a withdraw.
+2564. Can you look to make sure the exchange rate is correct
+2565. Exchange rate for my cash withdrawal is wrong
+2566. Hello. I'm on holiday and didn't bring any cash with me. I need to withdrawal my home currency from one of your machines. Do you have any that will do this and is there a charge?
+2567. Why was the exchange rate wrong when I got cash
+2568. I attempted to get money using a foreign currency at an ATM but the rate was highly inaccurate!
+2569. Why is the exchange rate wrong for my international withdrawal?
+2570. A wrong exchange rate was applied to a transaction made abroad.
+2571. The exchange rate you gave me for my cash withdrawal is wrong
+2572. Is there a fee for exchanging cash?
+2573. Why is the exchange rate so exorbitant? This should have been a much higher amount of cash for that to apply.
+2574. Why was the exchange rate different when I withdrew my cash?
+2575. When I got cash, my exchange rate was wrong.
+2576. Will there be additional costs of I make a withdrawal from a local ATM of British pounds? I need some cash to feel comfortable on the journey home
+2577. It seems I was overcharged when I used an ATM while on vacation. If I knew about your fees in advance I sure would have gone somewhere else.
+2578. I checked the exchange rate when I withdrew cash. But the actual rate that you applied was different.
+2579. In receiving cash, the wrong exchange rate was used for my transaction.
+2580. Can I make a withdraw if I am out of country from with out any fees at an ATM?
+2581. I took out a foreign currency and the exchange rate is wrong.
+2582. I feel like too much money was taken during my currency exchange.
+2583. There was an error in exchange rate for my cash withdrawal
+2584. I need the right foreign money, at the right rate, at ATMs, when I go abroad.
+2585. The conversion rate on the ATM that I used with foreign currency was wrong.
+2586. why is the exchange rate for a Foreign ATM different
+2587. My cash withdrawal charged me the wrong exchange rate
+2588. I withdrew some cash out of the ATM over the holiday. It seems that I was charged some outrageous fees. I would not have done that had I been aware of these outrageous charges!
+2589. The exchange rate for my withdrawal isn't correct and doesn't match the actual exchange rate.
+2590. Can you explain your exchange rate policy? I don't think I received the correct amount of cash in my ATM transaction.
+2591. My ecchange rate was wrong for a cash transaction.
+2592. I expected a higher exchange rate when I withdrew money. Can you tell me current exchange rates?
+2593. The see the rate applied to my transaction was wrong at the atm.
+2594. The rate of exchange isn't right for my cash withdrawal.
+2595. I took out cash abroad and the exchange rate isn't correct.
+2596. I used an ATM in a foreign currency but the rate applied is wrong!
+2597. how do you determine your exchange rates because one of yours was off when i got cash
+2598. I used the ATM machine to get money out for Holiday shopping and saw the outrageous charges. Why is that? I would not have used the ATM if I had known!
+2599. The cash withdrawal exchange rate is not correct.
+2600. Is there a local ATM that will provide British pounds, I have no money for my homeward journey and do not feel comfortable waiting until  I arrive in Britain. Will a withdrawal involve extra charges?
+2601. can i get a description of how to use a disposable virtual card
+2602. Can I create a disposable virtual card?
+2603. What can you tell me about getting a virtual disposable card?
+2604. I would like to order a disposable virtual card. How can I do this?
+2605. how do VR cards work
+2606. What is a disposable virtual card?
+2607. I would like a temporary virtual card
+2608. How do the disposable cards work?
+2609. How do I use a disposable virtual card?
+2610. Where's the best place to get a disposable virtual card?
+2611. Can you explain the disposable cards to me?
+2612. Is there anyway, I can get a disposable virtual card?
+2613. I just purchased a disposable virtual card. Am I able to use it for online purchases immediately?
+2614. how secure is a disposable virtual card
+2615. What do I do to get a disposable virtual card?
+2616. I want to get a disposable virtual card.
+2617. Can you explain disposable cards?
+2618. how do i get a virtual card for one time use
+2619. May I get a disposable virtual card as well?
+2620. Can i get a single use virtual card
+2621. I would like to create a disposable virtual card. How do I go about doing that?
+2622. I have a disposable virtual card here, so would you tell me what to do with it?
+2623. how does a virtual card work
+2624. What is the process of obtaining a disposable virtual card
+2625. What does a disposable virtual card do?
+2626. When can I order a disposable virtual card?
+2627. Is it possible to also get a disposable virtual card?
+2628. How do I obtain a disposable virtual card?
+2629. How would you use a disposable card?
+2630. I need a disposable virtual card, how do I get one?
+2631. How do disposable cards work?
+2632. Is there a disposable virtual card I can order?
+2633. Where can I get a disposable virtual card?
+2634. Will I be able to get a disposable virtual card as well?
+2635. Hello! I need to order a disposable virtual card. Where can I do that at?
+2636. where do I request a disposable virtual card?
+2637. Can i get a throw away card
+2638. how many transactions can i make with a disposable card
+2639. What are disposable cards?
+2640. what's the process for getting a disposable virtual card?
+2641. The app denied my topped up.
+2642. Heyy I tried to top up with my card today but it failed! I just got the couple days before but it has worked last time. What's going on, can you double check please?
+2643. I have a top up that didn't go through.  Why?
+2644. So, I tried topping up my card for the today. Unfortunately, it failed. A couple of days back I used it and it works fine. Can you double check and tell me what's going on?
+2645. Why did the app deny my top up?
+2646. please tell me why my top-up failed.
+2647. My top-up isn't working.
+2648. I attempted to top up but the app denied it.
+2649. What reason did my top-up fail for?
+2650. Why didn`t my topup go through?
+2651. How can I check to see if my top-up worked?
+2652. My top up didn't work.
+2653. My top up failed.
+2654. Why would my topup not go through?
+2655. Why caused my top up to not work?
+2656. Why did my top up not work?
+2657. Why was my top-up unsuccessful?
+2658. My funding to my card didn't go through.
+2659. I need to know why my credit card was declined for top up? What is the deal here and why did it not go through?
+2660. I topped up but the app did not accept it.
+2661. The app denied my top-up
+2662. I think my top up did not work
+2663. My top up was denied in the app.
+2664. Can you tell me if my pop-up went through?
+2665. can you check why I wasn't able to top up?
+2666. How did my top-up fail?
+2667. My top-up failed, WHY?
+2668. I tried to top up. Why was it denied?
+2669. What's the deal? My card was just denied for top up. Why is it not going through?
+2670. I don't think my top up is working correctly
+2671. The app won't let me top up my account
+2672. I'm not sure why my top up request was denied
+2673. Why can't I top up?
+2674. My top-up has failed.
+2675. Problems with top up
+2676. I really need money from my card today, but my card is getting declined. Please help!!
+2677. How do I know if my top up was unsuccessful?
+2678. I'm pretty sure my top up failed. How do I fix this?
+2679. why isnt top up working
+2680. Can you tell me why my top up didn't work?
+2681. I made a transfer a few hours ago from a UK banking account.  I do not yet see the transfer.  Please check on this for me.
+2682. the balance on my account didnt change when i transferred money
+2683. How long will it take for my transferred money to show up?
+2684. Why didn't my balance change after I transferred some money?
+2685. When will my balance update after a transfer?
+2686. How long does it take for an international transfer into my account?
+2687. The amount of time that transfers usually take from a UK account is what?I just completed a transfer and it is not showing up at all. I'm wondering at this point if everything is actually okay.
+2688. When will my transfer be available in my account.
+2689. I didn't get the money I transferred
+2690. I just completed a bank transfer and the balance didn't update
+2691. I transferred some money but I think it has gotten lost somewhere.
+2692. How long does a UK transfer take?
+2693. Hello I made a bank transfer couple hours ago from my UK account but it doesn't show up yet. Can you please check if everything is alright with it?
+2694. I made a transfer and am still waiting.
+2695. I made an out of country transfer and it hasn't went through yet.
+2696. After the transfer, the balance did not update.
+2697. Could you please check one of my transfer which i made few hours ago from my UK bank account, as its not showing yet.
+2698. I had cash transferred but the balance did not change.
+2699. I can't see my latest bank transfer
+2700. My bank transfer is still not showing up in my account.
+
+Return ONLY a JSON array, one object per query, in the same order. Each object must have exactly two keys:
+- "id": the query number (2551 to 2700)
+- "intent": the exact intent name from the list above (lowercase with underscores)
+
+No commentary. No markdown code fences. No explanation. Just the JSON array starting with [ and ending with ].

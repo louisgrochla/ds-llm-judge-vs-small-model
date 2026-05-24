@@ -1,0 +1,240 @@
+You are an intent classifier for a banking customer-service chatbot.
+
+For each user query below, assign it to exactly one of the following 77 intents:
+
+- activate_my_card
+- age_limit
+- apple_pay_or_google_pay
+- atm_support
+- automatic_top_up
+- balance_not_updated_after_bank_transfer
+- balance_not_updated_after_cheque_or_cash_deposit
+- beneficiary_not_allowed
+- cancel_transfer
+- card_about_to_expire
+- card_acceptance
+- card_arrival
+- card_delivery_estimate
+- card_linking
+- card_not_working
+- card_payment_fee_charged
+- card_payment_not_recognised
+- card_payment_wrong_exchange_rate
+- card_swallowed
+- cash_withdrawal_charge
+- cash_withdrawal_not_recognised
+- change_pin
+- compromised_card
+- contactless_not_working
+- country_support
+- declined_card_payment
+- declined_cash_withdrawal
+- declined_transfer
+- direct_debit_payment_not_recognised
+- disposable_card_limits
+- edit_personal_details
+- exchange_charge
+- exchange_rate
+- exchange_via_app
+- extra_charge_on_statement
+- failed_transfer
+- fiat_currency_support
+- get_disposable_virtual_card
+- get_physical_card
+- getting_spare_card
+- getting_virtual_card
+- lost_or_stolen_card
+- lost_or_stolen_phone
+- order_physical_card
+- passcode_forgotten
+- pending_card_payment
+- pending_cash_withdrawal
+- pending_top_up
+- pending_transfer
+- pin_blocked
+- receiving_money
+- Refund_not_showing_up
+- request_refund
+- reverted_card_payment?
+- supported_cards_and_currencies
+- terminate_account
+- top_up_by_bank_transfer_charge
+- top_up_by_card_charge
+- top_up_by_cash_or_cheque
+- top_up_failed
+- top_up_limits
+- top_up_reverted
+- topping_up_by_card
+- transaction_charged_twice
+- transfer_fee_charged
+- transfer_into_account
+- transfer_not_received_by_recipient
+- transfer_timing
+- unable_to_verify_identity
+- verify_my_identity
+- verify_source_of_funds
+- verify_top_up
+- virtual_card_not_working
+- visa_or_mastercard
+- why_verify_identity
+- wrong_amount_of_cash_received
+- wrong_exchange_rate_for_cash_withdrawal
+
+User queries (numbered):
+
+1501. I found a charge for a direct debit that was not made by me.
+1502. I am seeing a weird payment showing up that I know I did not make, how can I get it cancelled?
+1503. This Direct Debit payment may not be right.
+1504. why does the app show a direct debit payment that I did not authorize
+1505. Can I dispute a payment even if I notice it several weeks after it was made?
+1506. It seems there is an incorrect listing of a direct debit payment on my app that I did not make
+1507. I don't think I made this charge on my debit statement.
+1508. I have a direct debit charge that I do not recognize
+1509. I didn't make this direct debit transaction
+1510. There's a direct debit on my account that I didn't authorize
+1511. I understand that this is extremely late. After going over my transactions for the last couple of months I noticed a large charge that I'm sure I did not make. Is there anyway I can still dispute this?
+1512. I don't recognize a debit payment that was made and would like to find out about the payment.
+1513. I am concerned about the security in my account and would like to make a dispute.
+1514. Why is there a direct debit I didn't make showing in the app?
+1515. There is a direct debit I do not recognise in my statement
+1516. I have a direct debit transaction I have not set up, but would like to .
+1517. Someone has taken my money and I don't know who
+1518. I was charged on my account that shouldn't be there.
+1519. There's a direct debit I wish to dispute
+1520. Why was my account deducted from a seller when I didn't approve of it?
+1521. What do I do if I forget my passcode?  Because I did.
+1522. I can't find my password
+1523. How do I retrieve my passcode?
+1524. My passcode doesn't seem to be working
+1525. I lost my password
+1526. My password isn't being accepted and I need to reset it.
+1527. Something is wrong with my password.
+1528. Something is wrong with my passcode
+1529. How do I reset a forgotten passcode, please?
+1530. I can't recall my passcode and need to reset it.
+1531. Can I be given a new passcode?
+1532. I do not know my passcode.
+1533. I don't remember my code to get into the app.
+1534. I no longer have my passcode.
+1535. Why won't my passcode work?
+1536. Can I resent my passcode?
+1537. I need to reset my passcode. How do I do it?
+1538. Show me please how to reset my passcode.
+1539. Help me reset the passcode.
+1540. I have forgotten my passcode to access my app
+1541. What should I do if the passcode doesn't work for me?
+1542. I do not remember the code, what should I do?
+1543. Where can I reset the passcode?
+1544. I need help resetting my passcode to access my app.
+1545. What steps do I take to receive another passcode?
+1546. I forgot my password
+1547. I forgot my code to get into the app.
+1548. I have forgotten my password.
+1549. I forgot the code to access the app.
+1550. Is there a way to reset my passcode?
+1551. Can you help me reset my password?
+1552. Can I reset my password?  I don't know what it is.
+1553. How do I reset the passcode?
+1554. What should I do if I forgot my passcode?
+1555. My passcode doesn't work
+1556. Tell me how to reset the passcode.
+1557. I need a new passcode.
+1558. I don't have my access code for the app.
+1559. Can you tell me what to do to reset my passcode?
+1560. What is the code I need to get into the app?
+1561. Can you tell me why you won't let me get my own money out of the money machine? I know I used the right PIN.
+1562. My withdrawal was cancelled.
+1563. This is very frustrating. I can't get my card to work on any ATM I try and I've tried 3 of them so far. What's going on? Can you please fix this issue immediately?
+1564. The ATM did not allow me to withdraw
+1565. Why was my ATM transaction cancelled?
+1566. The ATM keeps declining my card. I tried at a couple different ATMs. Can you tell me if there's a problem with my account?
+1567. I was at the ATM trying to made a withdraw and I was declined.
+1568. The ATM didn't let me get any cash
+1569. I want to know why I have been unable to withdrawn funds.
+1570. I need your help to check my account, please! My card keeps being declined at the ATM, and I've already tried two different ones!
+1571. Hi, My card withdrawal was declined this morning. It was working fine till yesterday. Please check and inform me.
+1572. Hi, I was trying to use my card but it was declining by ATM. I have cross checked with two different ATMs but i was facing the same issue. Could you please check my account.
+1573. I tried to make a cash withdrawal and it was declined. Why did this happen?
+1574. I can't get money out of the ATM
+1575. The ATM is declining my card. I tried at two different ATMs. Can you tell me if there's anything wrong with my account?
+1576. The withdrawal was declined I am unsure as to why this happened?
+1577. I was declined when I tried to get cash.
+1578. Why was I declined at the ATM today when I was trying to make a withdraw?
+1579. What are some reasons that would cause ATM machines to decline my card? It has happened to me multiple times!
+1580. Why did the ATM machine fail to give me a cash withdrawal?
+1581. My ATM transaction was unsuccessful.
+1582. I attempted to get cash but was declined.
+1583. I tried to withdraw money but I was declined!
+1584. How come I can't take money out of the ATM?
+1585. The ATM keeps declining my card. I tried at two different ATMs. Can you tell me if there's an issue with my account?
+1586. Why was my cash withdrawal declined?
+1587. Why could I not get cash?
+1588. why couldn't I get cash in the ATM?
+1589. Why can't I get cash?
+1590. Why didn't the ATM give me my money?
+1591. i tried to withdraw money from an atm and i was declined on front of my friends. Why did this happen?
+1592. The ATM isn't giving out any money.
+1593. Why was I declined getting cash?
+1594. I couldn't get cash at the atm
+1595. Oh my goodness, my card has been declined twice at ATM! I tried two different ATM, but each one declined my card! Can you tell me what's going on with my account?
+1596. Why could I not choose cash at the ATM?
+1597. My cash withdrawl was declined why?
+1598. Is there a reason that the ATM declined my transaction?
+1599. The cash I tried to draw from the ATM was not approved.
+1600. atm would not give me cash
+1601. My card payment is still on hold, why is it so?
+1602. Why is my payment pending?
+1603. My card payment is still pending.
+1604. How do i finalize a card payment
+1605. Why is my card payment showing as pending?
+1606. Why has my payment not gone through?
+1607. Please help me to know the status of my card payment as its pending since a while.
+1608. I recently made a payment, and it is showing up in my account as "pending". What does that mean?
+1609. What does it mean by pending payment?
+1610. When will my card payment be done pending?
+1611. I made this payment days ago so why hasn't it gone through yet?
+1612. I am seeing pending from the card payment I made.
+1613. My card payment is showing pending.
+1614. I bought some stuff this morning but the payment shows as pending
+1615. I am waiting for a payment to go through.
+1616. How long does an item I bought show as pending?
+1617. What is a pending payment?
+1618. I would like to know why my purchases from this morning are still pending.
+1619. Why is there a pending transaction on my card?
+1620. My card payment is pending.
+1621. Why is a payment showing up on my card as pending?
+1622. I made a purchase and it says it's pending. What does that mean?
+1623. How long do card transactions take to clear?
+1624. what does pending mean?
+1625. How long will this card payment stay pending?
+1626. My payment still hasn't processed!
+1627. I was double charged, and the second charge is showing as "pending". How long will it be before I get my money back once the second charge has been refunded?
+1628. I have waited 15 days, but my payment still hasn't cleared.
+1629. Why would I have a pending payment?
+1630. Explain what the pending payment means?
+1631. Why are my payments showing pending?
+1632. My card is still pending, I've been waiting a while.
+1633. How long does it take for a payment to go thru? I made one a few days ago and it has not been cleared yet.
+1634. I bought some things this morning but the payment shows that it is pending
+1635. How long does it take to authorise a payment?
+1636. I had a payment that I made and it's been some amount of time and would like to know when it's suppose to go though.
+1637. What does a pending transaction mean?
+1638. I have paid by my card but payment is still its coming as pending. I think there is some issue please check and let me know when the status will complete.
+1639. I have a pending payment in my account that I paid a while back ago and it still hasnt gone through. Why would it show pending for so long?
+1640. I have a pending payment from stuff I bought this morning.
+1641. My phone was stolen
+1642. My phone was stolen yesterday.  What should I do?
+1643. If my phone is missing, can I block someone from using the app?
+1644. I think my phone is either lost or stolen.
+1645. If I was mugged and lost everything, how do I access my account and app?
+1646. I can't find my phone.
+1647. I've lost track of my phone or someone stole it.
+1648. I'm not sure where my phone is, I think someone stole it or it's lost.
+1649. Can I used my card even if my phone has been stolen?
+1650. My phone was stolen, what do I do?
+
+Return ONLY a JSON array, one object per query, in the same order. Each object must have exactly two keys:
+- "id": the query number (1501 to 1650)
+- "intent": the exact intent name from the list above (lowercase with underscores)
+
+No commentary. No markdown code fences. No explanation. Just the JSON array starting with [ and ending with ].

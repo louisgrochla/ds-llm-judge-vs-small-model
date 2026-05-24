@@ -1,0 +1,240 @@
+You are an intent classifier for a banking customer-service chatbot.
+
+For each user query below, assign it to exactly one of the following 77 intents:
+
+- activate_my_card
+- age_limit
+- apple_pay_or_google_pay
+- atm_support
+- automatic_top_up
+- balance_not_updated_after_bank_transfer
+- balance_not_updated_after_cheque_or_cash_deposit
+- beneficiary_not_allowed
+- cancel_transfer
+- card_about_to_expire
+- card_acceptance
+- card_arrival
+- card_delivery_estimate
+- card_linking
+- card_not_working
+- card_payment_fee_charged
+- card_payment_not_recognised
+- card_payment_wrong_exchange_rate
+- card_swallowed
+- cash_withdrawal_charge
+- cash_withdrawal_not_recognised
+- change_pin
+- compromised_card
+- contactless_not_working
+- country_support
+- declined_card_payment
+- declined_cash_withdrawal
+- declined_transfer
+- direct_debit_payment_not_recognised
+- disposable_card_limits
+- edit_personal_details
+- exchange_charge
+- exchange_rate
+- exchange_via_app
+- extra_charge_on_statement
+- failed_transfer
+- fiat_currency_support
+- get_disposable_virtual_card
+- get_physical_card
+- getting_spare_card
+- getting_virtual_card
+- lost_or_stolen_card
+- lost_or_stolen_phone
+- order_physical_card
+- passcode_forgotten
+- pending_card_payment
+- pending_cash_withdrawal
+- pending_top_up
+- pending_transfer
+- pin_blocked
+- receiving_money
+- Refund_not_showing_up
+- request_refund
+- reverted_card_payment?
+- supported_cards_and_currencies
+- terminate_account
+- top_up_by_bank_transfer_charge
+- top_up_by_card_charge
+- top_up_by_cash_or_cheque
+- top_up_failed
+- top_up_limits
+- top_up_reverted
+- topping_up_by_card
+- transaction_charged_twice
+- transfer_fee_charged
+- transfer_into_account
+- transfer_not_received_by_recipient
+- transfer_timing
+- unable_to_verify_identity
+- verify_my_identity
+- verify_source_of_funds
+- verify_top_up
+- virtual_card_not_working
+- visa_or_mastercard
+- why_verify_identity
+- wrong_amount_of_cash_received
+- wrong_exchange_rate_for_cash_withdrawal
+
+User queries (numbered):
+
+1801. My credit card was declined.
+1802. The new card that was just sent to me was declined multiple times yesterday when I tried to use it at a restaurant to pay for my dinner.  I am really disappointed  and embarrassed that my card was denied when I tried to use it to pay for my friend's birthday dinner.
+1803. Why was my card payment declined?
+1804. I was trying to purchase something at the store today and my card has been declined.  Why has this happened?
+1805. My payment has been declined, I thought this issue was fixed!
+1806. My card was declined in a shop
+1807. Why did it decline my payment?
+1808. My card declined
+1809. Can you look at my account ans see why my card was declined
+1810. I was out today looking forward to pay with my new card, turns out the payment just kept getting declined. This is really sad, what's going on?
+1811. Why was a transaction on my card declined?
+1812. My new card keeps getting declined. I was very excited to use it for the first time today. Why is this doing this?
+1813. My latest payment was declined, I was told everything was back to working order. What happened?
+1814. I know I have enough funds in my account but my card payment hasn't worked for some reason. What do I do?
+1815. Why doesn't the card payment work
+1816. I'm really stuck. I don't know why but my card payment has not gone through.
+1817. I have a card payment that was declined, but why?
+1818. Do you know why my card payment did not work?
+1819. Something is wrong with my payment account since it has been declined
+1820. Why are you declining my payment? Everything was fine.
+1821. I don't know why my payment didn't work.
+1822. My card payment did not work.
+1823. Why is my debit card being declined when I have money?
+1824. My card was not accepted.
+1825. I have no idea why my card payment did not work.
+1826. My card payment didn't work, can you help?
+1827. My card was rejected at the store for some reason, can you look into this for me?
+1828. Please explain why my card was declined?
+1829. Hello, I am facing the issue with my new card as payments are declining again and again. Please help me in this issue.
+1830. Do you know why my card payment is declined?
+1831. Why was my Payment declined
+1832. They declined my card payment.
+1833. Why has my card payment been declined?
+1834. I finally got my new card and was very excited to use it today. However, my payment kept declining. What is happening?
+1835. My card payment did not complete.
+1836. My card didn't work in one of the shops.
+1837. Card payment declined?
+1838. I tried using my card and it kept getting declined, Why?
+1839. How do you fix  my card payment?
+1840. Why do you keep declining my payment? I tried several times already with this card and it's just not working
+1841. I did transfer, why is it pending
+1842. How long for money transfer to show?
+1843. Why is my transfer not done yet?
+1844. I have a pending transfer
+1845. I am waiting for a pending money transfer to process.
+1846. i transfered however its still pending
+1847. I have a transfer that's pending and wanted to know how long it is going to take to process?
+1848. So the transfer finally worked but now it's been pending for quite a long time. How long do you expect me to wait for it? It's quite urgent
+1849. I had made a transfer but its still pending.
+1850. I submitted my transfer but it has been pending for quite a while and I was wondering what takes so long? why hasn't it completed
+1851. How can I speed up a transfer?  Mine is pending.
+1852. How long can an EU transfer take?
+1853. My transfer is still coming up as pending.
+1854. I'm trying to transfer money to another country. It's just pending and not sending. My account details are correct. Please help me.
+1855. My transfer is still pending and I know the account numbers are correct.  Please help.
+1856. I transferred money yesterday, but it still isn't available?
+1857. How long does a transfer stay pending?
+1858. How long do transfer pend for?
+1859. Why hasn't my transfer gone through yet?
+1860. When will the transfer go through?
+1861. Please explain why the transfers shows up as pending?
+1862. I double checked that I have the correct account details , they're right for sure. Transfer is still pending since forever. What should be done now?
+1863. When will my transfer go through?
+1864. What is the cause that the transfer shows as pending?
+1865. When will the transfer be completed?
+1866. Pending transfer?
+1867. I would like to know why my payment is still pending, can you help?
+1868. Someone transferred money to me and it doesn't show
+1869. How long does a transfer take to be confirmed?
+1870. I made a transfer 12 hours ago. Why is it still listed as pending?
+1871. Why does my transfer say "pending"?
+1872. How long can I expect a transfer to pend for?
+1873. For how long will my transfer be pending?
+1874. Transferring money in 2018 to another country shouldn't take this long. My transfer has been pending for too long. I verified my account details are correct.
+1875. Why is a money transfer not showing?
+1876. The transfer is coming up as pending the payment is due today. Will I be charged a fee?
+1877. I am still waiting for a money transfer to show
+1878. My transfer hasn't gone through yet.
+1879. I am confused as to why my transfer could still be pending.
+1880. How long does it take for a money transfer to show?
+1881. Can you remove my account please?
+1882. i want to close an account but im not sure about setting up a new one in the future, what do you recommend
+1883. My account needs to be deleted.
+1884. I would like to delete my account please.
+1885. What steps do I need to take to close my account?
+1886. I'm tired of all the problems I've had. I want to quit this account!
+1887. Please delete my account right now!
+1888. I want to close my account
+1889. unhappy with you, how to delete account
+1890. I would like to delete my account.
+1891. I am highly unsatisfied with this company and want to delete my account!
+1892. I don't like your company. Delete my account.
+1893. I would like to close my account.
+1894. This company is terrible! Can you delete my account?
+1895. This company is bad, please delete my account.
+1896. please delete my account, your services are not up to par.
+1897. I need your help in deleting my account.
+1898. The service of this company sucks, I need to terminate my account.
+1899. Delete this account!
+1900. How do I get rid of my account ASAP?
+1901. This company isn't good, I would like to delete my account.
+1902. Can you delete my account please?
+1903. I am not satisfied with your company and would like to delete my accounts!
+1904. Please delete my account. I am not happy with the service from your company.
+1905. Please terminate my account.
+1906. I am sick of this damn company and want to close out my account.
+1907. Please close my account. I am unsatisfied with your service.
+1908. Please delete my account.
+1909. Your service is terrible,.  Delete my account,
+1910. I want my account deleted!
+1911. I am extremely unhappy with this app and want to get rid of my account?
+1912. How do I delete my account?
+1913. This company sucks! Can you delete my account?
+1914. I wish to close my account. I do not like the service you provide.
+1915. Can you help me get rid of my account?
+1916. I don't find your services useful anymore, how do I delete my account?
+1917. Please delete my account, this company is not working for me!
+1918. I want to delete my account. I'm unhappy with the service you're providing.
+1919. Can you tell me how to close my account?
+1920. This company sucks! Can you terminate my account?
+1921. What do I do if an ATM "stole" my card?
+1922. How do I retrieve my card from the machine?
+1923. I was retrieving money and my card wouldn't remove.
+1924. What do I do since the machine swallowed my card. I need one.
+1925. HOw do I get my card back after the ATM has pulled it in?
+1926. Atm took my card
+1927. Is there a way I can get my ATM card back from the machine?
+1928. I think the atm ate my card.
+1929. The ATM didn't give me the card back!
+1930. How can I get my card out of the damn ATM?
+1931. The atm won't give my card back!
+1932. How can I get my card back out?
+1933. The ATM machine stole my card.
+1934. The ATM at Metro bank on High St. Kensington swallowed my card. How do I get it back?
+1935. My ATM got stuck and I'm not sure what to do.
+1936. The ATM ate my card.
+1937. The ATM won't give me my card back.
+1938. My card was confiscated by an ATM. How do I get my card back?
+1939. What do I do if the ATM ate my card?
+1940. ATM still has my card
+1941. What do I do if an ATM ate my card?
+1942. What happens if the ATM doesn't give me back my card?
+1943. I can't pull my card out of the ATM. Help me.
+1944. I have a problem!  The ATM stole my card!
+1945. Why would an ATM swallow my card?
+1946. My card was taken by the ATM.
+1947. Help!  The atm won't give me my card back.
+1948. The stupid machine just swallowed my card!! I need a new one ASAP
+1949. How do I retrieve a trapped card from a ATM?
+1950. My card is stuck in the ATM, what can I do?
+
+Return ONLY a JSON array, one object per query, in the same order. Each object must have exactly two keys:
+- "id": the query number (1801 to 1950)
+- "intent": the exact intent name from the list above (lowercase with underscores)
+
+No commentary. No markdown code fences. No explanation. Just the JSON array starting with [ and ending with ].

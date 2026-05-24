@@ -1,0 +1,241 @@
+You are an intent classifier for a banking customer-service chatbot.
+
+For each user query below, assign it to exactly one of the following 77 intents:
+
+- activate_my_card
+- age_limit
+- apple_pay_or_google_pay
+- atm_support
+- automatic_top_up
+- balance_not_updated_after_bank_transfer
+- balance_not_updated_after_cheque_or_cash_deposit
+- beneficiary_not_allowed
+- cancel_transfer
+- card_about_to_expire
+- card_acceptance
+- card_arrival
+- card_delivery_estimate
+- card_linking
+- card_not_working
+- card_payment_fee_charged
+- card_payment_not_recognised
+- card_payment_wrong_exchange_rate
+- card_swallowed
+- cash_withdrawal_charge
+- cash_withdrawal_not_recognised
+- change_pin
+- compromised_card
+- contactless_not_working
+- country_support
+- declined_card_payment
+- declined_cash_withdrawal
+- declined_transfer
+- direct_debit_payment_not_recognised
+- disposable_card_limits
+- edit_personal_details
+- exchange_charge
+- exchange_rate
+- exchange_via_app
+- extra_charge_on_statement
+- failed_transfer
+- fiat_currency_support
+- get_disposable_virtual_card
+- get_physical_card
+- getting_spare_card
+- getting_virtual_card
+- lost_or_stolen_card
+- lost_or_stolen_phone
+- order_physical_card
+- passcode_forgotten
+- pending_card_payment
+- pending_cash_withdrawal
+- pending_top_up
+- pending_transfer
+- pin_blocked
+- receiving_money
+- Refund_not_showing_up
+- request_refund
+- reverted_card_payment?
+- supported_cards_and_currencies
+- terminate_account
+- top_up_by_bank_transfer_charge
+- top_up_by_card_charge
+- top_up_by_cash_or_cheque
+- top_up_failed
+- top_up_limits
+- top_up_reverted
+- topping_up_by_card
+- transaction_charged_twice
+- transfer_fee_charged
+- transfer_into_account
+- transfer_not_received_by_recipient
+- transfer_timing
+- unable_to_verify_identity
+- verify_my_identity
+- verify_source_of_funds
+- verify_top_up
+- virtual_card_not_working
+- visa_or_mastercard
+- why_verify_identity
+- wrong_amount_of_cash_received
+- wrong_exchange_rate_for_cash_withdrawal
+
+User queries (numbered):
+
+1351. Who else can top up my account
+1352. Why is my money gone right when I attempted to top up
+1353. How do i transfer money using my credit card?
+1354. My friends want to top up my account
+1355. Who can top up my accounts?
+1356. show me how to top up with my card
+1357. I topped up my card but the money disappeared.
+1358. Why don't I see my top up in my wallet?
+1359. Why can't I see the top-up amount I just added to my account?
+1360. Are my friends able to top up my account?
+1361. How can i get multiple disposble cards.
+1362. Can I make many disposable cards per day?
+1363. I need to use my disposable card multiple times a day, is there a cutoff limit?
+1364. How do I make more than one disposable card in a day?
+1365. Can I have more than one disposable card?
+1366. what is the disposable cards limit?
+1367. What's the most disposable cards I can have?
+1368. Do these virtual cards have any caps on using them?
+1369. How many disposable cards can I have?
+1370. What is the amount of disposable cards I can have each day?
+1371. How many disposable cards per day am I allowed to have?
+1372. How many card payments can I use on a disposable card?
+1373. What if I need multiple disposable cards?
+1374. If I have more than one disposable card, can I make five payments on each of them?
+1375. Are you able to explain the restrictions of the disposable cards?
+1376. What is the maximum number of transactions I can make with one card?
+1377. What is the limit to number of transactions I can do with a disposable card?
+1378. How many disposable cards is the limit?
+1379. Tell me how many transactions I can do with a disposable card.
+1380. I have to have several disposable cards per day.
+1381. I would like to know any restrictions for the disposable cards.
+1382. How can I create many temporary cards daily?
+1383. Is it possible to make several disposable cards in a day?
+1384. How many disposable cards can I make in a single day?
+1385. Is there a limit to how many transactions I can make on one disposable card?
+1386. Are there any limits to how many disposable cards I can use?
+1387. Can you explain the virtual cards limit?
+1388. How many disposable virtual cards can I have?
+1389. I need to create several disposable cards per day.
+1390. Are there any hindrances to using a disposable virtual card?
+1391. How many disposable cards can I own?
+1392. How many virtual cards do I get?
+1393. What is the limit to disposable cards you can have?
+1394. How many times can I use a disposable card?
+1395. What can I use a virtual disposable card for?
+1396. Do you know what the restriction of the disposable cards are?
+1397. What are the limits for disposable virtual cards?
+1398. What are the limits to using disposable virtual cards?
+1399. How many transactions can I do with one disposable card?
+1400. How many times can I use the disposable virtual card I have?
+1401. I think someone is using my card to make transactions I don't remember.
+1402. someone is using my account
+1403. Someone I don't know has used my card without permission.
+1404. My card was used without my permission.
+1405. Can I freeze my card right now?
+1406. Freeze my account it's been hacked.
+1407. There are transactions I didn't make, someone else must have used my card.
+1408. Can you freeze my card because someone used it while I was out of town. I did not make these purchases.
+1409. Someone is using my account to do online shopping! Please freeze it asap
+1410. Someone else may be using my card.  There are transactions I don't recognize.
+1411. What do I do to stop unauthorized transactions on my card? I was never in the place from which the transactions on my bill were made and I never made them. Please help!
+1412. What do I do if I think my card was improperly used?
+1413. How can I stop fraud on my account right now?
+1414. I think my identity has been stolen, can you check on unauthorized charges?
+1415. I think someone else is using my card.  There are transactions I didn't make.
+1416. I don't recognize some of the transactions on my card, I think someone must have gotten my card info and used it.
+1417. Can I use app to freeze account and dispute fraud?
+1418. My card is being used online to make a bunch of purchases! Someone else is using it fraudulently. Can you help me freeze it?
+1419. Someone has my card number, freeze my account.
+1420. I see random purchases to my account, was it hacked?
+1421. It seems someone used my card! There are a few transactions from a small town in the middle of nowhere that I definitely have not made! Please prevent them from using it immediately!
+1422. How do I freeze my card using the app?
+1423. My card has been compromised
+1424. What should I do if I think that someone else may be using my card.
+1425. The transactions showing up are strange, I think my card was used without me knowing.
+1426. How do I freeze my account?
+1427. I'm not certain, but someone may be using my card.
+1428. How do I freeze my card? I think someone is using it to make a bunch of online transactions.
+1429. I think someone got my card details and used it because there are transactions i don't recognize. What do I do now?
+1430. Someone else used my card!
+1431. I believe someone is using my card without my agreement!
+1432. If I feel someone has my card information, can I get a new card?
+1433. There are a few transaction that I don't recognize, I think someone managed to get my card details and use it.
+1434. I think someone has access to my card numbers that shouldn't.
+1435. I think my child used my card while I wasn't home.
+1436. What do I do if I think someone managed to get my card information?
+1437. I think someone copied the numbers on my card and is using them.
+1438. What should I do if I think someone is using my card.
+1439. Can I use app to freeze my card and dispute fraud?
+1440. Someone else is using my card, freeze it.
+1441. Do all ATMs take this card?
+1442. Which ATMs accept this card?
+1443. Where is the closest Mastercard ATM?
+1444. Is there a list of ATM machines?
+1445. Are there any specific ATMs that this card can be used at?
+1446. How do I know which ATMs will accept this card?
+1447. Which ATM's accept my card?
+1448. Is there any nearby ATM's?
+1449. Where are the locations of ATMs that accept this card?
+1450. Which ATMs accept this placard ?
+1451. Help me locate the nearest ATM.
+1452. What ATMs is the card okay to use at?
+1453. How can I find the nearest ATM?
+1454. What kind of ATM's can I use?
+1455. How can I withdraw money?
+1456. How many miles away is the ATM?
+1457. From where can I withdraw?
+1458. Which ATM's will accept my card?
+1459. At what ATMS am I able to use the card?
+1460. Can I use my card at any ATMs?
+1461. Can I get cash with this card anywhere?
+1462. 
+Which ATMs accept this card?
+1463. Can someone please assist me with finding my nearest ATM?
+1464. Are there any ATM machines near me?
+1465. Where is the nearest bank machine?
+1466. What type of ATMs accept this card?
+1467. Where can I use this card at an ATM?
+1468. If I have this card, which ATMs can I go to?
+1469. What ATMs can I withdraw money from?
+1470. I want to withdraw money, where can I go?
+1471. Where can I withdrawal my money?
+1472. What are the ATMs that will accept this card?
+1473. What ATMs will accept this type of card?
+1474. Where can I find an ATM to use this card?
+1475. At which ATMs can I use this card?
+1476. Are there certain ATMs that I can use this card at?
+1477. Do you know the closest ATM?
+1478. Can I use this card at an ATM?
+1479. Is there places where I can't withdraw money?
+1480. locations to withdraw money
+1481. Help me.  There is a Direct Debit that I didn't make.
+1482. There is a direct debit that's not mine.
+1483. I have a strange direct debit in my statement
+1484. I don't understand where this debit came from and want it removed.
+1485. what is this charge on my account
+1486. im so mad right now. theres several charges that I think my x boyfriend made on my card. the companys on the website wouldn't refund me my money, they told me to contact my bank. DO something please.
+1487. someone stole my money
+1488. There's a Direct Debit payment in my account that I didn't make
+1489. There's a debit on my account that I didn't do.
+1490. I may have a fraud charge on my debit statement.
+1491. Why is there a direct debit payment on my app that is not from me?
+1492. Weird charges are appearing in my debit account.
+1493. Even though it's late, I wanted to see about disputing a charge. I was just looking through my transactions over the past couple of months and noticed a pretty large amount that was not completed by me. Is this possibly something I can still do.
+1494. There was a transaction from two weeks ago from a business that I don't know. I'm fairly certain it wasn't me who made it, but is it an option to trace it to confirm?
+1495. What is this direct debit I am seeing?
+1496. There is a Direct Debit that I don't recognize.
+1497. Unknown direct deposit
+1498. There is a suspicious direct debit payment.
+1499. There is a transaction from my account that I don't recognize can you trace back the information so I can make sure it's something I did or not?
+1500. A couple weeks ago some money was deducted from my account by some seller that I don't remember. I'm pretty sure I didn't do that, but is it possible to trace back who that is just to make sure?
+
+Return ONLY a JSON array, one object per query, in the same order. Each object must have exactly two keys:
+- "id": the query number (1351 to 1500)
+- "intent": the exact intent name from the list above (lowercase with underscores)
+
+No commentary. No markdown code fences. No explanation. Just the JSON array starting with [ and ending with ].

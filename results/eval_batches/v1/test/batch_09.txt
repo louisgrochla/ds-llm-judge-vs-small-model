@@ -1,0 +1,240 @@
+You are an intent classifier for a banking customer-service chatbot.
+
+For each user query below, assign it to exactly one of the following 77 intents:
+
+- activate_my_card
+- age_limit
+- apple_pay_or_google_pay
+- atm_support
+- automatic_top_up
+- balance_not_updated_after_bank_transfer
+- balance_not_updated_after_cheque_or_cash_deposit
+- beneficiary_not_allowed
+- cancel_transfer
+- card_about_to_expire
+- card_acceptance
+- card_arrival
+- card_delivery_estimate
+- card_linking
+- card_not_working
+- card_payment_fee_charged
+- card_payment_not_recognised
+- card_payment_wrong_exchange_rate
+- card_swallowed
+- cash_withdrawal_charge
+- cash_withdrawal_not_recognised
+- change_pin
+- compromised_card
+- contactless_not_working
+- country_support
+- declined_card_payment
+- declined_cash_withdrawal
+- declined_transfer
+- direct_debit_payment_not_recognised
+- disposable_card_limits
+- edit_personal_details
+- exchange_charge
+- exchange_rate
+- exchange_via_app
+- extra_charge_on_statement
+- failed_transfer
+- fiat_currency_support
+- get_disposable_virtual_card
+- get_physical_card
+- getting_spare_card
+- getting_virtual_card
+- lost_or_stolen_card
+- lost_or_stolen_phone
+- order_physical_card
+- passcode_forgotten
+- pending_card_payment
+- pending_cash_withdrawal
+- pending_top_up
+- pending_transfer
+- pin_blocked
+- receiving_money
+- Refund_not_showing_up
+- request_refund
+- reverted_card_payment?
+- supported_cards_and_currencies
+- terminate_account
+- top_up_by_bank_transfer_charge
+- top_up_by_card_charge
+- top_up_by_cash_or_cheque
+- top_up_failed
+- top_up_limits
+- top_up_reverted
+- topping_up_by_card
+- transaction_charged_twice
+- transfer_fee_charged
+- transfer_into_account
+- transfer_not_received_by_recipient
+- transfer_timing
+- unable_to_verify_identity
+- verify_my_identity
+- verify_source_of_funds
+- verify_top_up
+- virtual_card_not_working
+- visa_or_mastercard
+- why_verify_identity
+- wrong_amount_of_cash_received
+- wrong_exchange_rate_for_cash_withdrawal
+
+User queries (numbered):
+
+1201. I cannot verify my identity
+1202. I do not have what is required to prove my identity
+1203. Why doesn't the app believe I am who I say I am?
+1204. I am having trouble verifying my identity.
+1205. what do i do if my verification failed
+1206. It is impossible to verify my identity
+1207. The app doesn't know it's me.
+1208. I'm having trouble verifying my ID.
+1209. app does not recognize me
+1210. Help my verify my id.
+1211. The app failed to verify my identity.
+1212. I can't verify my ID.
+1213. I can't prove my identity.
+1214. I am not being recognized by the app.
+1215. Why isn't my ID being verified?
+1216. The app will not let me into my account.
+1217. I am having trouble proving my identity.
+1218. I cannot prove my own identity.
+1219. My ID won't be verified!
+1220. I can not get the app to know it is me.
+1221. I can't verify my identity.
+1222. The app doesn't recognize me.
+1223. I am having difficulties to verify my identity.
+1224. The app doesn't believe that I am me
+1225. What's with not verifying my Id?
+1226. What do i need to verify my id?
+1227. I tried verifying my ID, but it won't let me.
+1228. How do I show this stupid system that this is really my identity?
+1229. I am experiencing difficulty providing my identity.
+1230. I a having trouble proving my identity
+1231. How long will it take for my ID to verify?
+1232. Why am I not able to verify my id?
+1233. It doesn't let me verify my identity.
+1234. app doesnt think its me
+1235. Why am I having trouble verifying my id?
+1236. I am having issues with identity verification
+1237. The app won't let me log in as myself.
+1238. Why can't I verify my identity?
+1239. Why can't I verify my id?
+1240. for some reason I am having a problem with verifying my identity.
+1241. What do I do with my card PIN?
+1242. Is the PIN delivered separately?
+1243. I do not have my pin
+1244. Are PIN separately?
+1245. I cannot seem to find my PIN. Where is it?
+1246. How do I set-up my PIN for the new card?
+1247. How do I find my card PIN?
+1248. is my card PIN saved in the app
+1249. I don't know where to look to find my PIN.
+1250. where in the app can i find out about my new pin
+1251. Where in the app can I find my PIN?
+1252. I just got my new card but am not sure how to check its PIN.
+1253. do i need a pin
+1254. If I need a PIN for my card, where is it located?
+1255. what is my card PIN
+1256. And what about the Card's PIN?
+1257. About this card PIN?
+1258. I received my card but not my PIN.
+1259. Why can't I see my PIN?
+1260. what is the process for setting up a pin
+1261. Does my PIN come with my card?
+1262. Where can I find the card PIN?
+1263. Why isn't my PIN available yet?
+1264. Is my PIN located on my account somewhere?
+1265. Please help in finding my card PIN, thank you!
+1266. Where is my PIN number located?
+1267. I still don't have my pin.
+1268. So what about the card PIN?
+1269. I cannot locate the card PIN.
+1270. I need my PIN
+1271. Where can I find my PIN?
+1272. When do I receive my PIN
+1273. Help me find my card pin!
+1274. Is PIN delivered separately?
+1275. I can not find my card pin.
+1276. What do I need to do for a PIN?
+1277. Why can't I find my PIN?
+1278. Where is the card PIN?
+1279. What is my card's PIN?
+1280. where can user find pin?
+1281. I like to Mastercard rather than Visa.
+1282. Do I qualify for a visa card?
+1283. How do I get a visa card?
+1284. Do you guys accept Visa or Mastercard?
+1285. Are both Visa and Mastercard accepted?
+1286. Do you guys accept mastercard or visa?
+1287. Are both Visa and Mastercard offered?
+1288. Can you give me a visa?
+1289. How to decide if I get a Visa or Mastercard?
+1290. Can I get a mastercard?
+1291. What steps must I follow to get a Visa credit card?
+1292. I'd rather get a Mastercard
+1293. Do I get a choice between Visa and Mastercard?
+1294. What do I have to do to get a Visa credit card?
+1295. I would prefer a visa card
+1296. May I choose between Visa and Mastercard?
+1297. Am I allowed to use any card to make a payment?
+1298. What are the available cards?
+1299. I want to get Visa and Mastercard
+1300. Am I able to choose my card?
+1301. are both visa and mastercard available to me?
+1302. Do you do Visa or Mastercard?
+1303. How do I select a Mastercard instead of a Visa?
+1304. I would like to apply for a visa card.
+1305. Do I get to choose between Visa and Mastercard?
+1306. We need both a visa and a Mastercard.
+1307. Hello. Can you tell me if you use Visa or Mastercard?
+1308. I'd like more information about choosing a Visa or Mastercard.
+1309. Do you have Visa or Matercard?
+1310. Is it possible to have both a Visa and a Mastercard from you?
+1311. I like Mastercard better.
+1312. Do you offer Visa or Mastercard?
+1313. I would rather the Mastercard.
+1314. Please give me both a visa and a master card.
+1315. Is it possible to receive a Visa and a MasterCard?
+1316. What major card payments are accepted?
+1317. Is Visa or Mastercard available?
+1318. Can you let me know if Visa is among the card scheme assignments?
+1319. Do you use Mastercard or Visa?
+1320. Is it possible to get a Visa here?
+1321. How can I top up my account with a card?
+1322. WHERE IS MY MONEY I WAS USING MY CARD AND IT DISAPPEARED
+1323. How can I top up by card?
+1324. What is the process for using my credit card to transfer money?
+1325. How do I top up my card using your app? I'm new to this.
+1326. Can friends add to my account
+1327. Can I top up using my car?
+1328. Why can't I see my topup in my wallet anymore?
+1329. Use credit card to transfer money
+1330. How do my friends top up my account
+1331. I followed the instructions to transfer money using my card, but then the money disappeared and I don't know what happened.
+1332. Where's the money that got charged to my card? It's not showing up in my account balance
+1333. how can i top up?
+1334. I am missing some funds from my account - I tried to transfer them using my credit card number, and it disappeared.
+1335. I have friends that would like to top-up my account is that possible?
+1336. How do I transfer money using a credit card?
+1337. Can I give my friends access to my account so they can top it up for me?
+1338. I did a top-up, but I'm not seeing it in my wallet yet.
+1339. i know i entered the right info, but my top up isn't in my balance
+1340. Will my friend be able to top off my account?
+1341. Is there a way to transfer funds directly from my card?
+1342. Why isn't my top up showing on my wallet?
+1343. I tried to top up using my card, but now the money just disappeared!
+1344. Help me transfer money to my credit card.
+1345. I tried to use my card to top up but all of the money has disappeared.
+1346. Is it possible to use my credit card to transfer money?
+1347. How can someone add money to my account?
+1348. Cannot access my top up.
+1349. Are my friends able to add funds to my account?
+1350. Can I transfer money to my credit card?
+
+Return ONLY a JSON array, one object per query, in the same order. Each object must have exactly two keys:
+- "id": the query number (1201 to 1350)
+- "intent": the exact intent name from the list above (lowercase with underscores)
+
+No commentary. No markdown code fences. No explanation. Just the JSON array starting with [ and ending with ].

@@ -1,0 +1,61 @@
+{
+  "prompt_version": "v1",
+  "dataset": "dev_slice",
+  "n_predictions": 300,
+  "n_hallucinated": 0,
+  "accuracy": 0.8166666666666667,
+  "macro_f1": 0.8076137426786777,
+  "weighted_f1": 0.8162332112332112,
+  "top_confusions": [
+    {
+      "true_intent": "direct_debit_payment_not_recognised",
+      "pred_intent": "card_payment_not_recognised",
+      "count": 3
+    },
+    {
+      "true_intent": "supported_cards_and_currencies",
+      "pred_intent": "topping_up_by_card",
+      "count": 3
+    },
+    {
+      "true_intent": "top_up_by_bank_transfer_charge",
+      "pred_intent": "receiving_money",
+      "count": 2
+    },
+    {
+      "true_intent": "verify_source_of_funds",
+      "pred_intent": "receiving_money",
+      "count": 2
+    },
+    {
+      "true_intent": "order_physical_card",
+      "pred_intent": "get_physical_card",
+      "count": 2
+    },
+    {
+      "true_intent": "top_up_reverted",
+      "pred_intent": "top_up_failed",
+      "count": 2
+    },
+    {
+      "true_intent": "card_payment_not_recognised",
+      "pred_intent": "compromised_card",
+      "count": 2
+    },
+    {
+      "true_intent": "pending_transfer",
+      "pred_intent": "transfer_not_received_by_recipient",
+      "count": 2
+    },
+    {
+      "true_intent": "get_physical_card",
+      "pred_intent": "change_pin",
+      "count": 2
+    },
+    {
+      "true_intent": "reverted_card_payment?",
+      "pred_intent": "transfer_not_received_by_recipient",
+      "count": 1
+    }
+  ]
+}

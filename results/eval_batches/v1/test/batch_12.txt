@@ -1,0 +1,240 @@
+You are an intent classifier for a banking customer-service chatbot.
+
+For each user query below, assign it to exactly one of the following 77 intents:
+
+- activate_my_card
+- age_limit
+- apple_pay_or_google_pay
+- atm_support
+- automatic_top_up
+- balance_not_updated_after_bank_transfer
+- balance_not_updated_after_cheque_or_cash_deposit
+- beneficiary_not_allowed
+- cancel_transfer
+- card_about_to_expire
+- card_acceptance
+- card_arrival
+- card_delivery_estimate
+- card_linking
+- card_not_working
+- card_payment_fee_charged
+- card_payment_not_recognised
+- card_payment_wrong_exchange_rate
+- card_swallowed
+- cash_withdrawal_charge
+- cash_withdrawal_not_recognised
+- change_pin
+- compromised_card
+- contactless_not_working
+- country_support
+- declined_card_payment
+- declined_cash_withdrawal
+- declined_transfer
+- direct_debit_payment_not_recognised
+- disposable_card_limits
+- edit_personal_details
+- exchange_charge
+- exchange_rate
+- exchange_via_app
+- extra_charge_on_statement
+- failed_transfer
+- fiat_currency_support
+- get_disposable_virtual_card
+- get_physical_card
+- getting_spare_card
+- getting_virtual_card
+- lost_or_stolen_card
+- lost_or_stolen_phone
+- order_physical_card
+- passcode_forgotten
+- pending_card_payment
+- pending_cash_withdrawal
+- pending_top_up
+- pending_transfer
+- pin_blocked
+- receiving_money
+- Refund_not_showing_up
+- request_refund
+- reverted_card_payment?
+- supported_cards_and_currencies
+- terminate_account
+- top_up_by_bank_transfer_charge
+- top_up_by_card_charge
+- top_up_by_cash_or_cheque
+- top_up_failed
+- top_up_limits
+- top_up_reverted
+- topping_up_by_card
+- transaction_charged_twice
+- transfer_fee_charged
+- transfer_into_account
+- transfer_not_received_by_recipient
+- transfer_timing
+- unable_to_verify_identity
+- verify_my_identity
+- verify_source_of_funds
+- verify_top_up
+- virtual_card_not_working
+- visa_or_mastercard
+- why_verify_identity
+- wrong_amount_of_cash_received
+- wrong_exchange_rate_for_cash_withdrawal
+
+User queries (numbered):
+
+1651. lost my phone, dont want others to use it.
+1652. I lost my phone and need help securing it.
+1653. My phone was stolen so I no longer have access to the app.
+1654. left phone at hotel, how to access app
+1655. My phone is not on me.  How can I use the app?
+1656. my phone is gone
+1657. My phone is not with me at the moment so I will not be able to access the app.
+1658. my phone was taken! can you place cancel my account so no one uses it
+1659. I lost my phone and would like to freeze my accounts.
+1660. lost phone, can i still access account?
+1661. The hotel called and said I left my phone in the room.
+1662. Someone stole my phone yesterday :( is there anything I need to do?
+1663. lost phone, dont want others to access account
+1664. I was mugged and everything taken.  What do I do to protect my account?
+1665. I believe I left my smartphone at the hotel I was staying at.
+1666. Someone attacked me yesterday and took my things, so I am unable to use the app.  I am in need of some help.
+1667. Can I still use the app if I switched phones?
+1668. I was mugged yesterday and they took everything.  I can't access my app.  What are my next steps?
+1669. I got mugged yesterday and lost access to the app. I need to regain it.
+1670. If I lost my phone, can someone use my account?
+1671. I am not able to use the app since I forgot my phone at the hotel I was staying at.
+1672. Someone stole my phone.
+1673. Someone stole my cards!
+1674. My phone is lost.  What do I do to prevent someone from using the app?
+1675. Is there anything I need to do since my phone was stolen?
+1676. I lost my phone!
+1677. I can't find my phone but it has all my credit card information.
+1678. How do I use the app if I don't have my phone with me?
+1679. I got mugged yesterday and can't use the app.
+1680. My things were stolen yesterday and I can't use any apps or anything, so I am going to need some help.
+1681. Hello- It is urgent I get a refund on this product. The merchant has not been helpful, what can I do now to get this resolved ASAP?
+1682. Can I receive a refund for my item?
+1683. Get an item refund
+1684. Would I be able to get a refund for something I bought?
+1685. I need to do a refund
+1686. I need a refund on an item I have not received.  Am I able to simply cancel the payment?  I don't know how to do this.
+1687. I would like a refund for something I bought
+1688. I want to return an item.
+1689. Can I have a refund?
+1690. I wasn't charged the correct amount for an item I purchased, how can I fix this?
+1691. Hi there! I need to cancel an order I recently made and start processing a refund. Can you please help me with this and set up the refund as soon as possible? It's very urgent.
+1692. Please stop my purchase.
+1693. I want a refund because my package has been taking too long to arrive. How do I go about doing that?
+1694. How do I apply for a refund?
+1695. Can I have an item refunded?
+1696. I ordered something ages ago online but it's simply not arriving. I've got enough! Give me back my money, I'm not paying these people.
+1697. What do I need to do to get a refund?
+1698. I need a refund?
+1699. I am unhappy with my purchase, how do I cancel the order?
+1700. I bought something but now I would like a refund. How do I do that?
+1701. How do I get refunded?
+1702. Can you cancel my purchase?
+1703. How do I cancel a previous purchase
+1704. I would appreciate it if I could get an item refunded
+1705. How do I claim a refund?
+1706. I don't want the item, I bought it on accident, can I get a refund?
+1707. Hello I changed my mind and really need a refund on one of things I bought recently. Can you please cancel the transaction and get my money back. Please it's urgent.
+1708. I would like a refund on one of your products that has been sold to me
+1709. I am not Happy with this product can i get a refund?
+1710. I want this amount reversed out of my account.
+1711. Hello! I recently made a purchase and I'm needing to cancel my order and process a refund as soon as possible.
+1712. I want to reverse a purchase. Can I cancel it?
+1713. I am chatting about an order from a long while back.  I never got it to this day and am deeply upset by this!  I want all of my money back!  I just can not accept paying for something I never got.
+1714. I bought this item and was charged the wrong amount can I get a refund?
+1715. I would like to cancel a payment. I purchased something several days ago and i still have not received it.
+1716. What's the refund process?
+1717. I want a refund for my purchase
+1718. How can I process a refund for something I purchased?
+1719. I want to get an item refunded
+1720. I need to cancel a purchase I made.
+1721. I tried to make a transfer and it was declined. Why?
+1722. Good morning. I tried to make a purchase with my credit card last night and again this morning. Both times it was declined. Can you investigate?
+1723. I am getting continuous failure for all my transfers. I have cross checked each recipient detail again and again and everything is correct.
+1724. why was my transfer declined
+1725. What would make a decline message show up during a transfer?
+1726. Why do you keep declining my transfers?it was always been working really well so far but when I tried to buy something just now the card got declined . I tried couple of times already  but same thing is happening.
+1727. How can I fix my card, it got declined twice.
+1728. Why did a transfer get declined?
+1729. My transfers are being declined. IT has always worked for me but now it's declining my card. I've tried several times.
+1730. Why did my transfer decline
+1731. The card got declined twice when I tried to use it to buy something online yesterday.
+1732. If the transfer details have already but reviewed and confirmed that they are correct, what other reason would cause my transfer to be declined?
+1733. Why did I get a transfer declined?
+1734. Why did my my transfer get declined?
+1735. How do I contact customer support about a transfer?
+1736. You keep declining my transfers? It's always been working really well so far, but when I tried to buy something just now the card got declined. I tried couple times already but same thing.
+1737. Why was I unable to do a transfer?
+1738. Trouble transferring transaction contact for help
+1739. Why could my transfer have been declined?
+1740. When I try and to buy something using my card it keeps getting declined.
+1741. I could not do a transfer because it was declined
+1742. When I submit a transfer, it is being declined.  The information I put in has been reviewed.
+1743. Why was the transfer declined?
+1744. What is the reason my transfer was declined?
+1745. My transfer got declined.
+1746. My transfer was declined
+1747. I tired to move my money, but my transfer was declined.
+1748. I would like to know why my transfer was declined.
+1749. I tried to make a transfer, but it was declined. Can you tell me why?
+1750. For what reason was my transfer declined?
+1751. My transfer has been declined and I know it should have went through.
+1752. Double check your funds may be declined
+1753. I can't transfer money from my account.
+1754. Why would my transfer be declined? I've checked that I've put in all the right details, but it is still declined.
+1755. I tried to buy something online yesterday but it kept saying declined. Tried again today but same thing happened. What's broken?
+1756. I tried to buy something online yesterday but it wouldn't stop saying declined. Tried again today but same thing happened. What's Broken?
+1757. My card is being declined online. Could you tell me what might be broken or wrong with the account?
+1758. Are there any restrictions causing my transfer to be declined?
+1759. I was attempting to purchase a golf club off eBay yesterday, but my credit card was declined. I tried multiple times, and again this morning. Can you check into my card please?
+1760. I think my transfer was declined, but why?
+1761. The refund isn't showing up on my account.
+1762. My refund is missing from my statement.
+1763. I requested a refund, and never received it. What can I do?
+1764. I was supposed to get a purchase refunded but I don't see the money in my account
+1765. There's a refund missing from my statement
+1766. I need help. I asked for a refund from a merchant a while ago, but I have not gotten my money back. I keep checking my account, but nothing is showing up. What should I do now?
+1767. I am awaiting my refund
+1768. How long does it take for a refund?
+1769. Help! I keep checking my account, but my refund is not showing. I requested that a seller refund my money a while back, but there is no money showing in my account. What can you do for me?
+1770. Can you tell me why my refund is not showing in my statement?
+1771. I asked for a refund last week but nothing has happened yet, can you help me please?
+1772. Why is my refund missing from my  statement?
+1773. Still waiting on a refund.
+1774. I requested a refund and it is missing.
+1775. Hi, As suggested by you, i have asked the seller to initiate the refund, it has been a week and i haven't received my money. Please advise.
+1776. I bought something and returned it and the money from the return isn't in my account.
+1777. Do you have any idea on when I will receive my refund? I got my statement and it was not there.
+1778. Why isn't a recent refund on my statement?
+1779. Where can I see the refund in my account
+1780. i was supposed to get a refund but my balance hasn't changed, why not?
+1781. I requested a refund from a merchant days ago but I do not see it in my account.
+1782. The refund has not appeared in my account
+1783. Did my refund go through? It's not on my statement.
+1784. My statement doesn't show that a refund has processed
+1785. I requested a refund from a store but it hasn't arrived.
+1786. I still haven't seen a refund on my account
+1787. I am missing a refund.
+1788. My refund doesn't seem to be showing on my statement.
+1789. I am not seeing a refund in my statement.
+1790. Why can't I see a recent refund in my statement?
+1791. I did what you told me earlier and contacted the seller for a refund directly, but nothing is happening! It's been a week and I still haven't got anything. Please just give me back my money
+1792. Where is my refund? I have been checking my account all day.
+1793. It's been a week and I have done everything that I was asked to do and still nothing. I have contacted the seller and have not gotten a response. Please understand my frustration and put the money back in my account.
+1794. My refund is missing
+1795. Why doesn't a return show up im my account from a purchase I made?
+1796. I keep checking my bank statements but I don't see a refund that I've requested from a seller. Can you ensure that I receive the refund from the seller?
+1797. I am waiting patiently for a week now for the seller to get back to me and there has been no response, could you please help me further with getting my money back.  Thank you.
+1798. I would like some help getting a refund back from a seller. It still isn't showing up on my statement and I requested this a long time ago. I'm not sure why it's not returned yet. Can you assist me in getting this money back?
+1799. How long will it take to get my refund
+1800. I should have received a refund however it is not showing on my statement
+
+Return ONLY a JSON array, one object per query, in the same order. Each object must have exactly two keys:
+- "id": the query number (1651 to 1800)
+- "intent": the exact intent name from the list above (lowercase with underscores)
+
+No commentary. No markdown code fences. No explanation. Just the JSON array starting with [ and ending with ].

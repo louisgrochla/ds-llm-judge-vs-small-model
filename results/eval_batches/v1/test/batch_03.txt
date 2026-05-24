@@ -1,0 +1,240 @@
+You are an intent classifier for a banking customer-service chatbot.
+
+For each user query below, assign it to exactly one of the following 77 intents:
+
+- activate_my_card
+- age_limit
+- apple_pay_or_google_pay
+- atm_support
+- automatic_top_up
+- balance_not_updated_after_bank_transfer
+- balance_not_updated_after_cheque_or_cash_deposit
+- beneficiary_not_allowed
+- cancel_transfer
+- card_about_to_expire
+- card_acceptance
+- card_arrival
+- card_delivery_estimate
+- card_linking
+- card_not_working
+- card_payment_fee_charged
+- card_payment_not_recognised
+- card_payment_wrong_exchange_rate
+- card_swallowed
+- cash_withdrawal_charge
+- cash_withdrawal_not_recognised
+- change_pin
+- compromised_card
+- contactless_not_working
+- country_support
+- declined_card_payment
+- declined_cash_withdrawal
+- declined_transfer
+- direct_debit_payment_not_recognised
+- disposable_card_limits
+- edit_personal_details
+- exchange_charge
+- exchange_rate
+- exchange_via_app
+- extra_charge_on_statement
+- failed_transfer
+- fiat_currency_support
+- get_disposable_virtual_card
+- get_physical_card
+- getting_spare_card
+- getting_virtual_card
+- lost_or_stolen_card
+- lost_or_stolen_phone
+- order_physical_card
+- passcode_forgotten
+- pending_card_payment
+- pending_cash_withdrawal
+- pending_top_up
+- pending_transfer
+- pin_blocked
+- receiving_money
+- Refund_not_showing_up
+- request_refund
+- reverted_card_payment?
+- supported_cards_and_currencies
+- terminate_account
+- top_up_by_bank_transfer_charge
+- top_up_by_card_charge
+- top_up_by_cash_or_cheque
+- top_up_failed
+- top_up_limits
+- top_up_reverted
+- topping_up_by_card
+- transaction_charged_twice
+- transfer_fee_charged
+- transfer_into_account
+- transfer_not_received_by_recipient
+- transfer_timing
+- unable_to_verify_identity
+- verify_my_identity
+- verify_source_of_funds
+- verify_top_up
+- virtual_card_not_working
+- visa_or_mastercard
+- why_verify_identity
+- wrong_amount_of_cash_received
+- wrong_exchange_rate_for_cash_withdrawal
+
+User queries (numbered):
+
+301. How fast can you deliver?
+302. Ordered awhile back, what is the ETA in the US?
+303. How long should I expect for the card to arrive?
+304. Whats the delivery time to the United States?
+305. When will the card arrive?
+306. Send my card as soon as you are able to.
+307. When are cards delivered?
+308. How long does shipping take to get to a US destination?
+309. Can I get my card expedited?
+310. How long until my card is delivered?
+311. I need my card to come as soon as possible.
+312. When can I expect to receive my new card?
+313. I am waiting for my card to arrive.
+314. I need my card as soon as possible.
+315. I need it delivered by Saturday.
+316. What's the U.S. Delivery time?
+317. When will my card arrive?
+318. can I choose a date for delivery?
+319. Can I make sure my card is delivered on a specific day?
+320. Can I have it be delivered at a certain time?
+321. When traveling, can I auto top-up my card at certain times?
+322. Is there a limit when using auto top-up?
+323. Will it automatically top-up or do I need to do that manually if there isn't much cash left?
+324. I'm running out of money, can I  auto top up?
+325. How do I use auto top up?
+326. Can it automatically top-up money if there isn't much left?
+327. If there isn't much money left can it automatically top-up?
+328. I read about the auto-top up function, but can't find it in the app.
+329. Can I have it add money at certain time intervals when I travel?
+330. I'm going to be away for awhile, can I have it add money automatically in certain intervals?
+331. Where can I find the "auto-top" feature?
+332. I just activated auto top-up, but it is not letting me enable it. Why not?
+333. Is there an auto top-up option?
+334. where is theft-top option?
+335. Are there limits on auto top-up?
+336. can you assist me with the auto top up ?
+337. Do you have any limit on the auto top-up?
+338. Why are there limits on auto top-up?
+339. How can I top up automatically?
+340. How do I make sure I don't run out of money on my card while traveling?
+341. What's the limit on automatic top-up?
+342. If I will be traveling, is there a way to auto top-up my card on certain days?
+343. Where is the auto top-up option?
+344. Can I have a auto top-up when my account is short?
+345. Do you have an auto top-up option?
+346. Can I space out how often money is transferred along my travels?
+347. Will it automatically top-up money if there isn't a lot left?
+348. Can I have it add money automatically in certain intervals?
+349. Can I set up an automatic top-up for travel.
+350. I've tried looking for the auto-top up option on your website and I can't seem to find it. Can you help me?
+351. how do I top up my money automatically
+352. Can I be topped up once I hit a certain balance?
+353. Will it automatically top-up if there isn't much money left?
+354. Is there any way to Auto top-up?
+355. Can you explain where I can find the auto-top option?
+356. What is the auto top up function and where can I find that at?
+357. Is there a way to top-up automatically?
+358. Is there a top-up feature, if there isn't a lot of money left?
+359. What is the highest limit for Auto Top?
+360. How do I enable auto-top up?
+361. I've tried my card a bunch of times and it never worked.
+362. I can't get my card to work.
+363. My card appears to be broken how can I fix it?
+364. How do I know why my card isn't working?
+365. My card broke.
+366. My card won't work.
+367. Why is my card not working?
+368. Can you please identify the problem with my bank card?
+369. How do I unblock my card using the app?
+370. My card does not work
+371. How can I get my physical card to work?
+372. Can someone assist me by explaining why my card is not working?
+373. Help me.  My card doesn't work.
+374. Can a card stop working?
+375. I think my card is broken
+376. Why isn't my card working?
+377. My card isn't working anymore.
+378. My card was declined today when eating and I need to know what's wrong.
+379. My card doesn't work.
+380. How can I resolve a problem where my card won't go through at all?
+381. My actual card isn't working.
+382. Is my card broken?
+383. I broke my card
+384. My card stopped working
+385. My card is broke, what do I do?
+386. I tried using my card today and it's not working, can you help me?
+387. My card stopped working when I use it
+388. I can't use my card.
+389. Need help with my card. It's not working.
+390. I cannot use my card.
+391. The card I've got seems to be broken.
+392. My card isn't working
+393. My card suddenly quit working.
+394. I have tried to use my card several times and it does not work.
+395. The card I have doesn't work.
+396. My card doesn't accept any transaction at all. What's wrong??
+397. How can i check if my card is working?
+398. Nothing goes through on my card.
+399. How do I find out why my card won't work?
+400. Could it be that I deactivated my card, its not working?
+401. May I exchange currencies with this?
+402. Tell me how I can exchange between different currency.
+403. Can I change from one currency to another?
+404. How do I change GBP to AUD?
+405. Will this app exchange currencies?
+406. How do I convert currencies with the app?
+407. How are currencies exchanged?
+408. Can I exchange currencies with this app?
+409. How do I make an exchange from one currency to another?
+410. How do I interconvert between AUD and GBP?
+411. What all currencies can be exchanged?
+412. What is the best way to exchange currency between USD and GBP using your app?
+413. If I wanted to make a change from GBP to AUD what is the process?
+414. Can I get some money exchanged?
+415. Is it possible to change to another currency?
+416. How do I exchange my GBP to AUD?
+417. How would I use my money in a different country?
+418. If I receive foreign currencies, am I able to exchange them on the app?
+419. Can I change to another currency?
+420. I need AUD not GBP, how do I change it?
+421. What is the best way to exchange currency?
+422. If I need GBP instead of AUD what do I do?
+423. I was wondering whether exchanging currencies can be done on this app.
+424. I might need AUD instead of GBP, how to change?
+425. How do I go through the process of currency exchange?
+426. Change currency
+427. Can am I able to exchange currencies?
+428. Where do I go to change GBP?
+429. What currency's can i exchange for?
+430. What currencies will this app exchange?
+431. Can this app help me exchange currencies?
+432. I would like to exchange some currency.
+433. Can I exchange between GBP and USD on the app?
+434. Is there currency exchange on this app?
+435. Can I change my currency from USD to EUR?
+436. I think I want AUD and not GBP, can you help?
+437. How do I exchange currency?
+438. Can I use this app to change dollars into euros?
+439. Can I exchange currencies with my account?
+440. I would like to exchange currencies
+441. My entire gym bag, including my wallet, was stolen out of my locker today. Everything in my wallet is gone - how do I block the card to make it can't be used?
+442. I can't find my card and think it may have been stolen.
+443. Someone stole my card. I need to report it stolen. I made a police report already, but how do I report it with you?
+444. I cant find my card, it's gone.
+445. My card is lost! What can I do?
+446. I lost my card
+447. Oh no!  I lost my card!  Help!
+448. I believe my card has been stolen, what can I do about this situation? It's urgent.
+449. Help! Someone stole my card!
+450. Help.  I have a stolen card!
+
+Return ONLY a JSON array, one object per query, in the same order. Each object must have exactly two keys:
+- "id": the query number (301 to 450)
+- "intent": the exact intent name from the list above (lowercase with underscores)
+
+No commentary. No markdown code fences. No explanation. Just the JSON array starting with [ and ending with ].
