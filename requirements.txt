@@ -7,7 +7,7 @@ scipy>=1.11
 # Deep learning + transformers
 torch>=2.1
 transformers>=4.40
-datasets>=2.16
+datasets>=2.16,<4.0  # pinned: v4 removed script-based dataset loading, breaks PolyAI/banking77
 evaluate>=0.4
 accelerate>=0.27
 
