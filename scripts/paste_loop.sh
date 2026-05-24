@@ -4,11 +4,18 @@
 # Usage: bash scripts/paste_loop.sh [PROMPT_VERSION] [DATASET]
 #   defaults: v1 test
 #
-# For each batch file without a saved response, copies the prompt to
-# the macOS clipboard, prompts you to paste into a fresh Claude Code
-# session, save the response, and press enter to advance. Skips
-# batches that already have responses, so you can stop mid-run with
-# Ctrl+C and resume by re-running.
+# Setup once: open Claude Code in any empty directory (NOT inside any
+# project with a CLAUDE.md), run /model claude-sonnet-4-6, confirm
+# Sonnet 4.6 in the status bar. Keep that window open.
+#
+# Per batch: this script copies the next batch prompt to your clipboard,
+# you paste into Claude Code, save the JSON response to the indicated
+# file, then run /clear in Claude Code to wipe the conversation before
+# the next batch. /clear isolates each batch from the previous one's
+# context — non-negotiable for clean results.
+#
+# Skips batches that already have responses, so Ctrl+C is safe — re-run
+# to resume.
 
 set -e
 
@@ -51,7 +58,7 @@ for batch_file in "$BATCH_DIR"/batch_*.txt; do
   cat "$batch_file" | pbcopy
   echo "Prompt copied to clipboard."
   echo ""
-  echo "  1. Switch to a fresh Claude Code session (Sonnet 4.6)"
+  echo "  1. In your Claude Code window, run /clear (skip if this is batch 01)"
   echo "  2. Paste, hit enter, wait for JSON response"
   echo "  3. Copy the JSON, save to:"
   echo "       $response_file"
