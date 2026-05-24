@@ -18,14 +18,20 @@ env/
 .env.local
 .env.*.local
 
-# Data — keep raw downloads + intermediate processed data out of git
+# Data — keep raw downloads out, but commit the processed parquets
+# (they're small + stable, lets Colab clone-and-go without rerunning notebook 01)
 data/raw/
-data/processed/
 data/*.csv
 data/*.parquet
 data/*.json
 !data/README.md
 !data/sample/
+# Block contents of data/processed/ by default, then re-include the parquets + label names.
+# Use the *single-star* form so the directory itself isn't ignored — negation can't reach
+# inside an ignored directory.
+data/processed/*
+!data/processed/*.parquet
+!data/processed/*.txt
 
 # Model artefacts
 checkpoints/
