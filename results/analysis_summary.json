@@ -1,0 +1,109 @@
+{
+  "dataset": "PolyAI/banking77",
+  "test_set_size": 3080,
+  "num_classes": 77,
+  "llm_baseline": {
+    "model": "claude-sonnet-4-6",
+    "mode": "zero-shot (n=0 training examples)",
+    "macro_f1": 0.8913
+  },
+  "finetune_quality": {
+    "single_seed_mean_by_n": {
+      "50": 0.0996,
+      "100": 0.1534,
+      "250": 0.4699,
+      "500": 0.6678,
+      "1000": 0.7991,
+      "2500": 0.8844,
+      "5000": 0.9147,
+      "9000": 0.9249
+    },
+    "ensemble_by_n": {
+      "50": 0.2071,
+      "100": 0.3842,
+      "250": 0.6837,
+      "500": 0.7999,
+      "1000": 0.8658,
+      "2500": 0.9098,
+      "5000": 0.9271,
+      "9000": 0.934
+    },
+    "crossover_n_ensemble": 2500,
+    "peak_macro_f1": 0.934
+  },
+  "significance": {
+    "50": {
+      "observed_diff": -0.6842,
+      "bootstrap_mean": -0.6851,
+      "ci_lower_95": -0.7013,
+      "ci_upper_95": -0.6683,
+      "n_bootstrap": 2000
+    },
+    "100": {
+      "observed_diff": -0.5071,
+      "bootstrap_mean": -0.5085,
+      "ci_lower_95": -0.5267,
+      "ci_upper_95": -0.4904,
+      "n_bootstrap": 2000
+    },
+    "250": {
+      "observed_diff": -0.2076,
+      "bootstrap_mean": -0.2093,
+      "ci_lower_95": -0.2265,
+      "ci_upper_95": -0.1923,
+      "n_bootstrap": 2000
+    },
+    "500": {
+      "observed_diff": -0.0914,
+      "bootstrap_mean": -0.0925,
+      "ci_lower_95": -0.1082,
+      "ci_upper_95": -0.0773,
+      "n_bootstrap": 2000
+    },
+    "1000": {
+      "observed_diff": -0.0255,
+      "bootstrap_mean": -0.0259,
+      "ci_lower_95": -0.0391,
+      "ci_upper_95": -0.013,
+      "n_bootstrap": 2000
+    },
+    "2500": {
+      "observed_diff": 0.0186,
+      "bootstrap_mean": 0.0185,
+      "ci_lower_95": 0.0064,
+      "ci_upper_95": 0.0303,
+      "n_bootstrap": 2000
+    },
+    "5000": {
+      "observed_diff": 0.0358,
+      "bootstrap_mean": 0.0358,
+      "ci_lower_95": 0.0248,
+      "ci_upper_95": 0.0467,
+      "n_bootstrap": 2000
+    },
+    "9000": {
+      "observed_diff": 0.0427,
+      "bootstrap_mean": 0.0428,
+      "ci_lower_95": 0.032,
+      "ci_upper_95": 0.054,
+      "n_bootstrap": 2000
+    }
+  },
+  "cost_per_inference_usd": {
+    "sonnet_uncached": 0.00525,
+    "sonnet_cached": 0.00147,
+    "distilbert_low_util": 6.9e-06,
+    "distilbert_full_util": 6.9e-07
+  },
+  "breakeven_queries_per_month": {
+    "vs_sonnet_uncached": 68571,
+    "vs_sonnet_cached": 244897
+  },
+  "failure_overlap": {
+    "both_correct": 2646,
+    "distilbert_only_correct": 231,
+    "sonnet_only_correct": 120,
+    "both_wrong": 83,
+    "both_wrong_pct": 2.7
+  }
+}
