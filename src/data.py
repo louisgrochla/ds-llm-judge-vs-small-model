@@ -6,7 +6,7 @@ import pandas as pd
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data" / "processed"
 
-TRAINING_SIZES = [50, 100, 250, 500, 1000, 2500, 5000]
+TRAINING_SIZES = [50, 100, 250, 500, 1000, 2500, 5000, 9000]
 N_SEEDS = 5
 DEV_SLICE_SIZE = 300
 VAL_SET_SIZE = 500
