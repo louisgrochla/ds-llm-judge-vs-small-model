@@ -333,19 +333,13 @@
     <p class="figure-caption">DistilBERT macro-F1 by training-set size (5-seed ensemble, blue). Sonnet 4.6 zero-shot baseline as red dashed line. Crossover at n=2,500.</p>
   </div>
 
-  <h2>Try the actual model</h2>
-  <p class="muted">
-    See the fine-tuned DistilBERT classify 12 real banking queries side-by-side with Sonnet 4.6. The "both wrong" examples are the Banking77 label-noise cases — both models give the obviously-correct intent and the dataset's label is the questionable one.
-  </p>
-  <div class="links">
-    <a class="btn primary" href="https://huggingface.co/spaces/louisgrochla/distilbert-banking77-demo" target="_blank" rel="noopener">Try the classifier demo</a>
-    <a class="btn" href="https://github.com/louisgrochla/ds-llm-judge-vs-small-model" target="_blank" rel="noopener">View on GitHub</a>
-  </div>
-
   <h2>What's in the repo</h2>
   <p class="muted">
     Four Jupyter notebooks (data prep, LLM baseline, fine-tune sweep, analysis), 40 model run predictions in parquet, the raw LLM prompts and responses, the model checkpoint reference, a cost decision table for five common business scenarios, and per-notebook walkthrough docs explaining each design choice. Everything reproducible from scratch on a free Colab T4 GPU.
   </p>
+  <div class="links">
+    <a class="btn primary" href="https://github.com/louisgrochla/ds-llm-judge-vs-small-model" target="_blank" rel="noopener">View on GitHub</a>
+  </div>
 
   <footer>
     Louis Grochla · final-year UK Business Analytics undergrad, gap-year UK DS/ML role then US MS Data Science 2028 ·
