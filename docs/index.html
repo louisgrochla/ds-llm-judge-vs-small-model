@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Should you stop paying for the LLM API? — Build-vs-buy calculator</title>
+
+<meta name="description" content="An interactive calculator for teams running LLMs in production: at your query volume and your labeled-data budget, does fine-tuning an in-house classifier beat paying for Claude Sonnet 4.6? Based on a real Banking77 benchmark." />
+
+<meta property="og:title" content="Should you stop paying for the LLM API?" />
+<meta property="og:description" content="Build-vs-buy calculator. Based on a real benchmark — in-house DistilBERT matches Sonnet 4.6 at n=2,500 training examples, ~750× cheaper per query." />
+<meta property="og:image" content="https://raw.githubusercontent.com/louisgrochla/ds-llm-judge-vs-small-model/main/results/figures/crossover.png" />
+<meta property="og:url" content="https://louisgrochla.github.io/ds-llm-judge-vs-small-model/" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<style>
+  :root {
+    --bg: #fbfbfd;
+    --surface: #ffffff;
+    --border: #e5e7eb;
+    --border-strong: #d1d5db;
+    --text: #111827;
+    --text-muted: #6b7280;
+    --text-subtle: #9ca3af;
+    --accent: #2563eb;
+    --sonnet: #dc2626;
+    --distil: #2563eb;
+    --positive: #059669;
+    --warning: #d97706;
+    --soft-blue: #eff6ff;
+    --soft-amber: #fffbeb;
+    --soft-green: #ecfdf5;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.55;
+    font-size: 16px;
+  }
+
+  .container { max-width: 880px; margin: 0 auto; padding: 48px 24px 80px 24px; }
+
+  header { margin-bottom: 36px; }
+  h1 { font-size: 30px; line-height: 1.2; margin: 0 0 12px 0; font-weight: 700; letter-spacing: -0.01em; }
+  .lede { font-size: 17px; color: var(--text-muted); margin: 0 0 0 0; max-width: 640px; }
+  .lede strong { color: var(--text); }
+  .meta { font-size: 13px; color: var(--text-subtle); margin-top: 14px; }
+  .meta a { color: var(--accent); text-decoration: none; }
+  .meta a:hover { text-decoration: underline; }
+
+  .calc {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px;
+    margin: 28px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+  }
+
+  .calc-section-label {
+    font-size: 11px;
+    color: var(--text-subtle);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+
+  .input-row { margin-bottom: 22px; }
+  .input-row:last-child { margin-bottom: 0; }
+  .input-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+  .input-label-text { color: var(--text); font-weight: 500; }
+  .input-value {
+    font-variant-numeric: tabular-nums;
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 18px;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  input[type=range] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: var(--border);
+    outline: none;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+    border: 2px solid #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  }
+  input[type=range]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+    border: 2px solid #fff;
+  }
+
+  .options {
+    display: flex;
+    gap: 24px;
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+  .options label { display: flex; align-items: center; gap: 6px; cursor: pointer; }
+
+  .output {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 28px 0 0 0;
+  }
+  @media (max-width: 600px) { .output { grid-template-columns: 1fr; } }
+
+  .card {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    background: var(--surface);
+  }
+  .card.api { border-top: 3px solid var(--sonnet); }
+  .card.self { border-top: 3px solid var(--distil); }
+  .card-title {
+    font-size: 11px;
+    color: var(--text-subtle);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .cost {
+    font-size: 28px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    margin: 4px 0 4px 0;
+    letter-spacing: -0.01em;
+  }
+  .cost .unit { font-size: 13px; font-weight: 400; color: var(--text-muted); margin-left: 4px; }
+  .card-meta { font-size: 13px; color: var(--text-muted); }
+  .card-meta strong { color: var(--text); font-weight: 600; }
+
+  .verdict {
+    margin: 24px 0 0 0;
+    padding: 22px 24px;
+    border-radius: 10px;
+    border: 1px solid;
+  }
+  .verdict.switch { background: var(--soft-green); border-color: #a7f3d0; }
+  .verdict.api    { background: var(--soft-blue);  border-color: #c7dcfa; }
+  .verdict.wait   { background: var(--soft-amber); border-color: #fde68a; }
+
+  .verdict-headline {
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+  }
+  .verdict-headline .savings {
+    font-size: 22px;
+    font-variant-numeric: tabular-nums;
+  }
+  .verdict.switch .verdict-headline { color: #065f46; }
+  .verdict.api    .verdict-headline { color: #1e40af; }
+  .verdict.wait   .verdict-headline { color: #92400e; }
+
+  .verdict-body { font-size: 14px; line-height: 1.6; color: var(--text); margin: 0; }
+
+  .crossover-figure {
+    margin: 36px 0;
+    padding: 0;
+    text-align: center;
+  }
+  .crossover-figure img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+  }
+  .figure-caption {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 10px;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .quote-block {
+    background: var(--surface);
+    border-left: 3px solid var(--border-strong);
+    padding: 14px 20px;
+    margin: 24px 0;
+    font-size: 14px;
+    color: var(--text-muted);
+    border-radius: 4px;
+  }
+  .quote-block strong { color: var(--text); }
+
+  h2 {
+    font-size: 20px;
+    margin: 48px 0 14px 0;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+  }
+  p { color: var(--text); }
+  p.muted { color: var(--text-muted); }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid var(--border-strong);
+    background: var(--surface);
+    color: var(--text);
+  }
+  .btn:hover { background: var(--bg); }
+  .btn.primary { background: var(--accent); color: white; border-color: var(--accent); }
+  .btn.primary:hover { background: #1d4ed8; }
+
+  footer {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  code { background: #f3f4f6; padding: 1px 6px; border-radius: 3px; font-size: 13px; font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <h1>Should you stop paying for the LLM API?</h1>
+    <p class="lede">
+      A build-vs-buy calculator for teams using a frontier LLM (Claude Sonnet 4.6, GPT-4o, etc.) for intent classification. Based on a <strong>real benchmark</strong>: in-house DistilBERT matches Sonnet 4.6 at <strong>n=2,500 labeled examples</strong>, then runs <strong>~750× cheaper</strong> per query and <strong>~50× faster</strong>.
+    </p>
+    <p class="meta">
+      Move the sliders to your own situation. The recommendation updates live.
+      &nbsp;·&nbsp; <a href="https://github.com/louisgrochla/ds-llm-judge-vs-small-model" target="_blank" rel="noopener">Methodology & source</a>
+    </p>
+  </header>
+
+  <section class="calc">
+    <div class="calc-section-label">Your situation</div>
+
+    <div class="input-row">
+      <div class="input-label">
+        <span class="input-label-text">Queries you serve per month</span>
+        <span class="input-value" id="qpm-label">100,000</span>
+      </div>
+      <input type="range" id="qpm" min="3" max="7.7" step="0.05" value="5" />
+    </div>
+
+    <div class="input-row">
+      <div class="input-label">
+        <span class="input-label-text">Labeled examples you have (or could label)</span>
+        <span class="input-value" id="n-label">2,500</span>
+      </div>
+      <input type="range" id="n" min="0" max="9000" step="50" value="2500" />
+    </div>
+
+    <div class="options">
+      <label><input type="checkbox" id="caching" /> assume Anthropic prompt caching (~70% cost reduction on the API)</label>
+    </div>
+
+    <div class="output">
+      <div class="card api">
+        <div class="card-title">Claude Sonnet 4.6 (API)</div>
+        <div class="cost" id="api-cost">$530<span class="unit">/month</span></div>
+        <div class="card-meta">
+          <strong id="api-cost-per-query">$0.0053</strong> per query · <strong>~1,500 ms</strong> latency · 0 examples to label
+        </div>
+      </div>
+      <div class="card self">
+        <div class="card-title">In-house DistilBERT (self-hosted)</div>
+        <div class="cost" id="self-cost">$360<span class="unit">/month</span></div>
+        <div class="card-meta">
+          <strong>$360 fixed</strong> + ~$0.000007/query · <strong>~30 ms</strong> latency · macro-F1 <strong id="quality-label">0.91</strong> at your <span id="n-inline">n=2,500</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="verdict" id="verdict">
+      <div class="verdict-headline" id="verdict-headline"></div>
+      <p class="verdict-body" id="verdict-body"></p>
+    </div>
+  </section>
+
+  <div class="quote-block">
+    <strong>Why these specific numbers?</strong> All quality figures come from a 40-run fine-tune sweep (7 training-set sizes × 5 random seeds, soft-vote ensemble) on Banking77's 3,080-row test set. The Sonnet baseline (macro-F1 = 0.891) was measured the same way. Cost assumes Anthropic's published pricing and HuggingFace Inference Endpoint T4 ($360/mo always-on). Labeling cost defaults to $0.50/example. <a href="https://github.com/louisgrochla/ds-llm-judge-vs-small-model" target="_blank" rel="noopener">Notebook 04</a> has the full math.
+  </div>
+
+  <h2>The data behind it</h2>
+  <p class="muted">
+    DistilBERT (66M parameters) fine-tuned across 8 training-set sizes vs Sonnet 4.6 zero-shot. Crossover with Sonnet's macro-F1 = 0.891 happens at <strong>n=2,500</strong> for the 5-seed ensemble. Statistical significance verified with paired bootstrap (5,000 iterations): the +0.019 gap at n=2,500 has a 95% CI of [+0.006, +0.030] — clearly excludes zero.
+  </p>
+  <div class="crossover-figure">
+    <img src="https://raw.githubusercontent.com/louisgrochla/ds-llm-judge-vs-small-model/main/results/figures/crossover.png" alt="Crossover plot: DistilBERT macro-F1 vs training set size, with Sonnet 4.6 baseline" />
+    <p class="figure-caption">DistilBERT macro-F1 by training-set size (5-seed ensemble, blue). Sonnet 4.6 zero-shot baseline as red dashed line. Crossover at n=2,500.</p>
+  </div>
+
+  <h2>Try the actual model</h2>
+  <p class="muted">
+    See the fine-tuned DistilBERT classify 12 real banking queries side-by-side with Sonnet 4.6. The "both wrong" examples are the Banking77 label-noise cases — both models give the obviously-correct intent and the dataset's label is the questionable one.
+  </p>
+  <div class="links">
+    <a class="btn primary" href="https://huggingface.co/spaces/louisgrochla/distilbert-banking77-demo" target="_blank" rel="noopener">Try the classifier demo</a>
+    <a class="btn" href="https://github.com/louisgrochla/ds-llm-judge-vs-small-model" target="_blank" rel="noopener">View on GitHub</a>
+  </div>
+
+  <h2>What's in the repo</h2>
+  <p class="muted">
+    Four Jupyter notebooks (data prep, LLM baseline, fine-tune sweep, analysis), 40 model run predictions in parquet, the raw LLM prompts and responses, the model checkpoint reference, a cost decision table for five common business scenarios, and per-notebook walkthrough docs explaining each design choice. Everything reproducible from scratch on a free Colab T4 GPU.
+  </p>
+
+  <footer>
+    Louis Grochla · final-year UK Business Analytics undergrad, gap-year UK DS/ML role then US MS Data Science 2028 ·
+    <a href="https://www.linkedin.com/in/louisgrochla/" target="_blank" rel="noopener">LinkedIn</a> ·
+    <a href="https://github.com/louisgrochla" target="_blank" rel="noopener">GitHub</a> ·
+    <a href="mailto:louisgrochla27@gmail.com">Email</a>
+  </footer>
+
+</div>
+
+<script>
+  // === Constants (kept in sync with notebook 04) ===
+  const SONNET_COST_UNCACHED = 0.0053;
+  const SONNET_COST_CACHED   = 0.0015;
+  const DISTILBERT_PER_QUERY = 0.000007;
+  const SELF_HOST_FIXED      = 360;            // $/month, always-on T4
+  const COST_PER_LABEL       = 0.50;           // $ per labeled example
+  const SONNET_BASELINE      = 0.8913;
+
+  // 5-seed ensemble macro-F1 from notebook 04 (Banking77 test, 3,080 queries)
+  const QUALITY_BY_N = [
+    [0,     0.013],     // floor (untrained ≈ random)
+    [50,    0.207],
+    [100,   0.384],
+    [250,   0.684],
+    [500,   0.800],
+    [1000,  0.866],
+    [2500,  0.910],
+    [5000,  0.927],
+    [9000,  0.934],
+  ];
+
+  function qualityAtN(n) {
+    // Linear interpolation between the 9 measured points; clamp outside the range.
+    if (n <= QUALITY_BY_N[0][0]) return QUALITY_BY_N[0][1];
+    if (n >= QUALITY_BY_N.at(-1)[0]) return QUALITY_BY_N.at(-1)[1];
+    for (let i = 0; i < QUALITY_BY_N.length - 1; i++) {
+      const [n0, q0] = QUALITY_BY_N[i];
+      const [n1, q1] = QUALITY_BY_N[i + 1];
+      if (n >= n0 && n <= n1) {
+        const t = (n - n0) / (n1 - n0);
+        return q0 + t * (q1 - q0);
+      }
+    }
+    return QUALITY_BY_N.at(-1)[1];
+  }
+
+  function fmtMoney(x) {
+    if (x >= 1000) return '$' + Math.round(x).toLocaleString();
+    if (x >= 1)    return '$' + x.toFixed(0);
+    if (x >= 0.01) return '$' + x.toFixed(2);
+    return '$' + x.toFixed(4);
+  }
+
+  function fmtMoneyExact(x) {
+    if (x >= 0.001) return '$' + x.toFixed(4);
+    return '$' + x.toFixed(6);
+  }
+
+  function fmtNumber(x) {
+    return Math.round(x).toLocaleString();
+  }
+
+  function update() {
+    // Read inputs
+    const qpmExp = parseFloat(document.getElementById('qpm').value);
+    const queriesPerMonth = Math.round(Math.pow(10, qpmExp));
+    const n = parseInt(document.getElementById('n').value, 10);
+    const cached = document.getElementById('caching').checked;
+    const perQueryAPI = cached ? SONNET_COST_CACHED : SONNET_COST_UNCACHED;
+
+    // Compute
+    const apiMonthly  = queriesPerMonth * perQueryAPI;
+    const selfMonthly = SELF_HOST_FIXED + queriesPerMonth * DISTILBERT_PER_QUERY;
+    const quality     = qualityAtN(n);
+    const meetsSonnet = quality >= SONNET_BASELINE;
+    const savings     = apiMonthly - selfMonthly;
+    const labelingInvestment = n * COST_PER_LABEL;
+    const paybackMonths = savings > 0 ? labelingInvestment / savings : null;
+
+    // Render inputs labels
+    document.getElementById('qpm-label').textContent = fmtNumber(queriesPerMonth) + ' / month';
+    document.getElementById('n-label').textContent = fmtNumber(n);
+    document.getElementById('n-inline').textContent = 'n=' + fmtNumber(n);
+
+    // Render cards
+    document.getElementById('api-cost').innerHTML = fmtMoney(apiMonthly) + '<span class="unit">/month</span>';
+    document.getElementById('api-cost-per-query').textContent = fmtMoneyExact(perQueryAPI);
+    document.getElementById('self-cost').innerHTML = fmtMoney(selfMonthly) + '<span class="unit">/month</span>';
+    document.getElementById('quality-label').textContent = quality.toFixed(3);
+
+    // Verdict
+    const verdictEl = document.getElementById('verdict');
+    const headlineEl = document.getElementById('verdict-headline');
+    const bodyEl = document.getElementById('verdict-body');
+
+    verdictEl.className = 'verdict';
+
+    if (n < 100) {
+      verdictEl.classList.add('api');
+      headlineEl.textContent = 'You have no labeled data yet — keep paying the API.';
+      bodyEl.innerHTML = `An in-house model can't be trained on nothing. The crossover quality (matches Sonnet 4.6) requires <strong>~2,500 labeled examples</strong> — typically a couple weeks of small-team labeling work, or ~${fmtMoney(2500 * COST_PER_LABEL)} via a service. At your current volume of <strong>${fmtNumber(queriesPerMonth)} queries/month</strong>, that investment would pay back in about <strong>${Math.max(0.1, (2500 * COST_PER_LABEL) / Math.max((queriesPerMonth * perQueryAPI) - SELF_HOST_FIXED, 1)).toFixed(1)} months</strong> once trained.`;
+    } else if (!meetsSonnet) {
+      verdictEl.classList.add('wait');
+      const gap = SONNET_BASELINE - quality;
+      headlineEl.textContent = `Your dataset isn't large enough yet — stay on the API for now.`;
+      bodyEl.innerHTML = `At <strong>n=${fmtNumber(n)}</strong>, in-house DistilBERT would reach macro-F1 ≈ <strong>${quality.toFixed(3)}</strong>, about ${(gap * 100).toFixed(1)} points below Sonnet 4.6's <strong>0.891</strong>. You'd save money but you'd be shipping a less-accurate classifier. Label up to <strong>n=2,500</strong> before switching — at that point quality matches and you save <strong>${fmtMoney(Math.max(queriesPerMonth * perQueryAPI - SELF_HOST_FIXED, 0))}/month</strong>.`;
+    } else if (apiMonthly <= selfMonthly) {
+      verdictEl.classList.add('api');
+      const breakeven = Math.ceil(SELF_HOST_FIXED / perQueryAPI);
+      headlineEl.textContent = `Your volume is too low to justify the fixed self-host cost.`;
+      bodyEl.innerHTML = `Quality-wise you're set (n=${fmtNumber(n)} → macro-F1 ${quality.toFixed(3)} ≥ Sonnet's 0.891). But at <strong>${fmtNumber(queriesPerMonth)} queries/month</strong>, the API costs only <strong>${fmtMoney(apiMonthly)}/month</strong> — less than the <strong>${fmtMoney(SELF_HOST_FIXED)}/month</strong> fixed cost of always-on self-hosting. Break-even is <strong>${fmtNumber(breakeven)} queries/month</strong>${cached ? ' (with prompt caching)' : ''}.`;
+    } else {
+      verdictEl.classList.add('switch');
+      const labelsPaybackText = paybackMonths !== null
+        ? (paybackMonths < 0.1
+            ? 'instantly'
+            : paybackMonths < 1
+              ? `in <strong>${(paybackMonths * 30).toFixed(0)} days</strong>`
+              : `in <strong>${paybackMonths.toFixed(1)} months</strong>`)
+        : '';
+      headlineEl.innerHTML = `Switch to self-host. You'd save <span class="savings">${fmtMoney(savings)}/month</span>.`;
+      bodyEl.innerHTML = `In-house quality at n=${fmtNumber(n)} (macro-F1 ${quality.toFixed(3)}) ${quality > SONNET_BASELINE + 0.005 ? 'beats' : 'matches'} Sonnet 4.6's 0.891. At <strong>${fmtNumber(queriesPerMonth)} queries/month</strong>, API costs <strong>${fmtMoney(apiMonthly)}/month</strong> vs <strong>${fmtMoney(selfMonthly)}/month</strong> self-hosted. Your labeling investment of ~<strong>${fmtMoney(labelingInvestment)}</strong> pays back ${labelsPaybackText}.`;
+    }
+  }
+
+  document.getElementById('qpm').addEventListener('input', update);
+  document.getElementById('n').addEventListener('input', update);
+  document.getElementById('caching').addEventListener('change', update);
+  update();
+</script>
+</body>
+</html>
