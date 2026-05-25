@@ -62,3 +62,6 @@ Thumbs.db
 build/
 dist/
 *.egg-info/
+
+# Personal content-marketing notes — kept locally, not for the public repo
+docs/post-bank.md
