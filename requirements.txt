@@ -14,7 +14,7 @@ accelerate>=0.27
 # LLM API
 anthropic>=0.32
 
-# HF Hub (for publishing fine-tuned model weights)
+# HF Hub (for downloading Banking77 parquet directly — bypasses the broken script loader)
 huggingface_hub>=0.20
 
 # Notebook + viz
@@ -23,9 +23,6 @@ ipykernel>=6.27
 matplotlib>=3.8
 seaborn>=0.13
 plotly>=5.18
-
-# App
-gradio>=4.20
 
 # Utilities
 tqdm>=4.66
