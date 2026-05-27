@@ -14,11 +14,59 @@ I benchmarked a fine-tuned in-house DistilBERT against zero-shot Claude Sonnet 4
 
 The in-house model runs **~750× cheaper per query** (≈$0.000007 vs ≈$0.0053 for Sonnet, no caching) and **~50× faster** (~30ms vs ~1.5s). Break-even monthly volume: roughly **70,000 queries/month** for self-hosting to beat the uncached API.
 
+> **Banking77 is the worked example.** The methodology — measure crossover quality, compute break-even volume, audit for label noise — applies to any team running multi-class text classification through an LLM API. Skip to [the decision framework](#the-decision-framework) for the three questions to ask of your own situation.
+
 ![Crossover plot](results/figures/crossover.png)
 
 ---
 
-## Build vs buy — recommended approach by scenario
+## Where this generalises — beyond banking
+
+The Banking77 result is one worked example of a question every team running an LLM classifier should be asking. The methodology applies to any task with the same shape:
+
+- **Multi-class classification** — 3+ classes, ideally up to a few hundred
+- **Short text input** — queries, tickets, snippets (not full documents)
+- **Domain-specific vocabulary** — labels where the LLM doesn't have privileged general-knowledge leverage
+- **Enough query volume** to justify the ~$360/mo fixed cost of always-on inference hardware
+
+Real production tasks that match this shape:
+
+| Industry | Task |
+|---|---|
+| Support SaaS (Intercom-tier) | Ticket categorization into 30–80 categories |
+| Sales tech | Lead qualification by industry / intent |
+| E-commerce | Product categorization into taxonomy (often 100s of classes) |
+| Email / productivity tools | Inbox routing (work / personal / promotional / spam) |
+| Insurtech | Claims triage by type |
+| Content platforms | Topic tagging / categorization |
+| Legal tech | Document-type classification |
+| Healthcare | Patient query routing within established taxonomies |
+| Telecoms / retail | Chatbot intent routing |
+
+For each, the same questions apply: at what *n* does the in-house model match the LLM? At what query volume does the cost crossover happen? Does the dataset have a noise floor I'm hitting?
+
+The Banking77 numbers in this project are the worked example — the math is the same shape for your task. The crossover *number* changes with class count and difficulty (narrower taxonomies cross at lower n, more confusable ones at higher), but the *framework* doesn't.
+
+---
+
+## The decision framework
+
+Three questions to ask before considering a fine-tune replacing your LLM API call:
+
+1. **Do I have access to ~2,500+ labeled examples (or can I get them)?**
+   If no, the quality math doesn't work yet — keep paying the API and start labeling. Banking77's crossover is at n=2,500; harder tasks (more classes, more confusable labels) will need more, simpler tasks often less.
+
+2. **Am I serving >70,000 classifications per month?**
+   If no, the fixed cost of self-hosting (~$360/mo always-on T4) probably exceeds your API bill, even if quality matches. With prompt caching the break-even is higher (~245K queries/month).
+
+3. **Are my classes domain-specific — terminology the LLM has no special leg up on?**
+   If yes, the Banking77 crossover number is a defensible starting estimate. If your task uses general-knowledge categories (news topics, broad sentiment, language identification), expect the LLM to remain competitive at higher *n* because its pre-training already covers your taxonomy.
+
+**If yes to all three**, the calculator and decision table below give you concrete numbers for your situation. **If no to any**, the framework still tells you what to fix first — either the data, the volume, or the task framing.
+
+---
+
+## Build vs buy — five worked scenarios
 
 The cost/quality crossover combined:
 
