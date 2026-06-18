@@ -212,4 +212,4 @@ If you're at a team deploying LLMs and weighing fine-tuning, I'd be glad to talk
 
 ## Contact
 
-Louis Grochla — louisgrochla27@gmail.com · [LinkedIn](https://www.linkedin.com/in/louisgrochla/) · [GitHub](https://github.com/louisgrochla)
+Louis Grochla — louis.grochla@icloud.com · [LinkedIn](https://www.linkedin.com/in/louisgrochla/) · [GitHub](https://github.com/louisgrochla)
