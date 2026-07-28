@@ -322,7 +322,7 @@ The rebuilt LLM arm needs an `ANTHROPIC_API_KEY` in `.env`; `python scripts/run_
 
 ## Why I built this
 
-Final-year UK Business Analytics undergrad. Plan: graduate June 2027, gap-year UK DS/ML role, then US MS Data Science starting autumn 2028 (applications autumn 2027). My main project, [salespatch](https://github.com/louisgrochla/salespatch), is a multi-agent AI platform where LLMs classify and qualify UK independent businesses at multiple pipeline stages. The planned next architectural step is to replace those LLM stages with smaller fine-tuned models once we have enough outcome data. My own dataset is still small, so I pre-ran the experiment on a structurally identical public task to characterise exactly when the small model wins. The methodology here ports directly to that future work.
+Final-year UK Business Analytics undergrad, focused on a data science / ML career. My main project, [salespatch](https://github.com/louisgrochla/salespatch), is a multi-agent AI platform where LLMs classify and qualify UK independent businesses at multiple pipeline stages. The planned next architectural step is to replace those LLM stages with smaller fine-tuned models once we have enough outcome data. My own dataset is still small, so I pre-ran the experiment on a structurally identical public task to characterise exactly when the small model wins. The methodology here ports directly to that future work.
 
 If you're at a team deploying LLMs and weighing fine-tuning, I'd be glad to talk through this with your specific volume + dataset numbers — DM me.
 
@@ -330,4 +330,4 @@ If you're at a team deploying LLMs and weighing fine-tuning, I'd be glad to talk
 
 ## Contact
 
-Louis Grochla — louisgrochla27@gmail.com · [LinkedIn](https://www.linkedin.com/in/louisgrochla/) · [GitHub](https://github.com/louisgrochla)
+Louis Grochla — louis.grochla@icloud.com · [LinkedIn](https://www.linkedin.com/in/louisgrochla/) · [GitHub](https://github.com/louisgrochla)
