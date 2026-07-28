@@ -12,7 +12,9 @@ evaluate>=0.4
 accelerate>=0.27
 
 # LLM API
-anthropic>=0.32
+# >=0.104 for output_config (structured outputs with a closed label enum) and the
+# typed Batch API helpers the eval harness depends on. Verified against 0.104.1.
+anthropic>=0.104
 
 # HF Hub (for downloading Banking77 parquet directly — bypasses the broken script loader)
 huggingface_hub>=0.20

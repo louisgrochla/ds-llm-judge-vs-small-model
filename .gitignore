@@ -65,3 +65,14 @@ dist/
 
 # Personal content-marketing notes — kept locally, not for the public repo
 docs/post-bank.md
+
+# Local research notes — contains unverified agent output, do not publish
+research-notes/
+HANDOVER*.md
+
+# Dry-run request previews from the eval harness (regenerate with --dry-run)
+results/llm_runs/*/dry_run.json
+
+# Frozen-encoder probability arrays: ~130MB, and regenerated in ~2 min by
+# scripts/run_frozen_encoder.py. The metrics they produce are committed.
+results/frozen_encoder/*.npy
