@@ -37,7 +37,21 @@ Four targeted changes, each addressing an independent bottleneck:
 3. **Epochs scaled by n.** Small training sets need more passes because each example gets seen more times. `EPOCHS_BY_N = {50: 30, 100: 25, 250: 20, 500: 15, 1000: 12, 2500: 10, 5000: 8, 9000: 8}`. At n=50 with the v1 schedule the model got only 20 × ⌈50/32⌉ ≈ 40 updates — measurably more than 5 epochs but still tight. v2's 30 epochs at smaller batch gives ~120 updates.
 4. **Early-stopping patience bumped (2 → 3).** At higher LR the validation loss wobbles before improving — patience 2 was occasionally cutting runs short mid-improvement.
 
-The result: v2 n=100 went from macro-F1 = 0.022 (v1) to 0.15 (v2) — **8× better**. v2 n=5000 went from 0.77 to 0.91, crossing Sonnet. v2 n=9000 ensemble reached 0.934, approximately matching Casanueva 2020's BERT-base full-train number with a smaller model.
+The result: v2 n=100 went from macro-F1 = 0.022 (v1) to 0.15 (v2) — **8× better**. v2 n=5000 went from 0.77 to 0.91. v2 n=9000 ensemble reached 0.934.
+
+> **Corrected 2026-07-28.** This paragraph previously said n=5000 was "crossing Sonnet" and that
+> 0.934 "approximately matches Casanueva 2020's BERT-base full-train number". Both are wrong.
+> The Sonnet baseline is [withdrawn](../README.md#correction-notice--28-july-2026). And
+> Casanueva et al. 2020's 93.66 on Banking77 is the `bert-tuned` row, which the paper defines as
+> **BERT-large** (24 layers, 340M parameters) — not BERT-base — and Table 3 reports **accuracy**,
+> not macro-F1. Comparing a macro-F1 of 0.934 to an accuracy of 93.66 from a 5× larger model is a
+> category error twice over. For reference, their *frozen* BERT baseline (`bert-fixed`) is 87.19
+> accuracy, which is the more relevant comparison for this repo's frozen-encoder arm.
+>
+> The finding that survives, and is the more interesting one: **hyperparameter defaults dominated
+> the small-data result.** Same data, same model, same seeds — 0.77 → 0.91 at n=5,000 from four
+> changes to the recipe. Any paper reporting a single fine-tuning configuration in the low-budget
+> regime is reporting its tuning effort as much as its method.
 
 ## Per-(n, seed) prediction files
 

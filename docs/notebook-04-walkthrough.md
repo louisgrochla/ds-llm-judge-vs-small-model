@@ -46,6 +46,14 @@ Two design choices worth knowing:
 
 ## Section 3 — paired bootstrap test
 
+> **Withdrawn 2026-07-28.** Everything in this section is a difference against the LLM baseline,
+> which is invalid — the test set was collected ordered by class. Two further corrections that
+> apply regardless: this computes **confidence intervals, not a p-value** (the README's
+> "*p* < 0.01" was never computed anywhere), and it resamples **test rows only**, holding the 5
+> training seeds fixed, which understates uncertainty. `src/stats.py` now provides a real paired
+> permutation test, a bootstrap over seeds *and* rows, and an interval on the crossover budget
+> itself; `scripts/reanalysis.py` runs them.
+
 The means-look-close-enough question: is the +0.019 ensemble vs Sonnet gap at n=2,500 statistically real, or could it plausibly be sampling noise?
 
 Implementation: for each n, load all 5 seeds' softmax probabilities, average them per test row, take argmax → ensemble predictions. Then call `src.eval.paired_bootstrap_macro_f1(y_true, ensemble_preds, sonnet_preds, n_bootstrap=2000)` which:
@@ -75,7 +83,18 @@ Two cost functions:
 
 Why utilisation matters: a small team running a chatbot doesn't hit 200 inferences/second 24/7. The honest comparison number depends on your actual load. Reporting both ends bounds the answer. The calculator page also exposes a utilisation slider for the same reason.
 
-Headline: Sonnet uncached at $0.0053 vs DistilBERT at realistic load $0.000007 = **756× cheaper**. At full utilisation, 7,560×. The README and calculator both quote ~750× as a round, defensible figure.
+Headline: Sonnet uncached at $0.00525 vs DistilBERT at realistic load $0.0000069 = **~756× cheaper**. At full utilisation, 7,560×.
+
+> **Reconciled 2026-07-28.** This was the only place in the repo that stated the ratio correctly.
+> Elsewhere it appeared as 750× (README, calculator) and as "500× at full utilisation, ~50× at low
+> utilisation" (notebook 04 markdown) — four numbers for one quantity, with the utilisation label
+> inverted in the last one. The repo now quotes a single figure: **~756×, at 10% GPU utilisation,
+> against the uncached API, at list prices retrieved 2026-05-24.**
+>
+> Note also that two of the three inputs on the in-house side are assumptions with no artifact
+> behind them: the 200 inferences/sec throughput and the 10% utilisation. The API-side token
+> counts are estimates too — the rebuilt harness records `usage` per call, so that half becomes
+> measured.
 
 ## Section 5 — break-even chart
 

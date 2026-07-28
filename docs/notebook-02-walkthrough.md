@@ -1,5 +1,34 @@
 # Notebook 02 — what it did and why
 
+> # 🛑 This baseline is invalid — withdrawn 28 July 2026
+>
+> **The design choice described below is the bug.** Batching 150 queries per prompt was adopted to
+> avoid API cost. But the batches were filled from the test set *in its on-disk order*, which is
+> sorted by intent — so each batch contained about four distinct intents, and every prompt
+> implicitly narrowed the model's choice from 77 candidates to roughly four.
+>
+> Re-derived from the committed predictions (`python scripts/verify_handover_claims.py`):
+> **76 label transitions across 3,080 rows** where a random order gives ~3,040; mean **4.4**
+> distinct intents per 150-query batch; per-batch accuracy ranging 0.580–1.000, with one batch of
+> 2 intents scoring 1.000.
+>
+> **0.8913 is not a measurement of zero-shot per-query performance.** It is an upper bound on a
+> much easier task that no deployment resembles.
+>
+> Two further problems documented at the same time:
+> - **The prompt was never iterated.** `src/prompts/` contains exactly `v1.txt`. The README's
+>   claim that it was "iterated on the dev slice" was false; v1 went straight to test.
+> - **Latency was never measured** — as this page itself says below. The "~50× faster" claim that
+>   appeared in the README and on the docs site had nothing behind it.
+>
+> The replacement harness is `src/harness/`: one query per call, structured outputs with a closed
+> label enum, explicit `blocked`/`shuffled` ordering, ≥3 runs, `usage` recorded per call, and a
+> separate timed synchronous pass for p50/p95 latency. The `blocked` mode deliberately reproduces
+> what is described below, so the size of this contamination gets measured rather than conceded.
+>
+> This page is left as written, because how the bug got in is more instructive than a clean
+> account would be.
+
 Plain rundown of what notebook 02 does, the reasoning behind each design choice, and the actual results.
 
 ---
@@ -8,11 +37,13 @@ Plain rundown of what notebook 02 does, the reasoning behind each design choice,
 
 The LLM-as-judge baseline that notebook 03's fine-tuned DistilBERT is trying to match. Specifically: predictions from Claude Sonnet 4.6 on Banking77's official 3,080-row test set, saved to `results/llm_predictions_v1_test.parquet` for notebook 04's bootstrap significance test.
 
-**Headline result for v1 on the full test set:**
+**Headline result for v1 on the full test set — withdrawn, see above:**
 - Accuracy: 0.8981
 - Macro F1: 0.8913
 - Weighted F1: 0.8913
 - Hallucinations: 0
+
+*"Hallucinations: 0" is the one line here that survives, and it survives for the wrong reason: with only ~4 candidate labels visibly in play per prompt, producing an out-of-vocabulary label was unlikely. The rebuilt harness makes it impossible by construction instead, via a closed 77-value enum in the response schema.*
 
 ## Why Claude Code instead of the Anthropic API
 

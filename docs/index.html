@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Should you stop paying for the LLM API? — Build-vs-buy calculator</title>
 
-<meta name="description" content="An interactive calculator for teams running LLMs in production: at your query volume and your labeled-data budget, does fine-tuning an in-house classifier beat paying for Claude Sonnet 4.6? Based on a real Banking77 benchmark." />
+<meta name="description" content="An interactive cost calculator for teams running LLMs in production: at your query volume, is a per-query API bill or a fixed self-hosting cost cheaper? Includes what each labeled-data budget bought on Banking77." />
 
 <meta property="og:title" content="Should you stop paying for the LLM API?" />
-<meta property="og:description" content="Build-vs-buy calculator. Based on a real benchmark — in-house DistilBERT matches Sonnet 4.6 at n=2,500 training examples, ~750× cheaper per query." />
+<meta property="og:description" content="Build-vs-buy cost calculator for LLM text classification: per-query API bill vs fixed self-hosting cost, with the quality each label budget bought on Banking77." />
 <meta property="og:image" content="https://raw.githubusercontent.com/louisgrochla/ds-llm-judge-vs-small-model/main/results/figures/crossover.png" />
 <meta property="og:url" content="https://louisgrochla.github.io/ds-llm-judge-vs-small-model/" />
 <meta property="og:type" content="website" />
@@ -315,7 +315,7 @@
   <header>
     <h1>Should you stop paying for the LLM API?</h1>
     <p class="lede">
-      A build-vs-buy calculator for any team using a frontier LLM (Claude Sonnet 4.6, GPT-4o, etc.) to classify short text — support tickets, leads, product categories, emails, claims, etc. Based on a <strong>real benchmark</strong> on Banking77: in-house DistilBERT matches Sonnet 4.6 at <strong>n=2,500 labeled examples</strong>, then runs <strong>~750× cheaper</strong> per query and <strong>~50× faster</strong>. The methodology transfers — only the exact crossover number varies by task.
+      A build-vs-buy <strong>cost</strong> calculator for any team using a frontier LLM to classify short text — support tickets, leads, product categories, emails, claims. It compares a per-query API bill against a fixed self-hosting cost, and shows what quality each label budget bought on Banking77.
     </p>
     <p class="meta">
       Move the sliders to your own situation. The recommendation updates live.
@@ -323,15 +323,30 @@
     </p>
   </header>
 
+  <div class="framework" style="border-color:#b45309;background:#fffbeb;">
+    <div class="framework-title" style="color:#b45309;">Correction — 28 July 2026: the quality comparison is withdrawn</div>
+    <p>
+      This page previously stated that an in-house DistilBERT <em>matches Claude Sonnet 4.6 at n=2,500</em> and runs <em>~50× faster</em>. Both claims have been withdrawn.
+    </p>
+    <ul>
+      <li><strong>The LLM baseline was invalid.</strong> The test set was sent to the model ordered by class, so each prompt implicitly narrowed the choice from 77 intents to about four. The resulting 0.8913 is not a measurement of zero-shot performance, and no parity claim can rest on it.</li>
+      <li><strong>The latency figure was never measured.</strong> No latency measurement exists anywhere in the underlying repo. The "~30 ms vs ~1,500 ms" comparison has been removed rather than restated.</li>
+    </ul>
+    <p>
+      <strong>The cost arithmetic below is unaffected</strong> — it is division on published list prices, and those inputs are stated. What you cannot currently get from this page is the answer to "will the small model be good enough?" That requires the rebuilt baseline.
+      &nbsp;<a href="https://github.com/louisgrochla/ds-llm-judge-vs-small-model#correction-notice--28-july-2026" target="_blank" rel="noopener">Full correction notice and reproduction steps</a>.
+    </p>
+  </div>
+
   <div class="framework">
     <div class="framework-title">When does this apply to your situation?</div>
     <p>Three questions to ask before reading the calculator output:</p>
     <ol>
-      <li><strong>Do I have ~2,500+ labeled examples (or can I get them)?</strong> If no, keep paying the API — start labeling first. The quality math doesn't work below this threshold.</li>
-      <li><strong>Am I serving &gt;70,000 classifications per month?</strong> If no, the $360/mo fixed self-host cost likely exceeds your API bill, even if quality matches.</li>
-      <li><strong>Are my classes domain-specific (terminology the LLM has no special leg up on)?</strong> If yes, the Banking77 crossover applies. If your taxonomy is general-knowledge (news topics, broad sentiment), expect a higher crossover.</li>
+      <li><strong>How many labeled examples can I get?</strong> The quality figures below show what each budget bought on Banking77. The budget at which an in-house model reaches parity with a given LLM is exactly what is pending re-measurement — bring your own parity target.</li>
+      <li><strong>Am I serving enough volume to clear the fixed cost?</strong> Break-even is fixed monthly cost ÷ per-query API cost: ~68,600 queries/month uncached, ~245,000 with prompt caching, at the list prices used here.</li>
+      <li><strong>Are my classes domain-specific (terminology the LLM has no special leg up on)?</strong> If your taxonomy is general-knowledge (news topics, broad sentiment), expect the LLM to stay competitive to higher <em>n</em>. If it is historically accreted and idiosyncratic — most real ones are — expect the opposite.</li>
     </ol>
-    <p>If yes to all three, the calculator below gives you concrete numbers for your situation. If no to any, the framework still tells you what to fix first — data, volume, or task framing.</p>
+    <p>The cost side of this calculator is arithmetic and transfers directly. The quality side is one worked example, and its LLM comparison is currently withdrawn.</p>
   </div>
 
   <section class="calc">
@@ -362,14 +377,14 @@
         <div class="card-title">Claude Sonnet 4.6 (API)</div>
         <div class="cost" id="api-cost">$530<span class="unit">/month</span></div>
         <div class="card-meta">
-          <strong id="api-cost-per-query">$0.0053</strong> per query · <strong>~1,500 ms</strong> latency · 0 examples to label
+          <strong id="api-cost-per-query">$0.0053</strong> per query · 0 examples to label
         </div>
       </div>
       <div class="card self">
         <div class="card-title">In-house DistilBERT (self-hosted)</div>
         <div class="cost" id="self-cost">$360<span class="unit">/month</span></div>
         <div class="card-meta">
-          <strong>$360 fixed</strong> + ~$0.000007/query · <strong>~30 ms</strong> latency · macro-F1 <strong id="quality-label">0.91</strong> at your <span id="n-inline">n=2,500</span>
+          <strong>$360 fixed</strong> + ~$0.000007/query · macro-F1 <strong id="quality-label">0.91</strong> at your <span id="n-inline">n=2,500</span>
         </div>
       </div>
     </div>
@@ -381,7 +396,7 @@
   </section>
 
   <div class="quote-block">
-    <strong>Why these specific numbers?</strong> All quality figures come from a 40-run fine-tune sweep (7 training-set sizes × 5 random seeds, soft-vote ensemble) on Banking77's 3,080-row test set. The Sonnet baseline (macro-F1 = 0.891) was measured the same way. Cost assumes Anthropic's published pricing and HuggingFace Inference Endpoint T4 ($360/mo always-on). Labeling cost defaults to $0.50/example. <a href="https://github.com/louisgrochla/ds-llm-judge-vs-small-model" target="_blank" rel="noopener">Notebook 04</a> has the full math.
+    <strong>Why these specific numbers?</strong> Quality figures come from a 40-run fine-tune sweep (8 training-set sizes × 5 random seeds, soft-vote ensemble) on Banking77's 3,080-row test set. They are <em>ensemble</em> figures, while the cost column prices a <em>single</em> model — two different systems, so read them side by side with care. The Sonnet baseline was <strong>not</strong> measured the same way and has been withdrawn (see the correction above). Cost assumes Anthropic's published pricing and a HuggingFace Inference Endpoint T4 ($360/mo always-on); throughput and utilisation are assumptions, not measurements. Labeling cost defaults to $0.50/example. <a href="https://github.com/louisgrochla/ds-llm-judge-vs-small-model" target="_blank" rel="noopener">Notebook 04</a> has the full math.
   </div>
 
   <div class="use-cases">
@@ -397,16 +412,16 @@
       <li>Legal document classification</li>
       <li>Patient query routing (healthcare, within established taxonomies)</li>
     </ul>
-    <p>The exact crossover <em>n</em> changes with your specific class count and difficulty — narrower taxonomies need fewer labels, more confusable categories need more. The methodology (measure crossover, compute break-even, audit for label noise) transfers regardless of vertical.</p>
+    <p>The quality curve changes with your class count and difficulty — narrower taxonomies need fewer labels, more confusable categories need more. The <em>method</em> (measure your own quality curve, compute your own break-even, audit your labels for the noise floor) transfers regardless of vertical.</p>
   </div>
 
   <h2>The data behind it</h2>
   <p class="muted">
-    DistilBERT (66M parameters) fine-tuned across 8 training-set sizes vs Sonnet 4.6 zero-shot. Crossover with Sonnet's macro-F1 = 0.891 happens at <strong>n=2,500</strong> for the 5-seed ensemble. Statistical significance verified with paired bootstrap (5,000 iterations): the +0.019 gap at n=2,500 has a 95% CI of [+0.006, +0.030] — clearly excludes zero.
+    DistilBERT (66M parameters) fine-tuned across 8 training-set sizes × 5 random seeds on Banking77. Reported as a 5-seed soft-vote ensemble. Uncertainty is a <strong>paired bootstrap 95% confidence interval over 2,000 resamples</strong> — the repo computes intervals only, and no <em>p</em>-value is produced anywhere in it. Note also that at n≥5,000 the five seeds share most of their training rows (98% pairwise at n=9,000, because the sampling pool is only 9,203), so the spread there reflects training nondeterminism rather than sensitivity to which examples were labelled.
   </p>
   <div class="crossover-figure">
-    <img src="https://raw.githubusercontent.com/louisgrochla/ds-llm-judge-vs-small-model/main/results/figures/crossover.png" alt="Crossover plot: DistilBERT macro-F1 vs training set size, with Sonnet 4.6 baseline" />
-    <p class="figure-caption">DistilBERT macro-F1 by training-set size (5-seed ensemble, blue). Sonnet 4.6 zero-shot baseline as red dashed line. Crossover at n=2,500.</p>
+    <img src="https://raw.githubusercontent.com/louisgrochla/ds-llm-judge-vs-small-model/main/results/figures/crossover.png" alt="DistilBERT macro-F1 by training-set size on Banking77" />
+    <p class="figure-caption">DistilBERT macro-F1 by training-set size (5-seed ensemble, blue). <strong>The red dashed LLM baseline drawn on this figure is the withdrawn 0.8913 measurement — disregard that line.</strong> The figure is retained for the DistilBERT curves only.</p>
   </div>
 
   <h2>What's in the repo</h2>
@@ -433,7 +448,11 @@
   const DISTILBERT_PER_QUERY = 0.000007;
   const SELF_HOST_FIXED      = 360;            // $/month, always-on T4
   const COST_PER_LABEL       = 0.50;           // $ per labeled example
-  const SONNET_BASELINE      = 0.8913;
+
+  // NOTE (2026-07-28): SONNET_BASELINE = 0.8913 was removed. That figure came from a
+  // collection in which the test set was ordered by class, so the model was choosing
+  // among ~4 candidates rather than 77. Every verdict below used to gate on it; they
+  // are now cost-only, and quality is reported without a parity judgement.
 
   // 5-seed ensemble macro-F1 from notebook 04 (Banking77 test, 3,080 queries)
   const QUALITY_BY_N = [
@@ -491,7 +510,6 @@
     const apiMonthly  = queriesPerMonth * perQueryAPI;
     const selfMonthly = SELF_HOST_FIXED + queriesPerMonth * DISTILBERT_PER_QUERY;
     const quality     = qualityAtN(n);
-    const meetsSonnet = quality >= SONNET_BASELINE;
     const savings     = apiMonthly - selfMonthly;
     const labelingInvestment = n * COST_PER_LABEL;
     const paybackMonths = savings > 0 ? labelingInvestment / savings : null;
@@ -514,20 +532,20 @@
 
     verdictEl.className = 'verdict';
 
+    // Verdicts are cost-only. This calculator can tell you which option is cheaper
+    // at your volume; it cannot currently tell you whether the in-house model is
+    // good enough, because the LLM quality baseline it used has been withdrawn.
+    const breakeven = Math.ceil(SELF_HOST_FIXED / perQueryAPI);
+    const qualityNote = `On Banking77, n=${fmtNumber(n)} labels bought a 5-seed ensemble macro-F1 of ≈<strong>${quality.toFixed(3)}</strong> (single models score lower). Whether that clears your own bar is a judgement this page can't make for you — the LLM comparison it used to make is <a href="https://github.com/louisgrochla/ds-llm-judge-vs-small-model#correction-notice--28-july-2026" target="_blank" rel="noopener">withdrawn</a>.`;
+
     if (n < 100) {
       verdictEl.classList.add('api');
-      headlineEl.textContent = 'You have no labeled data yet — keep paying the API.';
-      bodyEl.innerHTML = `An in-house model can't be trained on nothing. The crossover quality (matches Sonnet 4.6) requires <strong>~2,500 labeled examples</strong> — typically a couple weeks of small-team labeling work, or ~${fmtMoney(2500 * COST_PER_LABEL)} via a service. At your current volume of <strong>${fmtNumber(queriesPerMonth)} queries/month</strong>, that investment would pay back in about <strong>${Math.max(0.1, (2500 * COST_PER_LABEL) / Math.max((queriesPerMonth * perQueryAPI) - SELF_HOST_FIXED, 1)).toFixed(1)} months</strong> once trained.`;
-    } else if (!meetsSonnet) {
-      verdictEl.classList.add('wait');
-      const gap = SONNET_BASELINE - quality;
-      headlineEl.textContent = `Your dataset isn't large enough yet — stay on the API for now.`;
-      bodyEl.innerHTML = `At <strong>n=${fmtNumber(n)}</strong>, in-house DistilBERT would reach macro-F1 ≈ <strong>${quality.toFixed(3)}</strong>, about ${(gap * 100).toFixed(1)} points below Sonnet 4.6's <strong>0.891</strong>. You'd save money but you'd be shipping a less-accurate classifier. Label up to <strong>n=2,500</strong> before switching — at that point quality matches and you save <strong>${fmtMoney(Math.max(queriesPerMonth * perQueryAPI - SELF_HOST_FIXED, 0))}/month</strong>.`;
+      headlineEl.textContent = 'Too little labeled data to train anything — stay on the API.';
+      bodyEl.innerHTML = `At n=${fmtNumber(n)} on a 77-class task there are fewer than two examples per class; the fine-tuned model is near-random. Start labeling. At <strong>${fmtNumber(queriesPerMonth)} queries/month</strong> your API bill is <strong>${fmtMoney(apiMonthly)}/month</strong>, and self-hosting only becomes cheaper above <strong>${fmtNumber(breakeven)} queries/month</strong>${cached ? ' (with prompt caching)' : ''}.`;
     } else if (apiMonthly <= selfMonthly) {
       verdictEl.classList.add('api');
-      const breakeven = Math.ceil(SELF_HOST_FIXED / perQueryAPI);
-      headlineEl.textContent = `Your volume is too low to justify the fixed self-host cost.`;
-      bodyEl.innerHTML = `Quality-wise you're set (n=${fmtNumber(n)} → macro-F1 ${quality.toFixed(3)} ≥ Sonnet's 0.891). But at <strong>${fmtNumber(queriesPerMonth)} queries/month</strong>, the API costs only <strong>${fmtMoney(apiMonthly)}/month</strong> — less than the <strong>${fmtMoney(SELF_HOST_FIXED)}/month</strong> fixed cost of always-on self-hosting. Break-even is <strong>${fmtNumber(breakeven)} queries/month</strong>${cached ? ' (with prompt caching)' : ''}.`;
+      headlineEl.textContent = `On cost alone, the API wins at your volume.`;
+      bodyEl.innerHTML = `At <strong>${fmtNumber(queriesPerMonth)} queries/month</strong> the API costs <strong>${fmtMoney(apiMonthly)}/month</strong> — less than the <strong>${fmtMoney(SELF_HOST_FIXED)}/month</strong> fixed cost of always-on self-hosting. Break-even is <strong>${fmtNumber(breakeven)} queries/month</strong>${cached ? ' (with prompt caching)' : ''}. ${qualityNote}`;
     } else {
       verdictEl.classList.add('switch');
       const labelsPaybackText = paybackMonths !== null
@@ -537,8 +555,8 @@
               ? `in <strong>${(paybackMonths * 30).toFixed(0)} days</strong>`
               : `in <strong>${paybackMonths.toFixed(1)} months</strong>`)
         : '';
-      headlineEl.innerHTML = `Switch to self-host. You'd save <span class="savings">${fmtMoney(savings)}/month</span>.`;
-      bodyEl.innerHTML = `In-house quality at n=${fmtNumber(n)} (macro-F1 ${quality.toFixed(3)}) ${quality > SONNET_BASELINE + 0.005 ? 'beats' : 'matches'} Sonnet 4.6's 0.891. At <strong>${fmtNumber(queriesPerMonth)} queries/month</strong>, API costs <strong>${fmtMoney(apiMonthly)}/month</strong> vs <strong>${fmtMoney(selfMonthly)}/month</strong> self-hosted. Your labeling investment of ~<strong>${fmtMoney(labelingInvestment)}</strong> pays back ${labelsPaybackText}.`;
+      headlineEl.innerHTML = `On cost alone, self-hosting saves <span class="savings">${fmtMoney(savings)}/month</span>.`;
+      bodyEl.innerHTML = `At <strong>${fmtNumber(queriesPerMonth)} queries/month</strong>, the API costs <strong>${fmtMoney(apiMonthly)}/month</strong> vs <strong>${fmtMoney(selfMonthly)}/month</strong> self-hosted, and a labeling investment of ~<strong>${fmtMoney(labelingInvestment)}</strong> pays back ${labelsPaybackText}. ${qualityNote}`;
     }
   }
 
