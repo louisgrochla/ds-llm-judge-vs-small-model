@@ -1,0 +1,33 @@
+{
+  "source": "clinc/clinc_oos/plus",
+  "n_classes_in_scope": 150,
+  "out_of_scope_class": "oos",
+  "out_of_scope_rows_held_out": {
+    "test": 1000
+  },
+  "splits": {
+    "test": 4500,
+    "val": 500,
+    "dev_slice": 300,
+    "demo_pool": 14198,
+    "official_val": 3000
+  },
+  "training_sizes": [
+    500,
+    1000,
+    2500,
+    5000,
+    9000,
+    13000
+  ],
+  "n_seeds": 3,
+  "carve_seed": 20260729,
+  "overlaps": {
+    "dev_vs_test": 0,
+    "val_vs_test": 0,
+    "pool_vs_test": 0,
+    "dev_vs_pool": 0,
+    "val_vs_pool": 0
+  },
+  "scope": "mechanism replication only (HANDOVER \u00a76.3) \u2014 not a full sweep"
+}
