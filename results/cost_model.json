@@ -1,0 +1,114 @@
+{
+  "measured_on": {
+    "machine": "arm",
+    "platform": "macOS-26.1-arm64-arm-64bit",
+    "torch_device": "mps",
+    "batch_size": 64,
+    "repeats": 40
+  },
+  "prices_retrieved": "2026-05-24",
+  "prices_usd_per_hour": {
+    "gpu": 0.5,
+    "cpu": 0.05
+  },
+  "api_usd_per_query_uncached": 0.00525,
+  "api_note": "ESTIMATED from ~1500 input + ~50 output tokens. Not measured. The rebuilt harness records usage per call and replaces this.",
+  "arms": {
+    "tfidf": {
+      "single": {
+        "p50_ms": 1.043,
+        "p95_ms": 1.488,
+        "min_ms": 0.885,
+        "n": 40
+      },
+      "batch": {
+        "p50_ms": 3.592,
+        "p95_ms": 4.633,
+        "min_ms": 3.148,
+        "n": 40
+      },
+      "accelerator": "none (CPU)",
+      "params_m": 0,
+      "queries_per_second_batched": 17817.4,
+      "usd_per_query_at_full_utilisation": 7.79513888888889e-10,
+      "usd_per_1m_queries": 0.0008,
+      "instance_usd_per_hour": 0.05,
+      "monthly_fixed_usd": 36.0,
+      "breakeven_queries_per_month": 6857
+    },
+    "minilm": {
+      "single": {
+        "p50_ms": 4.646,
+        "p95_ms": 5.647,
+        "min_ms": 4.183,
+        "n": 40
+      },
+      "batch": {
+        "p50_ms": 31.102,
+        "p95_ms": 33.573,
+        "min_ms": 29.712,
+        "n": 40
+      },
+      "accelerator": "mps",
+      "params_m": 22,
+      "queries_per_second_batched": 2057.7,
+      "usd_per_query_at_full_utilisation": 6.749565972222222e-08,
+      "usd_per_1m_queries": 0.0675,
+      "instance_usd_per_hour": 0.5,
+      "monthly_fixed_usd": 360.0,
+      "breakeven_queries_per_month": 68571
+    },
+    "distilbert": {
+      "single": {
+        "p50_ms": 10.373,
+        "p95_ms": 25.2,
+        "min_ms": 6.59,
+        "n": 40
+      },
+      "batch": {
+        "p50_ms": 83.348,
+        "p95_ms": 122.257,
+        "min_ms": 80.464,
+        "n": 40
+      },
+      "accelerator": "mps",
+      "params_m": 66,
+      "queries_per_second_batched": 767.9,
+      "usd_per_query_at_full_utilisation": 1.8087673611111112e-07,
+      "usd_per_1m_queries": 0.1809,
+      "instance_usd_per_hour": 0.5,
+      "monthly_fixed_usd": 360.0,
+      "breakeven_queries_per_month": 68571
+    },
+    "finetuned": {
+      "single": {
+        "p50_ms": 7.59,
+        "p95_ms": 11.353,
+        "min_ms": 6.575,
+        "n": 40
+      },
+      "batch": {
+        "p50_ms": 82.056,
+        "p95_ms": 84.907,
+        "min_ms": 79.122,
+        "n": 40
+      },
+      "accelerator": "mps",
+      "params_m": 66,
+      "queries_per_second_batched": 780.0,
+      "usd_per_query_at_full_utilisation": 1.7807291666666667e-07,
+      "usd_per_1m_queries": 0.1781,
+      "instance_usd_per_hour": 0.5,
+      "monthly_fixed_usd": 360.0,
+      "breakeven_queries_per_month": 68571
+    }
+  },
+  "load_average_at_start": 3.90087890625,
+  "caveats": [
+    "Latency is measured on the machine named above, not on the T4 the published cost model priced. Throughput on other hardware will differ.",
+    "Measurements are only valid on an idle machine; load_average_at_start is recorded so a contended run can be spotted and discarded.",
+    "Instance prices are list quotes, not invoices.",
+    "Utilisation is not assumed here: $/query is quoted at FULL utilisation, and the fixed monthly cost is given separately so the reader can apply their own load. The published model folded a 10% assumption into a single ratio.",
+    "Training cost is excluded from $/query for every arm. It is not symmetric: the frozen arms fit a logistic regression in seconds on CPU, the fine-tuned arm needs a GPU sweep."
+  ]
+}

@@ -23,10 +23,15 @@ Three encoders, chosen to bracket the space rather than to win:
               arm §6.2 actually specifies and the one a reviewer expects. Loaded
               through `transformers`, so no new dependency.
 
-Same 8 budgets x 5 seeds as the fine-tuning sweep, same val set, same test set.
+Runs on any dataset in the harness registry. The budget/seed grid is discovered
+from disk rather than hard-coded, because the sweeps differ: Banking77 is 8
+budgets x 5 seeds, CLINC150 is 6 x 3. Same val set and test set as the
+fine-tuned arm in both cases.
 
-    python scripts/run_frozen_encoder.py --encoder tfidf distilbert
-    python scripts/run_frozen_encoder.py --encoder minilm      # downloads weights once
+    python scripts/run_frozen_encoder.py --encoder tfidf distilbert minilm
+    python scripts/run_frozen_encoder.py --dataset clinc150 --encoder minilm
+
+Writes to results/frozen_encoder/<dataset>/.
 """
 
 from __future__ import annotations
@@ -42,10 +47,9 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-DATA_DIR = Path(__file__).resolve().parents[1] / "data" / "processed"
-OUT_DIR = Path(__file__).resolve().parents[1] / "results" / "frozen_encoder"
-SIZES = [50, 100, 250, 500, 1000, 2500, 5000, 9000]
-N_SEEDS = 5
+from src.harness import datasets  # noqa: E402
+
+RESULTS = Path(__file__).resolve().parents[1] / "results" / "frozen_encoder"
 
 ENCODERS = {
     "tfidf": None,
@@ -54,12 +58,18 @@ ENCODERS = {
 }
 
 
-def load(split: str) -> pd.DataFrame:
-    return pd.read_parquet(DATA_DIR / f"{split}.parquet")
+def discover_subsets(data_dir: Path) -> dict[int, list[int]]:
+    """Find the (budget -> seeds) grid actually present on disk.
 
-
-def label_names() -> list[str]:
-    return (DATA_DIR / "label_names.txt").read_text().splitlines()
+    Hard-coding the grid would silently skip budgets on a dataset with a
+    different sweep -- CLINC150 runs 6 budgets x 3 seeds, Banking77 8 x 5.
+    """
+    grid: dict[int, set[int]] = {}
+    for path in data_dir.glob("train_n*_seed*.parquet"):
+        stem = path.stem.replace("train_n", "")
+        n_str, seed_str = stem.split("_seed")
+        grid.setdefault(int(n_str), set()).add(int(seed_str))
+    return {n: sorted(seeds) for n, seeds in sorted(grid.items())}
 
 
 # --------------------------------------------------------------------------
@@ -104,11 +114,18 @@ def transformer_embeddings(texts: list[str], model_name: str, batch_size: int = 
 def build_features(encoder: str, corpus: dict[str, list[str]]) -> dict[str, np.ndarray]:
     """Featurise every split at once. Fitting happens on the training pool only.
 
-    Encodes each *distinct* text once. The 40 training subsets are all drawn from the
-    same 9,203-row pool, so the naive corpus is ~104k rows over ~12.8k unique texts --
-    an 8x waste that dominates runtime for the transformer encoders.
+    Encodes each *distinct* text once. Every training subset is drawn from one pool,
+    so the naive corpus repeats itself heavily -- on Banking77 that is ~104k rows over
+    ~12.8k unique texts, an 8x waste that dominates transformer-encoder runtime.
     """
-    unique = list(dict.fromkeys(t for texts in corpus.values() for t in texts))
+    # Sorted, not insertion-ordered. Transformer encoding runs in batches, and a
+    # batch's padding length depends on which texts share it -- so insertion order
+    # leaks into the embeddings through floating-point non-associativity. That is
+    # not hypothetical: rebuilding the pool from a different set of files (same
+    # texts, different order) moved one cell's regularisation choice and shifted a
+    # published ensemble figure by 0.004. Sorting makes the embeddings a function
+    # of the text set alone.
+    unique = sorted({t for texts in corpus.values() for t in texts})
     index = {t: i for i, t in enumerate(unique)}
     take = {split: [index[t] for t in texts] for split, texts in corpus.items()}
 
@@ -134,23 +151,46 @@ def build_features(encoder: str, corpus: dict[str, list[str]]) -> dict[str, np.n
 
 def main() -> int:
     ap = argparse.ArgumentParser()
+    ap.add_argument("--dataset", default="banking77", choices=sorted(datasets.REGISTRY))
     ap.add_argument("--encoder", nargs="+", default=["tfidf", "distilbert"],
                     choices=sorted(ENCODERS))
-    ap.add_argument("--sizes", nargs="+", type=int, default=SIZES)
-    ap.add_argument("--seeds", type=int, default=N_SEEDS)
+    ap.add_argument("--sizes", nargs="+", type=int, default=None,
+                    help="Default: every budget found on disk for this dataset.")
     ap.add_argument("--C", type=float, default=None,
-                    help="Fixed inverse regularisation. Default: tuned per budget on the val set.")
+                    help="Fixed inverse regularisation. Default: tuned per cell on the val set.")
+    ap.add_argument("--c-tol", type=float, default=0.0,
+                    help="Prefer the smallest C within this macro-F1 margin of the best "
+                         "validation score. 0 = strict argmax (with smaller C winning exact "
+                         "ties). Offered for sensitivity analysis; it does NOT buy stability -- "
+                         "determinism comes from sorting the encoded texts, not from this.")
     args = ap.parse_args()
 
     from sklearn.linear_model import LogisticRegression
     from sklearn.metrics import f1_score
 
-    names = label_names()
-    test, val = load("test"), load("val")
-    pool_frames = [pd.read_parquet(DATA_DIR / f"train_n9000_seed{s}.parquet") for s in range(N_SEEDS)]
-    pool = pd.concat(pool_frames).drop_duplicates(subset="text").reset_index(drop=True)
+    spec = datasets.get_dataset(args.dataset)
+    data_dir = spec.data_dir
+    names = list(spec.label_names)
+    test, val = spec.load_split("test"), spec.load_split("val")
 
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
+    grid = discover_subsets(data_dir)
+    if args.sizes:
+        grid = {n: seeds for n, seeds in grid.items() if n in args.sizes}
+    if not grid:
+        raise SystemExit(f"no training subsets found for {args.dataset} in {data_dir}")
+
+    # Fit the vectoriser on every labelled training row available -- never on test.
+    pool = pd.concat(
+        [pd.read_parquet(data_dir / f"train_n{n}_seed{s}.parquet") for n, seeds in grid.items()
+         for s in seeds]
+    ).drop_duplicates(subset="text").reset_index(drop=True)
+
+    out_dir = RESULTS / args.dataset
+    out_dir.mkdir(parents=True, exist_ok=True)
+    print(f"{args.dataset}: {len(names)} classes, {len(test)} test rows, "
+          f"{len(pool)} pooled training rows")
+    print(f"grid: {({n: len(s) for n, s in grid.items()})}  (budget -> seeds)")
+
     all_rows: list[dict] = []
     ensembles: dict[tuple[str, int], float] = {}
 
@@ -158,9 +198,9 @@ def main() -> int:
         print(f"\n=== {encoder} ===")
         started = time.perf_counter()
         corpus = {"pool": list(pool.text), "test": list(test.text), "val": list(val.text)}
-        for n in args.sizes:
-            for seed in range(args.seeds):
-                df = pd.read_parquet(DATA_DIR / f"train_n{n}_seed{seed}.parquet")
+        for n, seeds in grid.items():
+            for seed in seeds:
+                df = pd.read_parquet(data_dir / f"train_n{n}_seed{seed}.parquet")
                 corpus[f"train_{n}_{seed}"] = list(df.text)
         feats = build_features(encoder, corpus)
         print(f"  featurised in {time.perf_counter() - started:.1f}s")
@@ -168,31 +208,36 @@ def main() -> int:
         y_test = test.label.to_numpy()
         y_val = val.label.to_numpy()
 
-        for n in args.sizes:
+        for n, seeds in grid.items():
             scores, probs_for_n = [], []
-            for seed in range(args.seeds):
-                df = pd.read_parquet(DATA_DIR / f"train_n{n}_seed{seed}.parquet")
+            for seed in seeds:
+                df = pd.read_parquet(data_dir / f"train_n{n}_seed{seed}.parquet")
                 X, y = feats[f"train_{n}_{seed}"], df.label.to_numpy()
 
                 # Regularisation is selected on the val set -- the same fixed
                 # 500 rows the fine-tuned arm uses for early stopping, so both
                 # arms are charged the same extra supervision (HANDOVER §6.4).
                 if args.C is not None:
-                    best_c = args.C
+                    best_c, val_scores = args.C, {}
                 else:
-                    best_c, best_val = None, -1.0
+                    # Smallest C within `--c-tol` of the best validation score;
+                    # with the default tol of 0 this is a strict argmax that gives
+                    # exact ties to the more regularised model. Validation scores are
+                    # recorded per cell so any near-tie is auditable after the fact.
+                    val_scores = {}
                     for c in (0.1, 1.0, 10.0, 100.0):
-                        probe = LogisticRegression(C=c, max_iter=2000, n_jobs=-1).fit(X, y)
-                        v = f1_score(y_val, probe.predict(feats["val"]), average="macro",
-                                     labels=range(len(names)), zero_division=0)
-                        if v > best_val:
-                            best_c, best_val = c, v
+                        probe = LogisticRegression(C=c, max_iter=2000).fit(X, y)
+                        val_scores[c] = float(f1_score(
+                            y_val, probe.predict(feats["val"]), average="macro",
+                            labels=range(len(names)), zero_division=0))
+                    ceiling = max(val_scores.values())
+                    best_c = min(c for c, v in val_scores.items() if v >= ceiling - args.c_tol)
 
-                clf = LogisticRegression(C=best_c, max_iter=2000, n_jobs=-1).fit(X, y)
+                clf = LogisticRegression(C=best_c, max_iter=2000).fit(X, y)
                 proba = clf.predict_proba(feats["test"])
                 # Classes absent from a small training subset are absent from the
-                # model; re-expand to the full 77-way simplex so ensembling and
-                # macro-F1 are computed over the same label space at every n.
+                # model; re-expand to the full label simplex so ensembling and
+                # macro-F1 are computed over the same space at every budget.
                 full = np.zeros((len(y_test), len(names)))
                 full[:, clf.classes_] = proba
                 pred = full.argmax(1)
@@ -203,26 +248,27 @@ def main() -> int:
                 all_rows.append({
                     "encoder": encoder, "training_size": n, "seed": seed,
                     "macro_f1": macro, "C": best_c,
+                    "val_scores": json.dumps({str(k): round(v, 5) for k, v in val_scores.items()}),
                     "n_classes_seen": int(len(clf.classes_)),
                 })
-            # Soft-vote ensemble over the 5 seeds, matching the fine-tuned arm.
+            # Soft-vote ensemble across seeds, matching the fine-tuned arm.
             stacked = np.stack(probs_for_n)          # (n_seeds, n_rows, n_classes)
             ens_probs = stacked.mean(0)
             ens = f1_score(y_test, ens_probs.argmax(1), average="macro",
                            labels=range(len(names)), zero_division=0)
             ensembles[(encoder, n)] = ens
-            # Kept on disk rather than in the frame: 3,080 x 77 floats per run is
-            # far too heavy to carry as a parquet column, and the re-analysis
-            # needs the full simplex. Per-seed is saved too, because the
+            # Kept on disk rather than in the frame: n_rows x n_classes floats per
+            # run is far too heavy to carry as a parquet column, and the
+            # re-analysis needs the full simplex. Per-seed is saved too, because the
             # hierarchical bootstrap in src/stats.py resamples seeds and cannot
             # reconstruct them from an ensemble that has already been averaged.
-            np.save(OUT_DIR / f"probs_{encoder}_n{n}.npy", ens_probs)
-            np.save(OUT_DIR / f"probs_perseed_{encoder}_n{n}.npy", stacked)
+            np.save(out_dir / f"probs_{encoder}_n{n}.npy", ens_probs)
+            np.save(out_dir / f"probs_perseed_{encoder}_n{n}.npy", stacked)
             print(f"  n={n:>5}  seed-mean {np.mean(scores):.4f}  "
                   f"(sd {np.std(scores):.4f})  ensemble {ens:.4f}")
 
     frame = pd.DataFrame(all_rows)
-    frame.to_parquet(OUT_DIR / "frozen_predictions.parquet", index=False)
+    frame.to_parquet(out_dir / "frozen_predictions.parquet", index=False)
 
     summary = {}
     for encoder in args.encoder:
@@ -239,8 +285,8 @@ def main() -> int:
                 for n in sorted(sub.training_size.unique())
             },
         }
-    (OUT_DIR / "frozen_summary.json").write_text(json.dumps(summary, indent=2) + "\n")
-    print(f"\nwrote {OUT_DIR}")
+    (out_dir / "frozen_summary.json").write_text(json.dumps(summary, indent=2) + "\n")
+    print(f"\nwrote {out_dir}")
     return 0
 
 

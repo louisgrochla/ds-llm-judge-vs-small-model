@@ -83,12 +83,12 @@
       },
       "5000": {
         "ensemble_macro_f1": 0.8749,
-        "gap_vs_finetuned_ensemble": -0.0521,
+        "gap_vs_finetuned_ensemble": -0.0522,
         "p_value": 0.0001
       },
       "9000": {
         "ensemble_macro_f1": 0.8799,
-        "gap_vs_finetuned_ensemble": -0.0541,
+        "gap_vs_finetuned_ensemble": -0.054,
         "p_value": 0.0001
       }
     },
@@ -129,9 +129,9 @@
         "p_value": 0.77112
       },
       "9000": {
-        "ensemble_macro_f1": 0.9318,
-        "gap_vs_finetuned_ensemble": -0.0021,
-        "p_value": 0.58194
+        "ensemble_macro_f1": 0.9285,
+        "gap_vs_finetuned_ensemble": -0.0054,
+        "p_value": 0.18028
       }
     },
     "tfidf": {

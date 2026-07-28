@@ -45,7 +45,7 @@ from src.stats import (  # noqa: E402
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data" / "processed"
 FT_DIR = ROOT / "results" / "finetune" / "v2_retune"
-FROZEN_DIR = ROOT / "results" / "frozen_encoder"
+FROZEN_DIR = ROOT / "results" / "frozen_encoder" / "banking77"
 OUT = ROOT / "results" / "reanalysis_summary.json"
 SIZES = [50, 100, 250, 500, 1000, 2500, 5000, 9000]
 WITHDRAWN = "llm_predictions_v1_test.parquet"

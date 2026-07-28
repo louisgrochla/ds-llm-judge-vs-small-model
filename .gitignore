@@ -75,4 +75,4 @@ results/llm_runs/*/dry_run.json
 
 # Frozen-encoder probability arrays: ~130MB, and regenerated in ~2 min by
 # scripts/run_frozen_encoder.py. The metrics they produce are committed.
-results/frozen_encoder/*.npy
+results/frozen_encoder/**/*.npy

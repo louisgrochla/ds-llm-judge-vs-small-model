@@ -47,22 +47,22 @@ A cost-and-quality study on a real banking-intent task — and a public account 
 
 ## The result that survived the rebuild: fine-tuning didn't earn its keep
 
-While rebuilding the LLM baseline, the obvious missing control got added — a **frozen** encoder with a linear head, no fine-tuning at all. It should have been in the original study. Comparing it against the fine-tuned DistilBERT ensemble, with a paired approximate-randomisation test on macro-F1 (2,000 permutations, 3,080 test rows):
+While rebuilding the LLM baseline, the obvious missing control got added — a **frozen** encoder with a linear head, no fine-tuning at all. It should have been in the original study. Comparing it against the fine-tuned DistilBERT ensemble, with a paired approximate-randomisation test on macro-F1 (10,000 permutations, 3,080 test rows):
 
 | Labels (n) | Frozen MiniLM + logistic regression | Fine-tuned DistilBERT (5-seed) | Gap | *p* |
 |---|---|---|---|---|
-| 50 | **0.568** | 0.207 | **+0.361** | <0.001 |
-| 100 | **0.765** | 0.384 | **+0.381** | <0.001 |
-| 250 | **0.858** | 0.684 | **+0.174** | <0.001 |
-| 500 | **0.889** | 0.800 | **+0.089** | <0.001 |
-| 1,000 | **0.901** | 0.866 | **+0.035** | <0.001 |
-| 2,500 | 0.917 | 0.910 | +0.007 | 0.111 |
-| 5,000 | 0.928 | 0.927 | +0.001 | 0.767 |
-| 9,000 | 0.932 | 0.934 | −0.002 | 0.582 |
+| 50 | **0.5679** | 0.2071 | **+0.3608** | 0.0001 |
+| 100 | **0.7653** | 0.3842 | **+0.3812** | 0.0001 |
+| 250 | **0.8578** | 0.6837 | **+0.1741** | 0.0001 |
+| 500 | **0.8885** | 0.7999 | **+0.0886** | 0.0001 |
+| 1,000 | **0.9006** | 0.8658 | **+0.0349** | 0.0001 |
+| 2,500 | 0.9168 | 0.9098 | +0.0070 | 0.113 |
+| 5,000 | 0.9282 | 0.9271 | +0.0012 | 0.771 |
+| 9,000 | 0.9285 | 0.9340 | −0.0054 | 0.180 |
 
-**Fine-tuning DistilBERT does not significantly beat a frozen `all-MiniLM-L6-v2` with logistic regression at any label budget on Banking77.** Below n=2,500 it loses, badly — by 38 macro-F1 points at n=100. Above it, the two are statistically indistinguishable.
+**Fine-tuning DistilBERT does not significantly beat a frozen `all-MiniLM-L6-v2` with logistic regression at any label budget on Banking77.** Below n=2,500 it loses, badly — by 38 macro-F1 points at n=100. At and above 2,500, including at the largest budget, the two are statistically indistinguishable.
 
-Even **character n-gram TF-IDF** — no neural network at all, seconds to train on a laptop CPU — beats the fine-tuned model at n=100 (+0.217, *p*<0.001), n=250 (+0.068) and n=500 (+0.016), ties at n=1,000, and trails by only 2–3 points thereafter.
+Even **character n-gram TF-IDF** — no neural network at all, seconds to train on a laptop CPU — beats the fine-tuned model at n=100 (+0.217, *p*=0.0001), n=250 (+0.068) and n=500 (+0.016), ties at n=1,000 (*p*=0.15), and trails by only 2–3 points thereafter.
 
 Why this matters more than the original question: the study set out to find the budget at which a fine-tuned small model catches a frontier LLM. But there is a prior question — *does fine-tuning beat not fine-tuning?* — and on this task, in the low-budget regime where the whole "how many labels do I need" question lives, it does not. A comparison that pits an LLM against a fine-tuned transformer without this control is measuring tuning effort as much as method.
 
@@ -74,6 +74,59 @@ python scripts/reanalysis.py
 ```
 
 Caveats stated up front: this is one dataset; the frozen arms tune only an inverse-regularisation constant on the same 500-row validation set the fine-tuned arm uses for early stopping, so both are charged the same extra supervision; and `all-MiniLM-L6-v2` was itself trained on a large sentence-pair corpus, which is pre-training the fine-tuned DistilBERT did not get. That last point is the interesting one, not a confound to apologise for — *choosing an encoder whose pre-training matches your task* appears to buy more than fine-tuning a worse-matched one.
+
+### Reproducibility note
+
+Getting these numbers stable required fixing something worth stating, because it is a trap for anyone benchmarking frozen encoders. **Transformer embeddings are not a pure function of the input text when you batch them.** Padding length depends on which texts share a batch, and floating-point non-associativity does the rest. Rebuilding the text pool from a different set of files — identical texts, different order — perturbed the embeddings enough to flip one cell's regularisation choice on a near-tie, moving a published ensemble figure by 0.004.
+
+The first fix attempted was a tolerance rule on the regularisation search. Testing showed it bought nothing: at realistic noise scale every selection rule flips 0 of 120 cells. It was removed rather than left in looking like a safeguard. The actual fix is one line — sort the text list before encoding — which makes embeddings a function of the text set alone. TF-IDF results are now bit-identical across runs and across a filesystem move.
+
+---
+
+## Second taxonomy: CLINC150
+
+Scoped as mechanism replication, not a second study — 150 in-scope intents, 6 budgets × 3 seeds, frozen arms only. The 1,000 out-of-scope test queries are held out of every macro-F1 here; they carry a different sampling density and would let one anomalous class move the headline.
+
+| Labels (n) | TF-IDF | Frozen DistilBERT | Frozen MiniLM |
+|---|---|---|---|
+| 500 | 0.7629 | 0.7871 | **0.8878** |
+| 1,000 | 0.8328 | 0.8599 | **0.9207** |
+| 2,500 | 0.8802 | 0.8943 | **0.9385** |
+| 5,000 | 0.9027 | 0.9172 | **0.9445** |
+| 9,000 | 0.9105 | 0.9285 | **0.9549** |
+| 13,000 | 0.9201 | 0.9312 | **0.9532** |
+
+![What each label budget buys on CLINC150](results/figures/label_budget_sweep_clinc150.png)
+
+The encoder ordering is identical to Banking77 — MiniLM > frozen DistilBERT > TF-IDF at every budget — so that ranking is not a Banking77 artifact. Absolute performance is higher, consistent with CLINC150 being the cleaner taxonomy.
+
+The practitioner-facing number: **500 labels already buys 0.888 macro-F1 across 150 intents**, and going to 13,000 (26× the data) adds 0.065. Steep diminishing returns set in almost immediately.
+
+What this does **not** yet show is whether fine-tuning fails to earn its keep here too — that needs a fine-tuned CLINC arm, which is a GPU sweep and out of scope. Stated plainly rather than implied.
+
+---
+
+## Measured serving cost and latency
+
+The repo previously claimed "~50× faster (~30ms vs ~1.5s)" with **no measurement behind it anywhere**. Here are actual measurements. Per-query, end-to-end as a deployment would serve it, on an Apple Silicon laptop under a load average of 3.9 — so these are conservative:
+
+| Arm | p50 (batch=1) | p95 | Batched queries/sec | $/1M queries | Hardware |
+|---|---|---|---|---|---|
+| TF-IDF + logreg | **1.0 ms** | 1.5 ms | 17,817 | $0.0008 | **CPU only** |
+| Frozen MiniLM | 4.6 ms | 5.6 ms | 2,058 | $0.0675 | GPU |
+| Frozen DistilBERT | 10.4 ms | 25.2 ms | 768 | $0.1809 | GPU |
+| Fine-tuned DistilBERT | 7.6 ms | 11.4 ms | 780 | $0.1781 | GPU |
+
+For comparison the API arm is ~$5,250 per 1M queries — but that figure is still **estimated from token counts, not measured**. It becomes measured when the rebuilt harness runs, since it records `usage` on every call.
+
+**No "N× cheaper" ratio is quoted, deliberately.** At full utilisation the fixed cost amortises over so many queries that the ratio runs into the millions — arithmetically true, practically meaningless, and precisely the trap that produced this repo's four contradictory cost figures. What a practitioner can act on:
+
+| Arm | Fixed $/month | Break-even vs API | Hardware |
+|---|---|---|---|
+| TF-IDF + logreg | $36 | **6,857 queries/mo** | CPU |
+| Everything else | $360 | 68,571 queries/mo | GPU |
+
+That order-of-magnitude gap is the real cost finding: **a bag of character n-grams needs no accelerator**, so it pays for itself ten times sooner than anything holding a GPU resident. Reproduce with `python scripts/cost_model.py` — it records the machine and its load average alongside the numbers, so a contended run can be spotted and discarded.
 
 ---
 
